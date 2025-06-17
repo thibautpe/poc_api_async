@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- Spring Boot parent pour la gestion des versions et des plugins -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.7.0</version>
+        <relativePath/>
+    </parent>
+
+    <groupId>com.example</groupId>
+    <artifactId>demo</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>demo</name>
+    <description>Demo Spring Boot project</description>
+
+    <properties>
+        <!-- Version Java utilisée pour la compilation -->
+        <java.version>11</java.version>
+        
+        <!-- Versions de Gatling et du plugin Maven
+             - Gatling 3.9.5 : Version stable et compatible avec Java 11
+             - Plugin Maven 4.2.7 : Version compatible avec Gatling 3.9.x -->
+        <gatling.version>3.9.5</gatling.version>
+        <gatling-maven-plugin.version>4.2.7</gatling-maven-plugin.version>
+    </properties>
+
+    <dependencies>
+        <!-- Spring Boot Web pour l'API REST -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!-- Spring Boot Test pour les tests unitaires -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Gatling pour les tests de performance
+             Version 3.9.5 choisie pour :
+             - Stabilité avec Java 11
+             - Compatibilité avec le plugin Maven 4.2.7
+             - Support des fonctionnalités de test de charge -->
+        <dependency>
+            <groupId>io.gatling.highcharts</groupId>
+            <artifactId>gatling-charts-highcharts</artifactId>
+            <version>${gatling.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Netty : Dépendance requise par Gatling pour la gestion des connexions HTTP
+             Version 4.1.86.Final choisie pour :
+             - Compatibilité avec Gatling 3.9.5
+             - Correction des problèmes de sécurité connus
+             - Stabilité avec Java 11 -->
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-all</artifactId>
+            <version>4.1.86.Final</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!-- Plugin Spring Boot pour le packaging et le déploiement -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            
+            <!-- Plugin Gatling pour l'exécution des tests de performance
+                 Version 4.2.7 choisie pour :
+                 - Compatibilité avec Gatling 3.9.5
+                 - Support des fonctionnalités de reporting
+                 - Intégration avec Maven -->
+            <plugin>
+                <groupId>io.gatling</groupId>
+                <artifactId>gatling-maven-plugin</artifactId>
+                <version>${gatling-maven-plugin.version}</version>
+                <configuration>
+                    <simulationClass>com.example.demo.GatlingLoadTest1</simulationClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project> 
