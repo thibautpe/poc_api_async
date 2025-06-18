@@ -2441,3 +2441,144 @@ Identify and stop the process that's listening on port 8080 or configure this ap
 2025-06-18 22:58:14.574  INFO 4184 --- [http-nio-8080-exec-10] com.example.demo.HandlerController       : Request 0022 - Processing completed with price: 1898.16 (API duration: 1597ms)
 2025-06-18 22:58:15.808  INFO 4184 --- [http-nio-8080-exec-8] com.example.demo.HandlerController       : Request 0023 - Traitement pendant 2 secondes
 2025-06-18 22:58:15.808  INFO 4184 --- [http-nio-8080-exec-8] com.example.demo.HandlerController       : Request 0023 - Processing completed with price: 705.36 (API duration: 1822ms)
+2025-06-18 23:02:24.497  INFO 25780 --- [main] com.example.demo.DemoApplicationTests    : Starting DemoApplicationTests using Java 17.0.10 on DESKTOP-VDNJKAA with PID 25780 (started by Megaport in E:\ws\poc_api_async2)
+2025-06-18 23:02:24.499  INFO 25780 --- [main] com.example.demo.DemoApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2025-06-18 23:02:25.599  INFO 25780 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2025-06-18 23:02:25.609  INFO 25780 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-18 23:02:25.610  INFO 25780 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2025-06-18 23:02:25.770  INFO 25780 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-18 23:02:25.770  INFO 25780 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1248 ms
+2025-06-18 23:02:26.663  INFO 25780 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 63501 (http) with context path ''
+2025-06-18 23:02:26.674  INFO 25780 --- [main] com.example.demo.DemoApplicationTests    : Started DemoApplicationTests in 2.467 seconds (JVM running for 3.412)
+2025-06-18 23:02:27.184  INFO 25780 --- [http-nio-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-18 23:02:27.184  INFO 25780 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-18 23:02:27.185  INFO 25780 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-06-18 23:02:27.223  INFO 25780 --- [http-nio-auto-1-exec-1] com.example.demo.HandlerController       : Request 0001 - Starting processing with delay: 100ms, apiTimeout: 2000ms
+2025-06-18 23:02:29.429  INFO 25780 --- [http-nio-auto-1-exec-1] com.example.demo.HandlerController       : Request 0001 - Traitement pendant 2 secondes
+2025-06-18 23:02:29.429  INFO 25780 --- [http-nio-auto-1-exec-1] com.example.demo.HandlerController       : Request 0001 - Processing completed with price: 828.02 (API duration: 197ms)
+2025-06-18 23:02:29.491  INFO 25780 --- [http-nio-auto-1-exec-3] com.example.demo.HandlerController       : Request 0002 - Starting processing with delay: 2500ms, apiTimeout: 1000ms
+2025-06-18 23:02:30.498 ERROR 25780 --- [pool-2-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 1000 ms
+2025-06-18 23:02:32.508  INFO 25780 --- [http-nio-auto-1-exec-3] com.example.demo.HandlerController       : Request 0002 - Traitement pendant 2 secondes
+2025-06-18 23:02:32.510 ERROR 25780 --- [http-nio-auto-1-exec-3] com.example.demo.HandlerController       : Request 0002 - External API timeout after 1000ms (requested delay: 2500ms)
+2025-06-18 23:02:32.519  INFO 25780 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.example.demo.externalApi.ExternalApiControllerTest], using SpringBootContextLoader
+2025-06-18 23:02:32.520  INFO 25780 --- [main] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.example.demo.externalApi.ExternalApiControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2025-06-18 23:02:32.520  INFO 25780 --- [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.demo.externalApi.ExternalApiControllerTest]: ExternalApiControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-06-18 23:02:32.531  INFO 25780 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.demo.DemoApplication for test class com.example.demo.externalApi.ExternalApiControllerTest
+2025-06-18 23:02:32.533  INFO 25780 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2025-06-18 23:02:32.534  INFO 25780 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@505f45cc, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@994544, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@5df92089, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@6f0c45f4, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@45571cfc, org.springframework.test.context.support.DirtiesContextTestExecutionListener@faec277, org.springframework.test.context.event.EventPublishingTestExecutionListener@1b475663, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@1669931a, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@6b24ddd7, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@12e007be, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@3335afcf, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@699e0bf0, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@2499b971]
+2025-06-18 23:02:32.580  INFO 25780 --- [main] c.e.d.e.ExternalApiControllerTest        : Starting ExternalApiControllerTest using Java 17.0.10 on DESKTOP-VDNJKAA with PID 25780 (started by Megaport in E:\ws\poc_api_async2)
+2025-06-18 23:02:32.580  INFO 25780 --- [main] c.e.d.e.ExternalApiControllerTest        : No active profile set, falling back to 1 default profile: "default"
+2025-06-18 23:02:33.266  INFO 25780 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-06-18 23:02:33.266  INFO 25780 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-06-18 23:02:33.266  INFO 25780 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-06-18 23:02:33.274  INFO 25780 --- [main] c.e.d.e.ExternalApiControllerTest        : Started ExternalApiControllerTest in 0.733 seconds (JVM running for 10.011)
+2025-06-18 23:02:35.068 ERROR 25780 --- [pool-1-thread-3] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: Réponse arrivée après le timeout (1000 ms), durée réelle: 2558 ms, prix: 1994.14
+2025-06-18 23:04:27.772  INFO 31276 --- [main] com.example.demo.DemoApplication         : Starting DemoApplication using Java 17.0.10 on DESKTOP-VDNJKAA with PID 31276 (E:\ws\poc_api_async2\target\classes started by Megaport in E:\ws\poc_api_async2)
+2025-06-18 23:04:27.775  INFO 31276 --- [main] com.example.demo.DemoApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-06-18 23:04:28.531  INFO 31276 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2025-06-18 23:04:28.540  INFO 31276 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-18 23:04:28.541  INFO 31276 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2025-06-18 23:04:28.624  INFO 31276 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-18 23:04:28.625  INFO 31276 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 810 ms
+2025-06-18 23:04:28.895  INFO 31276 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2025-06-18 23:04:28.903  INFO 31276 --- [main] com.example.demo.DemoApplication         : Started DemoApplication in 1.464 seconds (JVM running for 1.773)
+2025-06-18 23:04:36.433  INFO 31276 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-18 23:04:36.434  INFO 31276 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-18 23:04:36.435  INFO 31276 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-06-18 23:04:36.461  INFO 31276 --- [http-nio-8080-exec-1] com.example.demo.HandlerController       : Request 0001 - Starting processing with delay: 2037ms, apiTimeout: 2000ms
+2025-06-18 23:04:37.314  INFO 31276 --- [http-nio-8080-exec-3] com.example.demo.HandlerController       : Request 0002 - Starting processing with delay: 2315ms, apiTimeout: 2000ms
+2025-06-18 23:04:38.468 ERROR 31276 --- [pool-2-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 2000 ms
+2025-06-18 23:04:39.316 ERROR 31276 --- [pool-2-thread-2] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 2000 ms
+2025-06-18 23:04:39.319  INFO 31276 --- [http-nio-8080-exec-5] com.example.demo.HandlerController       : Request 0003 - Starting processing with delay: 1877ms, apiTimeout: 2000ms
+2025-06-18 23:04:40.469  INFO 31276 --- [http-nio-8080-exec-1] com.example.demo.HandlerController       : Request 0001 - Traitement pendant 2 secondes
+2025-06-18 23:04:40.470 ERROR 31276 --- [http-nio-8080-exec-1] com.example.demo.HandlerController       : Request 0001 - External API timeout after 2000ms (requested delay: 2037ms)
+2025-06-18 23:04:41.316  INFO 31276 --- [http-nio-8080-exec-3] com.example.demo.HandlerController       : Request 0002 - Traitement pendant 2 secondes
+2025-06-18 23:04:41.316  INFO 31276 --- [http-nio-8080-exec-8] com.example.demo.HandlerController       : Request 0004 - Starting processing with delay: 2296ms, apiTimeout: 2000ms
+2025-06-18 23:04:41.316 ERROR 31276 --- [http-nio-8080-exec-3] com.example.demo.HandlerController       : Request 0002 - External API timeout after 2000ms (requested delay: 2315ms)
+2025-06-18 23:04:42.307  INFO 31276 --- [http-nio-8080-exec-2] com.example.demo.HandlerController       : Request 0005 - Starting processing with delay: 1931ms, apiTimeout: 2000ms
+2025-06-18 23:04:42.515 ERROR 31276 --- [pool-1-thread-4] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: Réponse arrivée après le timeout (2000 ms), durée réelle: 2044 ms, prix: 1225.65
+2025-06-18 23:04:43.204  INFO 31276 --- [http-nio-8080-exec-5] com.example.demo.HandlerController       : Request 0003 - Traitement pendant 2 secondes
+2025-06-18 23:04:43.205  INFO 31276 --- [http-nio-8080-exec-5] com.example.demo.HandlerController       : Request 0003 - Processing completed with price: 885.88 (API duration: 1883ms)
+2025-06-18 23:04:43.318 ERROR 31276 --- [pool-2-thread-2] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 2000 ms
+2025-06-18 23:04:43.318  INFO 31276 --- [http-nio-8080-exec-1] com.example.demo.HandlerController       : Request 0006 - Starting processing with delay: 1864ms, apiTimeout: 2000ms
+2025-06-18 23:04:43.635 ERROR 31276 --- [pool-1-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: Réponse arrivée après le timeout (2000 ms), durée réelle: 2319 ms, prix: 2464.67
+2025-06-18 23:04:44.305  INFO 31276 --- [http-nio-8080-exec-3] com.example.demo.HandlerController       : Request 0007 - Starting processing with delay: 2224ms, apiTimeout: 2000ms
+2025-06-18 23:04:45.316  INFO 31276 --- [http-nio-8080-exec-5] com.example.demo.HandlerController       : Request 0008 - Starting processing with delay: 1889ms, apiTimeout: 2000ms
+2025-06-18 23:04:45.318  INFO 31276 --- [http-nio-8080-exec-8] com.example.demo.HandlerController       : Request 0004 - Traitement pendant 2 secondes
+2025-06-18 23:04:45.319 ERROR 31276 --- [http-nio-8080-exec-8] com.example.demo.HandlerController       : Request 0004 - External API timeout after 2000ms (requested delay: 2296ms)
+2025-06-18 23:04:46.245  INFO 31276 --- [http-nio-8080-exec-2] com.example.demo.HandlerController       : Request 0005 - Traitement pendant 2 secondes
+2025-06-18 23:04:46.245  INFO 31276 --- [http-nio-8080-exec-2] com.example.demo.HandlerController       : Request 0005 - Processing completed with price: 2176.27 (API duration: 1935ms)
+2025-06-18 23:04:46.307 ERROR 31276 --- [pool-2-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 2000 ms
+2025-06-18 23:04:46.319  INFO 31276 --- [http-nio-8080-exec-4] com.example.demo.HandlerController       : Request 0009 - Starting processing with delay: 1863ms, apiTimeout: 2000ms
+2025-06-18 23:04:47.188  INFO 31276 --- [http-nio-8080-exec-1] com.example.demo.HandlerController       : Request 0006 - Traitement pendant 2 secondes
+2025-06-18 23:04:47.188  INFO 31276 --- [http-nio-8080-exec-1] com.example.demo.HandlerController       : Request 0006 - Processing completed with price: 1163.28 (API duration: 1869ms)
+2025-06-18 23:04:47.312  INFO 31276 --- [http-nio-8080-exec-8] com.example.demo.HandlerController       : Request 0010 - Starting processing with delay: 1688ms, apiTimeout: 2000ms
+2025-06-18 23:04:47.620 ERROR 31276 --- [pool-1-thread-3] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: Réponse arrivée après le timeout (2000 ms), durée réelle: 2302 ms, prix: 638.08
+2025-06-18 23:04:48.308  INFO 31276 --- [http-nio-8080-exec-3] com.example.demo.HandlerController       : Request 0007 - Traitement pendant 2 secondes
+2025-06-18 23:04:48.309 ERROR 31276 --- [http-nio-8080-exec-3] com.example.demo.HandlerController       : Request 0007 - External API timeout after 2000ms (requested delay: 2224ms)
+2025-06-18 23:04:48.315  INFO 31276 --- [http-nio-8080-exec-1] com.example.demo.HandlerController       : Request 0011 - Starting processing with delay: 2141ms, apiTimeout: 2000ms
+2025-06-18 23:04:49.212  INFO 31276 --- [http-nio-8080-exec-5] com.example.demo.HandlerController       : Request 0008 - Traitement pendant 2 secondes
+2025-06-18 23:04:49.212  INFO 31276 --- [http-nio-8080-exec-5] com.example.demo.HandlerController       : Request 0008 - Processing completed with price: 2011.64 (API duration: 1894ms)
+2025-06-18 23:04:49.317  INFO 31276 --- [http-nio-8080-exec-9] com.example.demo.HandlerController       : Request 0012 - Starting processing with delay: 2182ms, apiTimeout: 2000ms
+2025-06-18 23:04:50.193  INFO 31276 --- [http-nio-8080-exec-4] com.example.demo.HandlerController       : Request 0009 - Traitement pendant 2 secondes
+2025-06-18 23:04:50.194  INFO 31276 --- [http-nio-8080-exec-4] com.example.demo.HandlerController       : Request 0009 - Processing completed with price: 1603.42 (API duration: 1870ms)
+2025-06-18 23:04:50.307  INFO 31276 --- [http-nio-8080-exec-3] com.example.demo.HandlerController       : Request 0013 - Starting processing with delay: 2275ms, apiTimeout: 2000ms
+2025-06-18 23:04:50.316 ERROR 31276 --- [pool-2-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 2000 ms
+2025-06-18 23:04:50.537 ERROR 31276 --- [pool-1-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: Réponse arrivée après le timeout (2000 ms), durée réelle: 2228 ms, prix: 1930.56
+2025-06-18 23:04:51.006  INFO 31276 --- [http-nio-8080-exec-8] com.example.demo.HandlerController       : Request 0010 - Traitement pendant 2 secondes
+2025-06-18 23:04:51.007  INFO 31276 --- [http-nio-8080-exec-8] com.example.demo.HandlerController       : Request 0010 - Processing completed with price: 2197.16 (API duration: 1692ms)
+2025-06-18 23:04:51.311  INFO 31276 --- [http-nio-8080-exec-5] com.example.demo.HandlerController       : Request 0014 - Starting processing with delay: 2214ms, apiTimeout: 2000ms
+2025-06-18 23:04:51.319 ERROR 31276 --- [pool-2-thread-2] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 2000 ms
+2025-06-18 23:04:52.308 ERROR 31276 --- [pool-2-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 2000 ms
+2025-06-18 23:04:52.314  INFO 31276 --- [http-nio-8080-exec-10] com.example.demo.HandlerController       : Request 0015 - Starting processing with delay: 2108ms, apiTimeout: 2000ms
+2025-06-18 23:04:52.317  INFO 31276 --- [http-nio-8080-exec-1] com.example.demo.HandlerController       : Request 0011 - Traitement pendant 2 secondes
+2025-06-18 23:04:52.317 ERROR 31276 --- [http-nio-8080-exec-1] com.example.demo.HandlerController       : Request 0011 - External API timeout after 2000ms (requested delay: 2141ms)
+2025-06-18 23:04:53.313 ERROR 31276 --- [pool-2-thread-2] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 2000 ms
+2025-06-18 23:04:53.318  INFO 31276 --- [http-nio-8080-exec-6] com.example.demo.HandlerController       : Request 0016 - Starting processing with delay: 1832ms, apiTimeout: 2000ms
+2025-06-18 23:04:53.320  INFO 31276 --- [http-nio-8080-exec-9] com.example.demo.HandlerController       : Request 0012 - Traitement pendant 2 secondes
+2025-06-18 23:04:53.320 ERROR 31276 --- [http-nio-8080-exec-9] com.example.demo.HandlerController       : Request 0012 - External API timeout after 2000ms (requested delay: 2182ms)
+2025-06-18 23:04:54.308  INFO 31276 --- [http-nio-8080-exec-3] com.example.demo.HandlerController       : Request 0013 - Traitement pendant 2 secondes
+2025-06-18 23:04:54.308 ERROR 31276 --- [http-nio-8080-exec-3] com.example.demo.HandlerController       : Request 0013 - External API timeout after 2000ms (requested delay: 2275ms)
+2025-06-18 23:04:54.315 ERROR 31276 --- [pool-2-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 2000 ms
+2025-06-18 23:04:54.315  INFO 31276 --- [http-nio-8080-exec-9] com.example.demo.HandlerController       : Request 0017 - Starting processing with delay: 1989ms, apiTimeout: 2000ms
+2025-06-18 23:04:54.461 ERROR 31276 --- [pool-1-thread-4] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: Réponse arrivée après le timeout (2000 ms), durée réelle: 2144 ms, prix: 1181.12
+2025-06-18 23:04:55.314  INFO 31276 --- [http-nio-8080-exec-5] com.example.demo.HandlerController       : Request 0014 - Traitement pendant 2 secondes
+2025-06-18 23:04:55.314  INFO 31276 --- [http-nio-8080-exec-7] com.example.demo.HandlerController       : Request 0018 - Starting processing with delay: 2019ms, apiTimeout: 2000ms
+2025-06-18 23:04:55.314 ERROR 31276 --- [http-nio-8080-exec-5] com.example.demo.HandlerController       : Request 0014 - External API timeout after 2000ms (requested delay: 2214ms)
+2025-06-18 23:04:55.716 ERROR 31276 --- [pool-1-thread-3] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: Réponse arrivée après le timeout (2000 ms), durée réelle: 2185 ms, prix: 328.09
+2025-06-18 23:04:56.312  INFO 31276 --- [http-nio-8080-exec-5] com.example.demo.HandlerController       : Request 0019 - Starting processing with delay: 2118ms, apiTimeout: 2000ms
+2025-06-18 23:04:56.316 ERROR 31276 --- [pool-2-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 2000 ms
+2025-06-18 23:04:56.317  INFO 31276 --- [http-nio-8080-exec-10] com.example.demo.HandlerController       : Request 0015 - Traitement pendant 2 secondes
+2025-06-18 23:04:56.317 ERROR 31276 --- [http-nio-8080-exec-10] com.example.demo.HandlerController       : Request 0015 - External API timeout after 2000ms (requested delay: 2108ms)
+2025-06-18 23:04:56.708 ERROR 31276 --- [pool-1-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: Réponse arrivée après le timeout (2000 ms), durée réelle: 2281 ms, prix: 891.71
+2025-06-18 23:04:57.157  INFO 31276 --- [http-nio-8080-exec-6] com.example.demo.HandlerController       : Request 0016 - Traitement pendant 2 secondes
+2025-06-18 23:04:57.158  INFO 31276 --- [http-nio-8080-exec-6] com.example.demo.HandlerController       : Request 0016 - Processing completed with price: 246.85 (API duration: 1835ms)
+2025-06-18 23:04:57.311  INFO 31276 --- [http-nio-8080-exec-3] com.example.demo.HandlerController       : Request 0020 - Starting processing with delay: 2105ms, apiTimeout: 2000ms
+2025-06-18 23:04:57.315 ERROR 31276 --- [pool-2-thread-2] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 2000 ms
+2025-06-18 23:04:57.534 ERROR 31276 --- [pool-1-thread-2] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: Réponse arrivée après le timeout (2000 ms), durée réelle: 2220 ms, prix: 1547.68
+2025-06-18 23:04:58.314 ERROR 31276 --- [pool-2-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 2000 ms
+2025-06-18 23:04:58.314  INFO 31276 --- [http-nio-8080-exec-6] com.example.demo.HandlerController       : Request 0021 - Starting processing with delay: 2397ms, apiTimeout: 2000ms
+2025-06-18 23:04:58.317  INFO 31276 --- [http-nio-8080-exec-9] com.example.demo.HandlerController       : Request 0017 - Traitement pendant 2 secondes
+2025-06-18 23:04:58.317 ERROR 31276 --- [http-nio-8080-exec-9] com.example.demo.HandlerController       : Request 0017 - External API timeout after 2000ms (requested delay: 1989ms)
+2025-06-18 23:04:58.822 ERROR 31276 --- [pool-1-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: Réponse arrivée après le timeout (2000 ms), durée réelle: 2114 ms, prix: 1254.84
+2025-06-18 23:04:59.310  INFO 31276 --- [http-nio-8080-exec-9] com.example.demo.HandlerController       : Request 0022 - Starting processing with delay: 1766ms, apiTimeout: 2000ms
+2025-06-18 23:04:59.312 ERROR 31276 --- [pool-2-thread-2] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 2000 ms
+2025-06-18 23:04:59.316  INFO 31276 --- [http-nio-8080-exec-7] com.example.demo.HandlerController       : Request 0018 - Traitement pendant 2 secondes
+2025-06-18 23:04:59.316 ERROR 31276 --- [http-nio-8080-exec-7] com.example.demo.HandlerController       : Request 0018 - External API timeout after 2000ms (requested delay: 2019ms)
+2025-06-18 23:05:00.309  INFO 31276 --- [http-nio-8080-exec-7] com.example.demo.HandlerController       : Request 0023 - Starting processing with delay: 1879ms, apiTimeout: 2000ms
+2025-06-18 23:05:00.316  INFO 31276 --- [http-nio-8080-exec-5] com.example.demo.HandlerController       : Request 0019 - Traitement pendant 2 secondes
+2025-06-18 23:05:00.316 ERROR 31276 --- [pool-2-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 2000 ms
+2025-06-18 23:05:00.316 ERROR 31276 --- [http-nio-8080-exec-5] com.example.demo.HandlerController       : Request 0019 - External API timeout after 2000ms (requested delay: 2118ms)
+2025-06-18 23:05:01.313  INFO 31276 --- [http-nio-8080-exec-3] com.example.demo.HandlerController       : Request 0020 - Traitement pendant 2 secondes
+2025-06-18 23:05:01.313 ERROR 31276 --- [http-nio-8080-exec-3] com.example.demo.HandlerController       : Request 0020 - External API timeout after 2000ms (requested delay: 2105ms)
+2025-06-18 23:05:01.666 ERROR 31276 --- [pool-1-thread-2] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: Réponse arrivée après le timeout (2000 ms), durée réelle: 2024 ms, prix: 1499.87
+2025-06-18 23:05:02.310 ERROR 31276 --- [pool-2-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 2000 ms
+2025-06-18 23:05:02.316  INFO 31276 --- [http-nio-8080-exec-6] com.example.demo.HandlerController       : Request 0021 - Traitement pendant 2 secondes
+2025-06-18 23:05:02.316 ERROR 31276 --- [http-nio-8080-exec-6] com.example.demo.HandlerController       : Request 0021 - External API timeout after 2000ms (requested delay: 2397ms)
+2025-06-18 23:05:02.836 ERROR 31276 --- [pool-1-thread-3] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: Réponse arrivée après le timeout (2000 ms), durée réelle: 2120 ms, prix: 289.05
+2025-06-18 23:05:03.081  INFO 31276 --- [http-nio-8080-exec-9] com.example.demo.HandlerController       : Request 0022 - Traitement pendant 2 secondes
+2025-06-18 23:05:03.081  INFO 31276 --- [http-nio-8080-exec-9] com.example.demo.HandlerController       : Request 0022 - Processing completed with price: 753.26 (API duration: 1769ms)
+2025-06-18 23:05:03.422 ERROR 31276 --- [pool-1-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: Réponse arrivée après le timeout (2000 ms), durée réelle: 2109 ms, prix: 1648.84
+2025-06-18 23:05:04.313  INFO 31276 --- [http-nio-8080-exec-7] com.example.demo.HandlerController       : Request 0023 - Traitement pendant 2 secondes
+2025-06-18 23:05:04.313 ERROR 31276 --- [http-nio-8080-exec-7] com.example.demo.HandlerController       : Request 0023 - External API timeout after 2000ms (requested delay: 1879ms)
+2025-06-18 23:05:04.719 ERROR 31276 --- [pool-1-thread-2] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: Réponse arrivée après le timeout (2000 ms), durée réelle: 2403 ms, prix: 815.64

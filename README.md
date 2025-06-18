@@ -233,4 +233,7 @@ Les logs incluent :
 - **Pour un POC, la solution est très propre, pédagogique et réaliste.**
 - **Pour un passage en production**, il faudra industrialiser la gestion des pools de threads, la configuration, la sécurité, et l'observabilité.
 
-Si besoin d'exemples de refactoring pour la prod, ou d'approfondir un point (ex : injection du pool, gestion avancée des timeouts, monitoring), voir avec l'équipe ou demander un accompagnement technique. 
+Si besoin d'exemples de refactoring pour la prod, ou d'approfondir un point (ex : injection du pool, gestion avancée des timeouts, monitoring), voir avec l'équipe ou demander un accompagnement technique.
+
+> **Note sur la gestion des pools de threads** :
+> Les pools ExecutorService et ScheduledExecutorService sont injectés et mutualisés via Spring. **Il ne faut jamais les arrêter manuellement (shutdown)** dans le code applicatif. Leur cycle de vie est géré automatiquement par le conteneur Spring et ils sont arrêtés proprement à l'arrêt de l'application. 
