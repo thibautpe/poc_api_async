@@ -8,7 +8,12 @@
 - **Tests de charge** : Gatling (via plugin Maven)
 - **Tests unitaires** : JUnit 5 (Spring Boot Test)
 - **Logs** : SLF4J + Logback
-- **Automatisation** : Script PowerShell pour enchaîner build, lancement de l'app et tests de charge
+- **Observabilité / Monitoring** :
+  - **Micrometer** (instrumentation des métriques)
+  - **Spring Boot Actuator** (exposition des endpoints techniques)
+  - **Prometheus** (scraping et stockage des métriques)
+  - **Extraction et visualisation** : métriques extraites automatiquement après chaque test Gatling, visualisation possible dans Prometheus/Grafana ou via le navigateur
+- **Automatisation** : Script PowerShell pour enchaîner build, lancement de l'app, tests de charge, extraction et affichage des métriques
 
 ## Pourquoi Java 11 ?
 
@@ -28,16 +33,23 @@
 - Pas de `var` pour l'inférence de type locale (introduit en Java 10, mais peu utilisé pour la lisibilité dans les projets d'équipe).
 
 ### 3. Dépendances
-- Toutes les dépendances sont compatibles Java 11 (Spring Boot 2.7.x, Gatling, JUnit 5, etc.).
+- Toutes les dépendances sont compatibles Java 11 (Spring Boot 2.7.x, Gatling, JUnit 5, Micrometer, Actuator, etc.).
 - Pas d'utilisation de modules Java 9+ (module-info.java), pour éviter les problèmes de migration et garder la compatibilité avec les outils classiques.
 
 ### 4. Build & exécution
 - Utilisation de Maven avec configuration explicite du `sourceCompatibility` et `targetCompatibility` à 11 dans le `pom.xml`.
 - Scripts d'automatisation compatibles Windows (PowerShell) pour faciliter l'intégration en environnement d'entreprise.
+- Extraction automatisée des métriques via PowerShell après chaque test de charge.
 
-### 5. Limitations connues
+### 5. Observabilité et monitoring
+- Instrumentation des métriques métier et techniques avec Micrometer
+- Exposition des métriques via Spring Boot Actuator (`/actuator/prometheus`)
+- Intégration possible avec Prometheus et Grafana pour le suivi en production
+- Extraction et affichage automatisés des métriques après chaque campagne de test
+
+### 6. Limitations connues
 - Pas d'accès aux API ou syntaxes des versions Java supérieures à 11.
 - Si besoin de fonctionnalités avancées (virtual threads, records, etc.), une migration vers Java 17+ serait à prévoir.
 
 ## Conclusion
-Le choix de Java 11 garantit la stabilité, la compatibilité et la portabilité du projet dans la plupart des environnements professionnels actuels, tout en permettant une base moderne pour l'asynchrone, les tests et l'automatisation. 
+Le choix de Java 11 garantit la stabilité, la compatibilité et la portabilité du projet dans la plupart des environnements professionnels actuels, tout en permettant une base moderne pour l'asynchrone, les tests, l'observabilité et l'automatisation. 
