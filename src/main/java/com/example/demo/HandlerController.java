@@ -22,28 +22,30 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class HandlerController {
     private static final Logger logger = LoggerFactory.getLogger(HandlerController.class);
     private static final AtomicInteger requestCounter = new AtomicInteger(0);
-    private static final long API_TIMEOUT_MS = 2000;
 
     @Autowired
     private AsyncExternalApiCaller asyncExternalApiCaller;
 
     @GetMapping("/handle")
-    public ResponseEntity<Map<String, Object>> handleRequest(@RequestParam(defaultValue = "100") long delay) {
+    public ResponseEntity<Map<String, Object>> handleRequest(
+        @RequestParam(defaultValue = "100") long delay,
+        @RequestParam(defaultValue = "2000") long apiTimeout
+    ) {
         int requestId = requestCounter.incrementAndGet();
-        logger.info("Request {} - Starting processing with delay: {}ms, apiTimeout: {}ms", String.format("%04d", requestId), delay, API_TIMEOUT_MS);
+        logger.info("Request {} - Starting processing with delay: {}ms, apiTimeout: {}ms", String.format("%04d", requestId), delay, apiTimeout);
 
-        CompletableFuture<ApiResult> future = asyncExternalApiCaller.callExternalApiAsync(delay, API_TIMEOUT_MS);
+        CompletableFuture<ApiResult> future = asyncExternalApiCaller.callExternalApiAsync(delay, apiTimeout);
         ApiResult result;
         try {
-            result = future.get(API_TIMEOUT_MS + 100, TimeUnit.MILLISECONDS); // marge de sécurité
+            result = future.get(apiTimeout + 100, TimeUnit.MILLISECONDS); // marge de sécurité
         } catch (TimeoutException e) {
-            asyncExternalApiCaller.logLateResponse(delay, API_TIMEOUT_MS);
+            asyncExternalApiCaller.logLateResponse(delay, apiTimeout);
             logger.error("Request {} - External API timeout after {}ms (requested delay: {}ms)", 
-                String.format("%04d", requestId), API_TIMEOUT_MS, delay);
+                String.format("%04d", requestId), apiTimeout, delay);
             Map<String, Object> response = new HashMap<>();
             response.put("requestId", String.format("%04d", requestId));
             response.put("error", "EXTERNAL_API_TIMEOUT");
-            response.put("message", "Request timeout after " + API_TIMEOUT_MS + "ms (requested delay: " + delay + "ms)");
+            response.put("message", "Request timeout after " + apiTimeout + "ms (requested delay: " + delay + "ms)");
             response.put("status", "TIMEOUT");
             return ResponseEntity.status(HttpStatus.GATEWAY_TIMEOUT).body(response);
         } catch (Exception e) {
@@ -56,14 +58,22 @@ public class HandlerController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
         }
 
+        // Ajout d'un sleep de 2 secondes et d'une trace
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException ie) {
+            Thread.currentThread().interrupt();
+        }
+        logger.info("Request {} - Traitement pendant 2 secondes", String.format("%04d", requestId), delay, apiTimeout);
+
         if (!result.success && "EXTERNAL_API_TIMEOUT".equals(result.error)) {
-            asyncExternalApiCaller.logLateResponse(delay, API_TIMEOUT_MS);
+            asyncExternalApiCaller.logLateResponse(delay, apiTimeout);
             logger.error("Request {} - External API timeout after {}ms (requested delay: {}ms)", 
-                String.format("%04d", requestId), API_TIMEOUT_MS, delay);
+                String.format("%04d", requestId), apiTimeout, delay);
             Map<String, Object> response = new HashMap<>();
             response.put("requestId", String.format("%04d", requestId));
             response.put("error", "EXTERNAL_API_TIMEOUT");
-            response.put("message", "Request timeout after " + API_TIMEOUT_MS + "ms (requested delay: " + delay + "ms)");
+            response.put("message", "Request timeout after " + apiTimeout + "ms (requested delay: " + delay + "ms)");
             response.put("status", "TIMEOUT");
             return ResponseEntity.status(HttpStatus.GATEWAY_TIMEOUT).body(response);
         }

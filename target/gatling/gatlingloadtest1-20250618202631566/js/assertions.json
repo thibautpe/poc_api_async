@@ -1,7 +1,7 @@
 {
   "simulation": "com.example.demo.GatlingLoadTest1",
-  "simulationId": "gatlingloadtest1-20250617231047094",
-  "start": 1750201847772,
+  "simulationId": "gatlingloadtest1-20250618202631566",
+  "start": 1750278392554,
   "description": "",
   "scenarios": ["Handler Load Test"],
   "assertions": [
@@ -10,81 +10,81 @@
   "target": "max of response time",
   "condition": "is less than",
   "expectedValues": [4000.0],
-  "result": true,
+  "result": false,
   "message": "Global: max of response time is less than 4000.0",
-  "actualValue": [2123.0]
+  "actualValue": [4253.0]
 },
 {
   "path": "Global",
   "target": "95th percentile of response time",
   "condition": "is less than",
   "expectedValues": [3000.0],
-  "result": true,
+  "result": false,
   "message": "Global: 95th percentile of response time is less than 3000.0",
-  "actualValue": [2012.0]
+  "actualValue": [4020.0]
 },
 {
   "path": "Global",
   "target": "99th percentile of response time",
   "condition": "is less than",
   "expectedValues": [3500.0],
-  "result": true,
+  "result": false,
   "message": "Global: 99th percentile of response time is less than 3500.0",
-  "actualValue": [2099.0]
+  "actualValue": [4202.0]
 },
 {
   "path": "Global",
   "target": "percentage of successful events",
   "condition": "is greater than",
   "expectedValues": [40.0],
-  "result": false,
+  "result": true,
   "message": "Global: percentage of successful events is greater than 40.0",
-  "actualValue": [34.78260869565217]
+  "actualValue": [52.17391304347826]
 },
 {
   "path": "Global",
   "target": "percentage of failed events",
   "condition": "is less than",
   "expectedValues": [60.0],
-  "result": false,
+  "result": true,
   "message": "Global: percentage of failed events is less than 60.0",
-  "actualValue": [65.21739130434783]
+  "actualValue": [47.82608695652174]
 },
 {
   "path": "Handle Request",
   "target": "max of response time",
   "condition": "is less than",
   "expectedValues": [4000.0],
-  "result": true,
+  "result": false,
   "message": "Handle Request: max of response time is less than 4000.0",
-  "actualValue": [2123.0]
+  "actualValue": [4253.0]
 },
 {
   "path": "Handle Request",
   "target": "percentage of failed events",
   "condition": "is less than",
   "expectedValues": [60.0],
-  "result": false,
+  "result": true,
   "message": "Handle Request: percentage of failed events is less than 60.0",
-  "actualValue": [65.21739130434783]
+  "actualValue": [47.82608695652174]
 },
 {
   "path": "Handle Request",
   "target": "95th percentile of response time",
   "condition": "is less than",
   "expectedValues": [3000.0],
-  "result": true,
+  "result": false,
   "message": "Handle Request: 95th percentile of response time is less than 3000.0",
-  "actualValue": [2012.0]
+  "actualValue": [4020.0]
 },
 {
   "path": "Handle Request",
   "target": "99th percentile of response time",
   "condition": "is less than",
   "expectedValues": [3500.0],
-  "result": true,
+  "result": false,
   "message": "Handle Request: 99th percentile of response time is less than 3500.0",
-  "actualValue": [2099.0]
+  "actualValue": [4202.0]
 },
 {
   "path": "Global",
@@ -93,7 +93,7 @@
   "expectedValues": [0.5],
   "result": true,
   "message": "Global: mean requests per second is greater than 0.5",
-  "actualValue": [0.8518518518518519]
+  "actualValue": [0.7931034482758621]
 }
   ]
 }

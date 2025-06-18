@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.beans.factory.annotation.Value;
 
 import java.util.Map;
 import java.util.concurrent.*;
@@ -16,6 +17,8 @@ public class AsyncExternalApiCaller {
     private final RestTemplate restTemplate = new RestTemplate();
     private final AtomicInteger timeoutCounter = new AtomicInteger(0);
     private final AtomicInteger lateResponseCounter = new AtomicInteger(0);
+    @Value("${external.api.url}")
+    private String externalApiUrl;
 
     public static class ApiResult {
         public final boolean success;
@@ -39,7 +42,7 @@ public class AsyncExternalApiCaller {
             try {
                 @SuppressWarnings("unchecked")
                 Map<String, Object> response = restTemplate.getForObject(
-                        "http://localhost:8080/external/calculatePrice?delay=" + delay, Map.class);
+                        externalApiUrl + "?delay=" + delay, Map.class);
                 Double price = response != null ? ((Number) response.get("price")).doubleValue() : null;
                 long duration = System.currentTimeMillis() - start;
                 return new ApiResult(true, price, null, duration, "SUCCESS");
@@ -72,7 +75,7 @@ public class AsyncExternalApiCaller {
             try {
                 @SuppressWarnings("unchecked")
                 Map<String, Object> response = restTemplate.getForObject(
-                        "http://localhost:8080/external/calculatePrice?delay=" + delay, Map.class);
+                        externalApiUrl + "?delay=" + delay, Map.class);
                 Double price = response != null ? ((Number) response.get("price")).doubleValue() : null;
                 long duration = System.currentTimeMillis() - start;
                 if (duration > timeoutMs) {
@@ -91,5 +94,9 @@ public class AsyncExternalApiCaller {
 
     public int getLateResponseCount() {
         return lateResponseCounter.get();
+    }
+
+    public void setExternalApiUrl(String externalApiUrl) {
+        this.externalApiUrl = externalApiUrl;
     }
 } 

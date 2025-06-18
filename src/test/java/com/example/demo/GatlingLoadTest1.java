@@ -11,9 +11,15 @@ import static io.gatling.javaapi.http.HttpDsl.*;
 public class GatlingLoadTest1 extends Simulation {
     private static final Random random = new Random();
 
+    // Permet de configurer dynamiquement le port cible via une variable d'environnement ou une propriété système
+    private static final int TARGET_PORT = Integer.parseInt(
+        System.getProperty("gatling.target.port",
+            System.getenv().getOrDefault("GATLING_TARGET_PORT", "8080"))
+    );
+
     // HTTP Protocol Configuration
     private HttpProtocolBuilder httpProtocol = http
-        .baseUrl("http://localhost:8080")
+        .baseUrl("http://localhost:" + TARGET_PORT)
         .acceptHeader("application/json")
         .userAgentHeader("Gatling/Performance Test")
         .maxConnectionsPerHost(10)

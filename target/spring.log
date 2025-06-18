@@ -1669,3 +1669,646 @@ Identify and stop the process that's listening on port 8080 or configure this ap
 2025-06-18 01:11:14.015 ERROR 10192 --- [pool-1-thread-4] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: Réponse arrivée après le timeout (2000 ms), durée réelle: 2277 ms, prix: 723.93
 2025-06-18 01:11:14.812 ERROR 10192 --- [pool-1-thread-3] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: Réponse arrivée après le timeout (2000 ms), durée réelle: 2081 ms, prix: 1799.77
 2025-06-18 01:11:15.847 ERROR 10192 --- [pool-1-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: Réponse arrivée après le timeout (2000 ms), durée réelle: 2124 ms, prix: 1028.7
+2025-06-18 21:14:22.263  INFO 19964 --- [main] com.example.demo.DemoApplicationTests    : Starting DemoApplicationTests using Java 17.0.10 on DESKTOP-VDNJKAA with PID 19964 (started by Megaport in E:\ws\poc_api_async2)
+2025-06-18 21:14:22.267  INFO 19964 --- [main] com.example.demo.DemoApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2025-06-18 21:14:23.398  INFO 19964 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2025-06-18 21:14:23.410  INFO 19964 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-18 21:14:23.410  INFO 19964 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2025-06-18 21:14:23.572  INFO 19964 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-18 21:14:23.572  INFO 19964 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1280 ms
+2025-06-18 21:14:24.599  INFO 19964 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 50951 (http) with context path ''
+2025-06-18 21:14:24.610  INFO 19964 --- [main] com.example.demo.DemoApplicationTests    : Started DemoApplicationTests in 2.704 seconds (JVM running for 4.219)
+2025-06-18 21:14:25.092  INFO 19964 --- [http-nio-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-18 21:14:25.093  INFO 19964 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-18 21:14:25.094  INFO 19964 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-06-18 21:16:01.598  INFO 25776 --- [main] com.example.demo.DemoApplicationTests    : Starting DemoApplicationTests using Java 17.0.10 on DESKTOP-VDNJKAA with PID 25776 (started by Megaport in E:\ws\poc_api_async2)
+2025-06-18 21:16:01.600  INFO 25776 --- [main] com.example.demo.DemoApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2025-06-18 21:16:02.729  INFO 25776 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2025-06-18 21:16:02.743  INFO 25776 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-18 21:16:02.744  INFO 25776 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2025-06-18 21:16:02.908  INFO 25776 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-18 21:16:02.908  INFO 25776 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1285 ms
+2025-06-18 21:16:03.879  INFO 25776 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 51028 (http) with context path ''
+2025-06-18 21:16:03.889  INFO 25776 --- [main] com.example.demo.DemoApplicationTests    : Started DemoApplicationTests in 2.613 seconds (JVM running for 3.562)
+2025-06-18 21:16:04.347  INFO 25776 --- [http-nio-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-18 21:16:04.347  INFO 25776 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-18 21:16:04.348  INFO 25776 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-06-18 21:16:04.378  INFO 25776 --- [http-nio-auto-1-exec-1] com.example.demo.HandlerController       : Request 0001 - Starting processing with delay: 100ms, apiTimeout: 2000ms
+2025-06-18 21:16:04.392 ERROR 25776 --- [pool-1-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_ERROR: I/O error on GET request for "http://localhost:8080/external/calculatePrice": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2025-06-18 21:16:06.407  INFO 25776 --- [http-nio-auto-1-exec-1] com.example.demo.HandlerController       : Request 0001 - Traitement pendant 2 secondes
+2025-06-18 21:16:06.407 ERROR 25776 --- [http-nio-auto-1-exec-1] com.example.demo.HandlerController       : Request 0001 - External API error: EXTERNAL_API_ERROR
+2025-06-18 21:16:15.410  INFO 22944 --- [main] com.example.demo.DemoApplicationTests    : Starting DemoApplicationTests using Java 17.0.10 on DESKTOP-VDNJKAA with PID 22944 (started by Megaport in E:\ws\poc_api_async2)
+2025-06-18 21:16:15.412  INFO 22944 --- [main] com.example.demo.DemoApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2025-06-18 21:16:16.480  INFO 22944 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2025-06-18 21:16:16.493  INFO 22944 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-18 21:16:16.493  INFO 22944 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2025-06-18 21:16:16.637  INFO 22944 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-18 21:16:16.637  INFO 22944 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1202 ms
+2025-06-18 21:16:17.623  INFO 22944 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 51049 (http) with context path ''
+2025-06-18 21:16:17.634  INFO 22944 --- [main] com.example.demo.DemoApplicationTests    : Started DemoApplicationTests in 2.536 seconds (JVM running for 3.468)
+2025-06-18 21:16:18.128  INFO 22944 --- [http-nio-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-18 21:16:18.128  INFO 22944 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-18 21:16:18.129  INFO 22944 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-06-18 21:16:18.178  INFO 22944 --- [http-nio-auto-1-exec-1] com.example.demo.HandlerController       : Request 0001 - Starting processing with delay: 100ms, apiTimeout: 2000ms
+2025-06-18 21:16:18.209 ERROR 22944 --- [pool-1-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_ERROR: I/O error on GET request for "http://localhost:8080/external/calculatePrice": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2025-06-18 21:16:19.515  INFO 19784 --- [main] com.example.demo.DemoApplicationTests    : Starting DemoApplicationTests using Java 17.0.10 on DESKTOP-VDNJKAA with PID 19784 (started by Megaport in E:\ws\poc_api_async2)
+2025-06-18 21:16:19.517  INFO 19784 --- [main] com.example.demo.DemoApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2025-06-18 21:16:20.225  INFO 22944 --- [http-nio-auto-1-exec-1] com.example.demo.HandlerController       : Request 0001 - Traitement pendant 2 secondes
+2025-06-18 21:16:20.226 ERROR 22944 --- [http-nio-auto-1-exec-1] com.example.demo.HandlerController       : Request 0001 - External API error: EXTERNAL_API_ERROR
+2025-06-18 21:16:20.683  INFO 19784 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2025-06-18 21:16:20.699  INFO 19784 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-18 21:16:20.699  INFO 19784 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2025-06-18 21:16:20.855  INFO 19784 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-18 21:16:20.855  INFO 19784 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1312 ms
+2025-06-18 21:16:21.836  INFO 19784 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 51055 (http) with context path ''
+2025-06-18 21:16:21.848  INFO 19784 --- [main] com.example.demo.DemoApplicationTests    : Started DemoApplicationTests in 2.651 seconds (JVM running for 3.69)
+2025-06-18 21:16:22.321  INFO 19784 --- [http-nio-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-18 21:16:22.322  INFO 19784 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-18 21:16:22.323  INFO 19784 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-06-18 21:16:22.357  INFO 19784 --- [http-nio-auto-1-exec-1] com.example.demo.HandlerController       : Request 0001 - Starting processing with delay: 100ms, apiTimeout: 2000ms
+2025-06-18 21:16:22.372 ERROR 19784 --- [pool-1-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_ERROR: I/O error on GET request for "http://localhost:8080/external/calculatePrice": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2025-06-18 21:16:24.382  INFO 19784 --- [http-nio-auto-1-exec-1] com.example.demo.HandlerController       : Request 0001 - Traitement pendant 2 secondes
+2025-06-18 21:16:24.382 ERROR 19784 --- [http-nio-auto-1-exec-1] com.example.demo.HandlerController       : Request 0001 - External API error: EXTERNAL_API_ERROR
+2025-06-18 21:16:32.457  INFO 4324 --- [main] com.example.demo.DemoApplicationTests    : Starting DemoApplicationTests using Java 17.0.10 on DESKTOP-VDNJKAA with PID 4324 (started by Megaport in E:\ws\poc_api_async2)
+2025-06-18 21:16:32.460  INFO 4324 --- [main] com.example.demo.DemoApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2025-06-18 21:16:33.550  INFO 4324 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2025-06-18 21:16:33.563  INFO 4324 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-18 21:16:33.564  INFO 4324 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2025-06-18 21:16:33.713  INFO 4324 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-18 21:16:33.713  INFO 4324 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1229 ms
+2025-06-18 21:16:34.640  INFO 4324 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 51065 (http) with context path ''
+2025-06-18 21:16:34.650  INFO 4324 --- [main] com.example.demo.DemoApplicationTests    : Started DemoApplicationTests in 2.524 seconds (JVM running for 3.552)
+2025-06-18 21:16:35.094  INFO 4324 --- [http-nio-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-18 21:16:35.094  INFO 4324 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-18 21:16:35.095  INFO 4324 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-06-18 21:16:35.125  INFO 4324 --- [http-nio-auto-1-exec-1] com.example.demo.HandlerController       : Request 0001 - Starting processing with delay: 100ms, apiTimeout: 2000ms
+2025-06-18 21:16:35.139 ERROR 4324 --- [pool-1-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_ERROR: I/O error on GET request for "http://localhost:8080/external/calculatePrice": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2025-06-18 21:16:37.146  INFO 4324 --- [http-nio-auto-1-exec-1] com.example.demo.HandlerController       : Request 0001 - Traitement pendant 2 secondes
+2025-06-18 21:16:37.146 ERROR 4324 --- [http-nio-auto-1-exec-1] com.example.demo.HandlerController       : Request 0001 - External API error: EXTERNAL_API_ERROR
+2025-06-18 21:16:56.654  INFO 3800 --- [main] com.example.demo.DemoApplicationTests    : Starting DemoApplicationTests using Java 17.0.10 on DESKTOP-VDNJKAA with PID 3800 (started by Megaport in E:\ws\poc_api_async2)
+2025-06-18 21:16:56.657  INFO 3800 --- [main] com.example.demo.DemoApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2025-06-18 21:16:57.748  INFO 3800 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2025-06-18 21:16:57.763  INFO 3800 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-18 21:16:57.763  INFO 3800 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2025-06-18 21:16:57.923  INFO 3800 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-18 21:16:57.924  INFO 3800 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1243 ms
+2025-06-18 21:16:58.818  INFO 3800 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 51135 (http) with context path ''
+2025-06-18 21:16:58.829  INFO 3800 --- [main] com.example.demo.DemoApplicationTests    : Started DemoApplicationTests in 2.482 seconds (JVM running for 3.443)
+2025-06-18 21:16:59.272  INFO 3800 --- [http-nio-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-18 21:16:59.272  INFO 3800 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-18 21:16:59.273  INFO 3800 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-06-18 21:16:59.307  INFO 3800 --- [http-nio-auto-1-exec-1] com.example.demo.HandlerController       : Request 0001 - Starting processing with delay: 100ms, apiTimeout: 2000ms
+2025-06-18 21:16:59.323 ERROR 3800 --- [pool-1-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_ERROR: I/O error on GET request for "http://localhost:8080/external/calculatePrice": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2025-06-18 21:17:01.338  INFO 3800 --- [http-nio-auto-1-exec-1] com.example.demo.HandlerController       : Request 0001 - Traitement pendant 2 secondes
+2025-06-18 21:17:01.339 ERROR 3800 --- [http-nio-auto-1-exec-1] com.example.demo.HandlerController       : Request 0001 - External API error: EXTERNAL_API_ERROR
+2025-06-18 21:17:13.589  INFO 26444 --- [main] com.example.demo.DemoApplicationTests    : Starting DemoApplicationTests using Java 17.0.10 on DESKTOP-VDNJKAA with PID 26444 (started by Megaport in E:\ws\poc_api_async2)
+2025-06-18 21:17:13.591  INFO 26444 --- [main] com.example.demo.DemoApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2025-06-18 21:17:14.634  INFO 26444 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2025-06-18 21:17:14.647  INFO 26444 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-18 21:17:14.648  INFO 26444 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2025-06-18 21:17:14.799  INFO 26444 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-18 21:17:14.799  INFO 26444 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1184 ms
+2025-06-18 21:17:15.739  INFO 26444 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 51146 (http) with context path ''
+2025-06-18 21:17:15.749  INFO 26444 --- [main] com.example.demo.DemoApplicationTests    : Started DemoApplicationTests in 2.457 seconds (JVM running for 3.425)
+2025-06-18 21:17:16.188  INFO 26444 --- [http-nio-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-18 21:17:16.189  INFO 26444 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-18 21:17:16.190  INFO 26444 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-06-18 21:17:16.219  INFO 26444 --- [http-nio-auto-1-exec-1] com.example.demo.HandlerController       : Request 0001 - Starting processing with delay: 100ms, apiTimeout: 2000ms
+2025-06-18 21:17:16.233 ERROR 26444 --- [pool-1-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_ERROR: I/O error on GET request for "http://localhost:8080/external/calculatePrice": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2025-06-18 21:17:18.242  INFO 26444 --- [http-nio-auto-1-exec-1] com.example.demo.HandlerController       : Request 0001 - Traitement pendant 2 secondes
+2025-06-18 21:17:18.242 ERROR 26444 --- [http-nio-auto-1-exec-1] com.example.demo.HandlerController       : Request 0001 - External API error: EXTERNAL_API_ERROR
+2025-06-18 21:17:48.452  INFO 10256 --- [main] com.example.demo.DemoApplication         : Starting DemoApplication using Java 17.0.10 on DESKTOP-VDNJKAA with PID 10256 (E:\ws\poc_api_async2\target\classes started by Megaport in E:\ws\poc_api_async2)
+2025-06-18 21:17:48.457  INFO 10256 --- [main] com.example.demo.DemoApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-06-18 21:17:49.401  INFO 10256 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2025-06-18 21:17:49.413  INFO 10256 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-18 21:17:49.413  INFO 10256 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2025-06-18 21:17:49.507  INFO 10256 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-18 21:17:49.507  INFO 10256 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 998 ms
+2025-06-18 21:17:49.917  INFO 10256 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2025-06-18 21:17:49.929  INFO 10256 --- [main] com.example.demo.DemoApplication         : Started DemoApplication in 1.873 seconds (JVM running for 2.339)
+2025-06-18 21:19:08.239  INFO 26236 --- [main] com.example.demo.DemoApplication         : Starting DemoApplication using Java 17.0.10 on DESKTOP-VDNJKAA with PID 26236 (E:\ws\poc_api_async2\target\classes started by Megaport in E:\ws\poc_api_async2)
+2025-06-18 21:19:08.243  INFO 26236 --- [main] com.example.demo.DemoApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-06-18 21:19:09.216  INFO 26236 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2025-06-18 21:19:09.228  INFO 26236 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-18 21:19:09.229  INFO 26236 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2025-06-18 21:19:09.331  INFO 26236 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-18 21:19:09.332  INFO 26236 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1033 ms
+2025-06-18 21:19:09.699  INFO 26236 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2025-06-18 21:19:09.710  INFO 26236 --- [main] com.example.demo.DemoApplication         : Started DemoApplication in 1.886 seconds (JVM running for 2.375)
+2025-06-18 21:19:40.330  INFO 19628 --- [main] com.example.demo.DemoApplicationTests    : Starting DemoApplicationTests using Java 17.0.10 on DESKTOP-VDNJKAA with PID 19628 (started by Megaport in E:\ws\poc_api_async2)
+2025-06-18 21:19:40.332  INFO 19628 --- [main] com.example.demo.DemoApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2025-06-18 21:19:41.449  INFO 19628 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2025-06-18 21:19:41.461  INFO 19628 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-18 21:19:41.461  INFO 19628 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2025-06-18 21:19:41.608  INFO 19628 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-18 21:19:41.608  INFO 19628 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1251 ms
+2025-06-18 21:19:42.572  INFO 19628 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 51266 (http) with context path ''
+2025-06-18 21:19:42.583  INFO 19628 --- [main] com.example.demo.DemoApplicationTests    : Started DemoApplicationTests in 2.582 seconds (JVM running for 3.535)
+2025-06-18 21:19:43.292  INFO 19628 --- [http-nio-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-18 21:19:43.293  INFO 19628 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-18 21:19:43.294  INFO 19628 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-06-18 21:19:43.326  INFO 19628 --- [http-nio-auto-1-exec-1] com.example.demo.HandlerController       : Request 0001 - Starting processing with delay: 100ms, apiTimeout: 2000ms
+2025-06-18 21:19:43.342 ERROR 19628 --- [pool-1-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_ERROR: I/O error on GET request for "http://localhost:8080/external/calculatePrice": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2025-06-18 21:19:45.356  INFO 19628 --- [http-nio-auto-1-exec-1] com.example.demo.HandlerController       : Request 0001 - Traitement pendant 2 secondes
+2025-06-18 21:19:45.356 ERROR 19628 --- [http-nio-auto-1-exec-1] com.example.demo.HandlerController       : Request 0001 - External API error: EXTERNAL_API_ERROR
+2025-06-18 21:20:24.512  INFO 18620 --- [main] com.example.demo.DemoApplicationTests    : Starting DemoApplicationTests using Java 17.0.10 on DESKTOP-VDNJKAA with PID 18620 (started by Megaport in E:\ws\poc_api_async2)
+2025-06-18 21:20:24.514  INFO 18620 --- [main] com.example.demo.DemoApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2025-06-18 21:20:25.703  INFO 18620 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2025-06-18 21:20:25.715  INFO 18620 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-18 21:20:25.716  INFO 18620 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2025-06-18 21:20:25.884  INFO 18620 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-18 21:20:25.884  INFO 18620 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1346 ms
+2025-06-18 21:20:26.798  INFO 18620 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 51304 (http) with context path ''
+2025-06-18 21:20:26.809  INFO 18620 --- [main] com.example.demo.DemoApplicationTests    : Started DemoApplicationTests in 2.585 seconds (JVM running for 3.553)
+2025-06-18 21:20:27.272  INFO 18620 --- [http-nio-auto-1-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-18 21:20:27.273  INFO 18620 --- [http-nio-auto-1-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-18 21:20:27.274  INFO 18620 --- [http-nio-auto-1-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-06-18 21:20:27.308  INFO 18620 --- [http-nio-auto-1-exec-2] com.example.demo.HandlerController       : Request 0001 - Starting processing with delay: 100ms, apiTimeout: 2000ms
+2025-06-18 21:20:27.324 ERROR 18620 --- [pool-1-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_ERROR: I/O error on GET request for "http://localhost:8080/external/calculatePrice": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2025-06-18 21:20:29.330  INFO 18620 --- [http-nio-auto-1-exec-2] com.example.demo.HandlerController       : Request 0001 - Traitement pendant 2 secondes
+2025-06-18 21:20:29.330 ERROR 18620 --- [http-nio-auto-1-exec-2] com.example.demo.HandlerController       : Request 0001 - External API error: EXTERNAL_API_ERROR
+2025-06-18 21:22:11.567  INFO 19132 --- [main] com.example.demo.DemoApplicationTests    : Starting DemoApplicationTests using Java 17.0.10 on DESKTOP-VDNJKAA with PID 19132 (started by Megaport in E:\ws\poc_api_async2)
+2025-06-18 21:22:11.569  INFO 19132 --- [main] com.example.demo.DemoApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2025-06-18 21:22:12.629  INFO 19132 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2025-06-18 21:22:12.638  INFO 19132 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-18 21:22:12.639  INFO 19132 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2025-06-18 21:22:12.789  INFO 19132 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-18 21:22:12.789  INFO 19132 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1196 ms
+2025-06-18 21:22:13.773  INFO 19132 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 51431 (http) with context path ''
+2025-06-18 21:22:13.783  INFO 19132 --- [main] com.example.demo.DemoApplicationTests    : Started DemoApplicationTests in 2.504 seconds (JVM running for 3.379)
+2025-06-18 21:22:14.260  INFO 19132 --- [http-nio-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-18 21:22:14.260  INFO 19132 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-18 21:22:14.261  INFO 19132 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-06-18 21:22:14.292  INFO 19132 --- [http-nio-auto-1-exec-1] com.example.demo.HandlerController       : Request 0001 - Starting processing with delay: 100ms, apiTimeout: 2000ms
+2025-06-18 21:22:14.307 ERROR 19132 --- [pool-1-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_ERROR: I/O error on GET request for "http://localhost:8080/external/calculatePrice": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2025-06-18 21:22:16.310  INFO 19132 --- [http-nio-auto-1-exec-1] com.example.demo.HandlerController       : Request 0001 - Traitement pendant 2 secondes
+2025-06-18 21:22:16.310 ERROR 19132 --- [http-nio-auto-1-exec-1] com.example.demo.HandlerController       : Request 0001 - External API error: EXTERNAL_API_ERROR
+2025-06-18 21:23:51.216  INFO 3868 --- [main] com.example.demo.DemoApplication         : Starting DemoApplication using Java 17.0.10 on DESKTOP-VDNJKAA with PID 3868 (E:\ws\poc_api_async2\target\classes started by Megaport in E:\ws\poc_api_async2)
+2025-06-18 21:23:51.219  INFO 3868 --- [main] com.example.demo.DemoApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-06-18 21:23:51.974  INFO 3868 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2025-06-18 21:23:51.984  INFO 3868 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-18 21:23:51.985  INFO 3868 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2025-06-18 21:23:52.097  INFO 3868 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-18 21:23:52.098  INFO 3868 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 837 ms
+2025-06-18 21:23:52.378  INFO 3868 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2025-06-18 21:23:52.387  INFO 3868 --- [main] com.example.demo.DemoApplication         : Started DemoApplication in 1.542 seconds (JVM running for 1.822)
+2025-06-18 21:24:01.617  INFO 17028 --- [main] com.example.demo.DemoApplicationTests    : Starting DemoApplicationTests using Java 17.0.10 on DESKTOP-VDNJKAA with PID 17028 (started by Megaport in E:\ws\poc_api_async2)
+2025-06-18 21:24:01.618  INFO 17028 --- [main] com.example.demo.DemoApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2025-06-18 21:24:02.780  INFO 17028 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2025-06-18 21:24:02.792  INFO 17028 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-18 21:24:02.793  INFO 17028 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2025-06-18 21:24:02.964  INFO 17028 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-18 21:24:02.965  INFO 17028 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1323 ms
+2025-06-18 21:24:03.936  INFO 17028 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 51536 (http) with context path ''
+2025-06-18 21:24:03.946  INFO 17028 --- [main] com.example.demo.DemoApplicationTests    : Started DemoApplicationTests in 2.624 seconds (JVM running for 3.582)
+2025-06-18 21:24:04.425  INFO 17028 --- [http-nio-auto-1-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-18 21:24:04.425  INFO 17028 --- [http-nio-auto-1-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-18 21:24:04.426  INFO 17028 --- [http-nio-auto-1-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-06-18 21:24:04.460  INFO 17028 --- [http-nio-auto-1-exec-2] com.example.demo.HandlerController       : Request 0001 - Starting processing with delay: 100ms, apiTimeout: 2000ms
+2025-06-18 21:24:04.541  INFO 3868 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-18 21:24:04.542  INFO 3868 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-18 21:24:04.543  INFO 3868 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-06-18 21:24:06.761  INFO 17028 --- [http-nio-auto-1-exec-2] com.example.demo.HandlerController       : Request 0001 - Traitement pendant 2 secondes
+2025-06-18 21:24:06.761  INFO 17028 --- [http-nio-auto-1-exec-2] com.example.demo.HandlerController       : Request 0001 - Processing completed with price: 2379.55 (API duration: 292ms)
+2025-06-18 21:25:43.963  INFO 25516 --- [main] com.example.demo.DemoApplicationTests    : Starting DemoApplicationTests using Java 17.0.10 on DESKTOP-VDNJKAA with PID 25516 (started by Megaport in E:\ws\poc_api_async2)
+2025-06-18 21:25:43.967  INFO 25516 --- [main] com.example.demo.DemoApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2025-06-18 21:25:45.504  INFO 25516 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2025-06-18 21:25:45.515  INFO 25516 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-18 21:25:45.515  INFO 25516 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2025-06-18 21:25:45.671  INFO 25516 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-18 21:25:45.671  INFO 25516 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1662 ms
+2025-06-18 21:25:46.607  INFO 25516 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 51697 (http) with context path ''
+2025-06-18 21:25:46.619  INFO 25516 --- [main] com.example.demo.DemoApplicationTests    : Started DemoApplicationTests in 3.04 seconds (JVM running for 4.584)
+2025-06-18 21:25:47.119  INFO 25516 --- [http-nio-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-18 21:25:47.119  INFO 25516 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-18 21:25:47.120  INFO 25516 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-06-18 21:25:47.155  INFO 25516 --- [http-nio-auto-1-exec-1] com.example.demo.HandlerController       : Request 0001 - Starting processing with delay: 100ms, apiTimeout: 2000ms
+2025-06-18 21:25:47.175 ERROR 25516 --- [pool-1-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_ERROR: I/O error on GET request for "http://localhost:8080/external/calculatePrice": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2025-06-18 21:25:49.191  INFO 25516 --- [http-nio-auto-1-exec-1] com.example.demo.HandlerController       : Request 0001 - Traitement pendant 2 secondes
+2025-06-18 21:25:49.191 ERROR 25516 --- [http-nio-auto-1-exec-1] com.example.demo.HandlerController       : Request 0001 - External API error: EXTERNAL_API_ERROR
+2025-06-18 21:26:25.436  INFO 26484 --- [main] com.example.demo.DemoApplicationTests    : Starting DemoApplicationTests using Java 17.0.10 on DESKTOP-VDNJKAA with PID 26484 (started by Megaport in E:\ws\poc_api_async2)
+2025-06-18 21:26:25.439  INFO 26484 --- [main] com.example.demo.DemoApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2025-06-18 21:26:26.521  INFO 26484 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2025-06-18 21:26:26.533  INFO 26484 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-18 21:26:26.534  INFO 26484 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2025-06-18 21:26:26.691  INFO 26484 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-18 21:26:26.691  INFO 26484 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1227 ms
+2025-06-18 21:26:27.544  INFO 26484 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 51725 (http) with context path ''
+2025-06-18 21:26:27.554  INFO 26484 --- [main] com.example.demo.DemoApplicationTests    : Started DemoApplicationTests in 2.411 seconds (JVM running for 3.318)
+2025-06-18 21:26:28.025  INFO 26484 --- [http-nio-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-18 21:26:28.026  INFO 26484 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-18 21:26:28.027  INFO 26484 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-06-18 21:26:28.065  INFO 26484 --- [http-nio-auto-1-exec-1] com.example.demo.HandlerController       : Request 0001 - Starting processing with delay: 100ms, apiTimeout: 2000ms
+2025-06-18 21:26:28.087 ERROR 26484 --- [pool-1-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_ERROR: I/O error on GET request for "http://localhost:8080/external/calculatePrice": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2025-06-18 21:26:30.096  INFO 26484 --- [http-nio-auto-1-exec-1] com.example.demo.HandlerController       : Request 0001 - Traitement pendant 2 secondes
+2025-06-18 21:26:30.096 ERROR 26484 --- [http-nio-auto-1-exec-1] com.example.demo.HandlerController       : Request 0001 - External API error: EXTERNAL_API_ERROR
+2025-06-18 21:27:16.834  INFO 7296 --- [main] com.example.demo.DemoApplicationTests    : Starting DemoApplicationTests using Java 17.0.10 on DESKTOP-VDNJKAA with PID 7296 (started by Megaport in E:\ws\poc_api_async2)
+2025-06-18 21:27:16.837  INFO 7296 --- [main] com.example.demo.DemoApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2025-06-18 21:27:18.038  INFO 7296 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2025-06-18 21:27:18.051  INFO 7296 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-18 21:27:18.051  INFO 7296 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2025-06-18 21:27:18.220  INFO 7296 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-18 21:27:18.221  INFO 7296 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1358 ms
+2025-06-18 21:27:19.178  INFO 7296 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 51796 (http) with context path ''
+2025-06-18 21:27:19.188  INFO 7296 --- [main] com.example.demo.DemoApplicationTests    : Started DemoApplicationTests in 2.646 seconds (JVM running for 3.608)
+2025-06-18 21:27:19.672  INFO 7296 --- [http-nio-auto-1-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-18 21:27:19.672  INFO 7296 --- [http-nio-auto-1-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-18 21:27:19.673  INFO 7296 --- [http-nio-auto-1-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-06-18 21:27:19.713  INFO 7296 --- [http-nio-auto-1-exec-2] com.example.demo.HandlerController       : Request 0001 - Starting processing with delay: 100ms, apiTimeout: 2000ms
+2025-06-18 21:27:19.732 ERROR 7296 --- [pool-1-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_ERROR: I/O error on GET request for "http://localhost:8080/external/calculatePrice": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2025-06-18 21:27:21.738  INFO 7296 --- [http-nio-auto-1-exec-2] com.example.demo.HandlerController       : Request 0001 - Traitement pendant 2 secondes
+2025-06-18 21:27:21.738 ERROR 7296 --- [http-nio-auto-1-exec-2] com.example.demo.HandlerController       : Request 0001 - External API error: EXTERNAL_API_ERROR
+2025-06-18 21:30:46.896  INFO 23256 --- [main] com.example.demo.DemoApplicationTests    : Starting DemoApplicationTests using Java 17.0.10 on DESKTOP-VDNJKAA with PID 23256 (started by Megaport in E:\ws\poc_api_async2)
+2025-06-18 21:30:46.898  INFO 23256 --- [main] com.example.demo.DemoApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2025-06-18 21:30:48.102  INFO 23256 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2025-06-18 21:30:48.113  INFO 23256 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-18 21:30:48.113  INFO 23256 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2025-06-18 21:30:48.267  INFO 23256 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-18 21:30:48.267  INFO 23256 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1341 ms
+2025-06-18 21:30:49.334  INFO 23256 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 52090 (http) with context path ''
+2025-06-18 21:30:49.347  INFO 23256 --- [main] com.example.demo.DemoApplicationTests    : Started DemoApplicationTests in 2.744 seconds (JVM running for 3.718)
+2025-06-18 21:30:49.814  INFO 23256 --- [http-nio-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-18 21:30:49.815  INFO 23256 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-18 21:30:49.815  INFO 23256 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-06-18 21:30:49.845  INFO 23256 --- [http-nio-auto-1-exec-1] com.example.demo.HandlerController       : Request 0001 - Starting processing with delay: 100ms, apiTimeout: 2000ms
+2025-06-18 21:30:49.862 ERROR 23256 --- [pool-1-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_ERROR: I/O error on GET request for "http://localhost:0/external/calculatePrice": Cannot assign requested address: connect; nested exception is java.net.BindException: Cannot assign requested address: connect
+2025-06-18 21:30:51.876  INFO 23256 --- [http-nio-auto-1-exec-1] com.example.demo.HandlerController       : Request 0001 - Traitement pendant 2 secondes
+2025-06-18 21:30:51.876 ERROR 23256 --- [http-nio-auto-1-exec-1] com.example.demo.HandlerController       : Request 0001 - External API error: EXTERNAL_API_ERROR
+2025-06-18 21:32:00.209  INFO 14896 --- [main] com.example.demo.DemoApplicationTests    : Starting DemoApplicationTests using Java 17.0.10 on DESKTOP-VDNJKAA with PID 14896 (started by Megaport in E:\ws\poc_api_async2)
+2025-06-18 21:32:00.211  INFO 14896 --- [main] com.example.demo.DemoApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2025-06-18 21:32:01.415  INFO 14896 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2025-06-18 21:32:01.427  INFO 14896 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-18 21:32:01.427  INFO 14896 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2025-06-18 21:32:01.588  INFO 14896 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-18 21:32:01.588  INFO 14896 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1351 ms
+2025-06-18 21:32:02.511  INFO 14896 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 52210 (http) with context path ''
+2025-06-18 21:32:02.522  INFO 14896 --- [main] com.example.demo.DemoApplicationTests    : Started DemoApplicationTests in 2.609 seconds (JVM running for 3.547)
+2025-06-18 21:32:02.979  INFO 14896 --- [http-nio-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-18 21:32:02.979  INFO 14896 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-18 21:32:02.980  INFO 14896 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-06-18 21:32:03.012  INFO 14896 --- [http-nio-auto-1-exec-1] com.example.demo.HandlerController       : Request 0001 - Starting processing with delay: 100ms, apiTimeout: 2000ms
+2025-06-18 21:32:05.222  INFO 14896 --- [http-nio-auto-1-exec-1] com.example.demo.HandlerController       : Request 0001 - Traitement pendant 2 secondes
+2025-06-18 21:32:05.223  INFO 14896 --- [http-nio-auto-1-exec-1] com.example.demo.HandlerController       : Request 0001 - Processing completed with price: 916.85 (API duration: 196ms)
+2025-06-18 21:32:29.541  INFO 8696 --- [main] com.example.demo.DemoApplicationTests    : Starting DemoApplicationTests using Java 17.0.10 on DESKTOP-VDNJKAA with PID 8696 (started by Megaport in E:\ws\poc_api_async2)
+2025-06-18 21:32:29.543  INFO 8696 --- [main] com.example.demo.DemoApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2025-06-18 21:32:30.725  INFO 8696 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2025-06-18 21:32:30.738  INFO 8696 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-18 21:32:30.739  INFO 8696 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2025-06-18 21:32:30.929  INFO 8696 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-18 21:32:30.929  INFO 8696 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1360 ms
+2025-06-18 21:32:32.075  INFO 8696 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 52253 (http) with context path ''
+2025-06-18 21:32:32.089  INFO 8696 --- [main] com.example.demo.DemoApplicationTests    : Started DemoApplicationTests in 2.863 seconds (JVM running for 3.804)
+2025-06-18 21:32:32.596  INFO 8696 --- [http-nio-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-18 21:32:32.596  INFO 8696 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-18 21:32:32.598  INFO 8696 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-06-18 21:32:32.644  INFO 8696 --- [http-nio-auto-1-exec-1] com.example.demo.HandlerController       : Request 0001 - Starting processing with delay: 100ms, apiTimeout: 2000ms
+2025-06-18 21:32:34.857  INFO 8696 --- [http-nio-auto-1-exec-1] com.example.demo.HandlerController       : Request 0001 - Traitement pendant 2 secondes
+2025-06-18 21:32:34.857  INFO 8696 --- [http-nio-auto-1-exec-1] com.example.demo.HandlerController       : Request 0001 - Processing completed with price: 876.98 (API duration: 199ms)
+2025-06-18 21:33:36.891  INFO 280 --- [main] com.example.demo.DemoApplicationTests    : Starting DemoApplicationTests using Java 17.0.10 on DESKTOP-VDNJKAA with PID 280 (started by Megaport in E:\ws\poc_api_async2)
+2025-06-18 21:33:36.893  INFO 280 --- [main] com.example.demo.DemoApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2025-06-18 21:33:37.993  INFO 280 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2025-06-18 21:33:38.006  INFO 280 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-18 21:33:38.006  INFO 280 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2025-06-18 21:33:38.152  INFO 280 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-18 21:33:38.152  INFO 280 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1233 ms
+2025-06-18 21:33:39.153  INFO 280 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 52347 (http) with context path ''
+2025-06-18 21:33:39.163  INFO 280 --- [main] com.example.demo.DemoApplicationTests    : Started DemoApplicationTests in 2.582 seconds (JVM running for 3.54)
+2025-06-18 21:33:50.712  INFO 17416 --- [main] com.example.demo.DemoApplicationTests    : Starting DemoApplicationTests using Java 17.0.10 on DESKTOP-VDNJKAA with PID 17416 (started by Megaport in E:\ws\poc_api_async2)
+2025-06-18 21:33:50.714  INFO 17416 --- [main] com.example.demo.DemoApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2025-06-18 21:33:51.791  INFO 17416 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2025-06-18 21:33:51.804  INFO 17416 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-18 21:33:51.805  INFO 17416 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2025-06-18 21:33:51.957  INFO 17416 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-18 21:33:51.957  INFO 17416 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1218 ms
+2025-06-18 21:33:52.827  INFO 17416 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 52384 (http) with context path ''
+2025-06-18 21:33:52.837  INFO 17416 --- [main] com.example.demo.DemoApplicationTests    : Started DemoApplicationTests in 2.419 seconds (JVM running for 3.303)
+2025-06-18 21:34:23.621  INFO 12204 --- [main] com.example.demo.DemoApplicationTests    : Starting DemoApplicationTests using Java 17.0.10 on DESKTOP-VDNJKAA with PID 12204 (started by Megaport in E:\ws\poc_api_async2)
+2025-06-18 21:34:23.623  INFO 12204 --- [main] com.example.demo.DemoApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2025-06-18 21:34:25.262  INFO 12204 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2025-06-18 21:34:25.276  INFO 12204 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-18 21:34:25.277  INFO 12204 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2025-06-18 21:34:25.567  INFO 12204 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-18 21:34:25.568  INFO 12204 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1918 ms
+2025-06-18 21:34:26.528  INFO 12204 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 52408 (http) with context path ''
+2025-06-18 21:34:26.540  INFO 12204 --- [main] com.example.demo.DemoApplicationTests    : Started DemoApplicationTests in 3.272 seconds (JVM running for 4.237)
+2025-06-18 21:35:14.236  INFO 21492 --- [main] com.example.demo.DemoApplicationTests    : Starting DemoApplicationTests using Java 17.0.10 on DESKTOP-VDNJKAA with PID 21492 (started by Megaport in E:\ws\poc_api_async2)
+2025-06-18 21:35:14.238  INFO 21492 --- [main] com.example.demo.DemoApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2025-06-18 21:35:15.378  INFO 21492 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2025-06-18 21:35:15.388  INFO 21492 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-18 21:35:15.389  INFO 21492 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2025-06-18 21:35:15.543  INFO 21492 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-18 21:35:15.544  INFO 21492 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1280 ms
+2025-06-18 21:35:16.543  INFO 21492 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 52508 (http) with context path ''
+2025-06-18 21:35:16.554  INFO 21492 --- [main] com.example.demo.DemoApplicationTests    : Started DemoApplicationTests in 2.726 seconds (JVM running for 3.797)
+2025-06-18 21:35:26.024  INFO 17324 --- [main] com.example.demo.DemoApplicationTests    : Starting DemoApplicationTests using Java 17.0.10 on DESKTOP-VDNJKAA with PID 17324 (started by Megaport in E:\ws\poc_api_async2)
+2025-06-18 21:35:26.025  INFO 17324 --- [main] com.example.demo.DemoApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2025-06-18 21:35:27.128  INFO 17324 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2025-06-18 21:35:27.140  INFO 17324 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-18 21:35:27.141  INFO 17324 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2025-06-18 21:35:27.298  INFO 17324 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-18 21:35:27.298  INFO 17324 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1246 ms
+2025-06-18 21:35:28.238  INFO 17324 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 52523 (http) with context path ''
+2025-06-18 21:35:28.249  INFO 17324 --- [main] com.example.demo.DemoApplicationTests    : Started DemoApplicationTests in 2.547 seconds (JVM running for 3.576)
+2025-06-18 21:36:12.366  INFO 22360 --- [main] com.example.demo.DemoApplicationTests    : Starting DemoApplicationTests using Java 17.0.10 on DESKTOP-VDNJKAA with PID 22360 (started by Megaport in E:\ws\poc_api_async2)
+2025-06-18 21:36:12.370  INFO 22360 --- [main] com.example.demo.DemoApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2025-06-18 21:36:13.846  INFO 22360 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2025-06-18 21:36:13.864  INFO 22360 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-18 21:36:13.865  INFO 22360 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2025-06-18 21:36:14.089  INFO 22360 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-18 21:36:14.090  INFO 22360 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1686 ms
+2025-06-18 21:36:15.254  INFO 22360 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 52594 (http) with context path ''
+2025-06-18 21:36:15.268  INFO 22360 --- [main] com.example.demo.DemoApplicationTests    : Started DemoApplicationTests in 3.248 seconds (JVM running for 4.269)
+2025-06-18 21:37:28.128  INFO 22884 --- [main] com.example.demo.DemoApplicationTests    : Starting DemoApplicationTests using Java 17.0.10 on DESKTOP-VDNJKAA with PID 22884 (started by Megaport in E:\ws\poc_api_async2)
+2025-06-18 21:37:28.130  INFO 22884 --- [main] com.example.demo.DemoApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2025-06-18 21:37:29.324  INFO 22884 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2025-06-18 21:37:29.335  INFO 22884 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-18 21:37:29.336  INFO 22884 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2025-06-18 21:37:29.512  INFO 22884 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-18 21:37:29.512  INFO 22884 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1356 ms
+2025-06-18 21:37:30.591  INFO 22884 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 52678 (http) with context path ''
+2025-06-18 21:37:30.603  INFO 22884 --- [main] com.example.demo.DemoApplicationTests    : Started DemoApplicationTests in 2.775 seconds (JVM running for 3.799)
+2025-06-18 21:37:31.213  INFO 22884 --- [http-nio-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-18 21:37:31.213  INFO 22884 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-18 21:37:31.214  INFO 22884 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-06-18 21:37:31.265  INFO 22884 --- [http-nio-auto-1-exec-1] com.example.demo.HandlerController       : Request 0001 - Starting processing with delay: 100ms, apiTimeout: 2000ms
+2025-06-18 21:37:33.495  INFO 22884 --- [http-nio-auto-1-exec-1] com.example.demo.HandlerController       : Request 0001 - Traitement pendant 2 secondes
+2025-06-18 21:37:33.495  INFO 22884 --- [http-nio-auto-1-exec-1] com.example.demo.HandlerController       : Request 0001 - Processing completed with price: 1648.73 (API duration: 224ms)
+2025-06-18 21:37:59.817  INFO 16736 --- [main] com.example.demo.DemoApplicationTests    : Starting DemoApplicationTests using Java 17.0.10 on DESKTOP-VDNJKAA with PID 16736 (started by Megaport in E:\ws\poc_api_async2)
+2025-06-18 21:37:59.819  INFO 16736 --- [main] com.example.demo.DemoApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2025-06-18 21:38:01.013  INFO 16736 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2025-06-18 21:38:01.031  INFO 16736 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-18 21:38:01.032  INFO 16736 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2025-06-18 21:38:01.211  INFO 16736 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-18 21:38:01.211  INFO 16736 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1365 ms
+2025-06-18 21:38:02.127  INFO 16736 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 52722 (http) with context path ''
+2025-06-18 21:38:02.139  INFO 16736 --- [main] com.example.demo.DemoApplicationTests    : Started DemoApplicationTests in 2.606 seconds (JVM running for 3.495)
+2025-06-18 21:38:02.644  INFO 16736 --- [http-nio-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-18 21:38:02.645  INFO 16736 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-18 21:38:02.645  INFO 16736 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-06-18 21:38:02.679  INFO 16736 --- [http-nio-auto-1-exec-1] com.example.demo.HandlerController       : Request 0001 - Starting processing with delay: 100ms, apiTimeout: 2000ms
+2025-06-18 21:38:04.868  INFO 16736 --- [http-nio-auto-1-exec-1] com.example.demo.HandlerController       : Request 0001 - Traitement pendant 2 secondes
+2025-06-18 21:38:04.868  INFO 16736 --- [http-nio-auto-1-exec-1] com.example.demo.HandlerController       : Request 0001 - Processing completed with price: 1327.62 (API duration: 183ms)
+2025-06-18 21:39:15.919  INFO 26464 --- [main] com.example.demo.DemoApplicationTests    : Starting DemoApplicationTests using Java 17.0.10 on DESKTOP-VDNJKAA with PID 26464 (started by Megaport in E:\ws\poc_api_async2)
+2025-06-18 21:39:15.920  INFO 26464 --- [main] com.example.demo.DemoApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2025-06-18 21:39:17.206  INFO 26464 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2025-06-18 21:39:17.216  INFO 26464 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-18 21:39:17.217  INFO 26464 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2025-06-18 21:39:17.379  INFO 26464 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-18 21:39:17.380  INFO 26464 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1431 ms
+2025-06-18 21:39:18.299  INFO 26464 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 52761 (http) with context path ''
+2025-06-18 21:39:18.311  INFO 26464 --- [main] com.example.demo.DemoApplicationTests    : Started DemoApplicationTests in 2.687 seconds (JVM running for 3.607)
+2025-06-18 21:39:18.779  INFO 26464 --- [http-nio-auto-1-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-18 21:39:18.780  INFO 26464 --- [http-nio-auto-1-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-18 21:39:18.780  INFO 26464 --- [http-nio-auto-1-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-06-18 21:39:18.824  INFO 26464 --- [http-nio-auto-1-exec-2] com.example.demo.HandlerController       : Request 0001 - Starting processing with delay: 100ms, apiTimeout: 2000ms
+2025-06-18 21:39:21.025  INFO 26464 --- [http-nio-auto-1-exec-2] com.example.demo.HandlerController       : Request 0001 - Traitement pendant 2 secondes
+2025-06-18 21:39:21.025  INFO 26464 --- [http-nio-auto-1-exec-2] com.example.demo.HandlerController       : Request 0001 - Processing completed with price: 535.1 (API duration: 197ms)
+2025-06-18 21:43:05.656  INFO 19704 --- [main] com.example.demo.DemoApplicationTests    : Starting DemoApplicationTests using Java 17.0.10 on DESKTOP-VDNJKAA with PID 19704 (started by Megaport in E:\ws\poc_api_async2)
+2025-06-18 21:43:05.658  INFO 19704 --- [main] com.example.demo.DemoApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2025-06-18 21:43:06.930  INFO 19704 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2025-06-18 21:43:06.946  INFO 19704 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-18 21:43:06.947  INFO 19704 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2025-06-18 21:43:07.134  INFO 19704 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-18 21:43:07.135  INFO 19704 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1449 ms
+2025-06-18 21:43:08.194  INFO 19704 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 52987 (http) with context path ''
+2025-06-18 21:43:08.206  INFO 19704 --- [main] com.example.demo.DemoApplicationTests    : Started DemoApplicationTests in 2.892 seconds (JVM running for 3.991)
+2025-06-18 21:43:08.773  INFO 19704 --- [http-nio-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-18 21:43:08.773  INFO 19704 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-18 21:43:08.774  INFO 19704 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-06-18 21:43:08.811  INFO 19704 --- [http-nio-auto-1-exec-1] com.example.demo.HandlerController       : Request 0001 - Starting processing with delay: 100ms, apiTimeout: 2000ms
+2025-06-18 21:43:11.015  INFO 19704 --- [http-nio-auto-1-exec-1] com.example.demo.HandlerController       : Request 0001 - Traitement pendant 2 secondes
+2025-06-18 21:43:11.015  INFO 19704 --- [http-nio-auto-1-exec-1] com.example.demo.HandlerController       : Request 0001 - Processing completed with price: 223.64 (API duration: 199ms)
+2025-06-18 21:43:35.115  INFO 25848 --- [main] com.example.demo.DemoApplicationTests    : Starting DemoApplicationTests using Java 17.0.10 on DESKTOP-VDNJKAA with PID 25848 (started by Megaport in E:\ws\poc_api_async2)
+2025-06-18 21:43:35.117  INFO 25848 --- [main] com.example.demo.DemoApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2025-06-18 21:43:36.208  INFO 25848 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2025-06-18 21:43:36.220  INFO 25848 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-18 21:43:36.221  INFO 25848 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2025-06-18 21:43:36.377  INFO 25848 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-18 21:43:36.377  INFO 25848 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1235 ms
+2025-06-18 21:43:37.248  INFO 25848 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 53005 (http) with context path ''
+2025-06-18 21:43:37.258  INFO 25848 --- [main] com.example.demo.DemoApplicationTests    : Started DemoApplicationTests in 2.432 seconds (JVM running for 3.317)
+2025-06-18 21:43:37.723  INFO 25848 --- [http-nio-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-18 21:43:37.723  INFO 25848 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-18 21:43:37.724  INFO 25848 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-06-18 21:43:37.759  INFO 25848 --- [http-nio-auto-1-exec-1] com.example.demo.HandlerController       : Request 0001 - Starting processing with delay: 100ms, apiTimeout: 2000ms
+2025-06-18 21:43:39.948  INFO 25848 --- [http-nio-auto-1-exec-1] com.example.demo.HandlerController       : Request 0001 - Traitement pendant 2 secondes
+2025-06-18 21:43:39.948  INFO 25848 --- [http-nio-auto-1-exec-1] com.example.demo.HandlerController       : Request 0001 - Processing completed with price: 1978.13 (API duration: 185ms)
+2025-06-18 21:46:24.238  INFO 11852 --- [main] com.example.demo.DemoApplicationTests    : Starting DemoApplicationTests using Java 17.0.10 on DESKTOP-VDNJKAA with PID 11852 (started by Megaport in E:\ws\poc_api_async2)
+2025-06-18 21:46:24.240  INFO 11852 --- [main] com.example.demo.DemoApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2025-06-18 21:46:25.360  INFO 11852 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2025-06-18 21:46:25.371  INFO 11852 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-18 21:46:25.371  INFO 11852 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2025-06-18 21:46:25.525  INFO 11852 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-18 21:46:25.525  INFO 11852 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1260 ms
+2025-06-18 21:46:26.488  INFO 11852 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 59028 (http) with context path ''
+2025-06-18 21:46:26.497  INFO 11852 --- [main] com.example.demo.DemoApplicationTests    : Started DemoApplicationTests in 2.547 seconds (JVM running for 3.523)
+2025-06-18 21:46:26.972  INFO 11852 --- [http-nio-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-18 21:46:26.972  INFO 11852 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-18 21:46:26.973  INFO 11852 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-06-18 21:46:27.005  INFO 11852 --- [http-nio-auto-1-exec-1] com.example.demo.HandlerController       : Request 0001 - Starting processing with delay: 100ms, apiTimeout: 2000ms
+2025-06-18 21:46:29.205  INFO 11852 --- [http-nio-auto-1-exec-1] com.example.demo.HandlerController       : Request 0001 - Traitement pendant 2 secondes
+2025-06-18 21:46:29.205  INFO 11852 --- [http-nio-auto-1-exec-1] com.example.demo.HandlerController       : Request 0001 - Processing completed with price: 505.55 (API duration: 195ms)
+2025-06-18 21:46:29.277  INFO 11852 --- [http-nio-auto-1-exec-3] com.example.demo.HandlerController       : Request 0002 - Starting processing with delay: 2500ms, apiTimeout: 1000ms
+2025-06-18 21:46:30.290 ERROR 11852 --- [pool-3-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 1000 ms
+2025-06-18 21:46:32.295  INFO 11852 --- [http-nio-auto-1-exec-3] com.example.demo.HandlerController       : Request 0002 - Traitement pendant 2 secondes
+2025-06-18 21:46:32.296 ERROR 11852 --- [http-nio-auto-1-exec-3] com.example.demo.HandlerController       : Request 0002 - External API timeout after 1000ms (requested delay: 2500ms)
+2025-06-18 21:46:34.643 ERROR 11852 --- [pool-1-thread-3] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE_ERROR: I/O error on GET request for "http://localhost:59028/external/calculatePrice": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2025-06-18 21:46:53.957  INFO 12148 --- [main] com.example.demo.DemoApplicationTests    : Starting DemoApplicationTests using Java 17.0.10 on DESKTOP-VDNJKAA with PID 12148 (started by Megaport in E:\ws\poc_api_async2)
+2025-06-18 21:46:53.959  INFO 12148 --- [main] com.example.demo.DemoApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2025-06-18 21:46:55.051  INFO 12148 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2025-06-18 21:46:55.062  INFO 12148 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-18 21:46:55.062  INFO 12148 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2025-06-18 21:46:55.208  INFO 12148 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-18 21:46:55.208  INFO 12148 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1228 ms
+2025-06-18 21:46:56.073  INFO 12148 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 59084 (http) with context path ''
+2025-06-18 21:46:56.082  INFO 12148 --- [main] com.example.demo.DemoApplicationTests    : Started DemoApplicationTests in 2.401 seconds (JVM running for 3.31)
+2025-06-18 21:46:56.543  INFO 12148 --- [http-nio-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-18 21:46:56.543  INFO 12148 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-18 21:46:56.544  INFO 12148 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-06-18 21:46:56.576  INFO 12148 --- [http-nio-auto-1-exec-1] com.example.demo.HandlerController       : Request 0001 - Starting processing with delay: 100ms, apiTimeout: 2000ms
+2025-06-18 21:46:58.777  INFO 12148 --- [http-nio-auto-1-exec-1] com.example.demo.HandlerController       : Request 0001 - Traitement pendant 2 secondes
+2025-06-18 21:46:58.778  INFO 12148 --- [http-nio-auto-1-exec-1] com.example.demo.HandlerController       : Request 0001 - Processing completed with price: 1492.93 (API duration: 194ms)
+2025-06-18 21:46:58.844  INFO 12148 --- [http-nio-auto-1-exec-3] com.example.demo.HandlerController       : Request 0002 - Starting processing with delay: 2500ms, apiTimeout: 1000ms
+2025-06-18 21:46:59.845 ERROR 12148 --- [pool-3-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 1000 ms
+2025-06-18 21:47:01.845  INFO 12148 --- [http-nio-auto-1-exec-3] com.example.demo.HandlerController       : Request 0002 - Traitement pendant 2 secondes
+2025-06-18 21:47:01.846 ERROR 12148 --- [http-nio-auto-1-exec-3] com.example.demo.HandlerController       : Request 0002 - External API timeout after 1000ms (requested delay: 2500ms)
+2025-06-18 21:47:04.352 ERROR 12148 --- [pool-1-thread-3] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: Réponse arrivée après le timeout (1000 ms), durée réelle: 2506 ms, prix: 918.82
+2025-06-18 21:51:31.285  INFO 8108 --- [main] com.example.demo.DemoApplicationTests    : Starting DemoApplicationTests using Java 17.0.10 on DESKTOP-VDNJKAA with PID 8108 (started by Megaport in E:\ws\poc_api_async2)
+2025-06-18 21:51:31.287  INFO 8108 --- [main] com.example.demo.DemoApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2025-06-18 21:51:32.565  INFO 8108 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2025-06-18 21:51:32.578  INFO 8108 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-18 21:51:32.579  INFO 8108 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2025-06-18 21:51:32.740  INFO 8108 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-18 21:51:32.741  INFO 8108 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1422 ms
+2025-06-18 21:51:33.880  INFO 8108 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 59253 (http) with context path ''
+2025-06-18 21:51:33.900  INFO 8108 --- [main] com.example.demo.DemoApplicationTests    : Started DemoApplicationTests in 2.95 seconds (JVM running for 4.17)
+2025-06-18 21:51:34.467  INFO 8108 --- [http-nio-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-18 21:51:34.468  INFO 8108 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-18 21:51:34.469  INFO 8108 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-06-18 21:51:52.674  INFO 8108 --- [http-nio-auto-1-exec-1] com.example.demo.HandlerController       : Request 0001 - Starting processing with delay: 100ms, apiTimeout: 2000ms
+2025-06-18 21:52:07.492  INFO 8108 --- [http-nio-auto-1-exec-1] com.example.demo.HandlerController       : Request 0001 - Traitement pendant 2 secondes
+2025-06-18 21:52:17.193  INFO 8108 --- [http-nio-auto-1-exec-1] com.example.demo.HandlerController       : Request 0001 - Processing completed with price: 378.94 (API duration: 239ms)
+2025-06-18 21:53:06.974  INFO 8108 --- [http-nio-auto-1-exec-4] com.example.demo.HandlerController       : Request 0002 - Starting processing with delay: 2500ms, apiTimeout: 1000ms
+2025-06-18 21:53:10.781 ERROR 8108 --- [pool-3-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 1000 ms
+2025-06-18 21:53:54.390  INFO 8108 --- [http-nio-auto-1-exec-4] com.example.demo.HandlerController       : Request 0002 - Traitement pendant 2 secondes
+2025-06-18 21:54:06.284 ERROR 8108 --- [pool-1-thread-3] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: RÃ©ponse arrivÃ©e aprÃ¨s le timeout (1000 ms), durÃ©e rÃ©elle: 2517 ms, prix: 2137.53
+2025-06-18 21:54:10.533 ERROR 8108 --- [http-nio-auto-1-exec-4] com.example.demo.HandlerController       : Request 0002 - External API timeout after 1000ms (requested delay: 2500ms)
+2025-06-18 22:04:41.199  INFO 20332 --- [main] com.example.demo.DemoApplicationTests    : Starting DemoApplicationTests using Java 17.0.10 on DESKTOP-VDNJKAA with PID 20332 (started by Megaport in E:\ws\poc_api_async2)
+2025-06-18 22:04:41.233  INFO 20332 --- [main] com.example.demo.DemoApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2025-06-18 22:04:42.850  INFO 20332 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2025-06-18 22:04:42.863  INFO 20332 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-18 22:04:42.864  INFO 20332 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2025-06-18 22:04:43.037  INFO 20332 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-18 22:04:43.038  INFO 20332 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1776 ms
+2025-06-18 22:04:44.158  INFO 20332 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 63832 (http) with context path ''
+2025-06-18 22:04:44.168  INFO 20332 --- [main] com.example.demo.DemoApplicationTests    : Started DemoApplicationTests in 4.52 seconds (JVM running for 17.299)
+2025-06-18 22:04:44.814  INFO 20332 --- [http-nio-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-18 22:04:44.815  INFO 20332 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-18 22:04:44.817  INFO 20332 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-06-18 22:04:44.854  INFO 20332 --- [http-nio-auto-1-exec-1] com.example.demo.HandlerController       : Request 0001 - Starting processing with delay: 100ms, apiTimeout: 2000ms
+2025-06-18 22:04:47.056  INFO 20332 --- [http-nio-auto-1-exec-1] com.example.demo.HandlerController       : Request 0001 - Traitement pendant 2 secondes
+2025-06-18 22:04:47.056  INFO 20332 --- [http-nio-auto-1-exec-1] com.example.demo.HandlerController       : Request 0001 - Processing completed with price: 2398.97 (API duration: 192ms)
+2025-06-18 22:04:47.142  INFO 20332 --- [http-nio-auto-1-exec-3] com.example.demo.HandlerController       : Request 0002 - Starting processing with delay: 2500ms, apiTimeout: 1000ms
+2025-06-18 22:04:48.158 ERROR 20332 --- [pool-3-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 1000 ms
+2025-06-18 22:04:50.169  INFO 20332 --- [http-nio-auto-1-exec-3] com.example.demo.HandlerController       : Request 0002 - Traitement pendant 2 secondes
+2025-06-18 22:04:50.171 ERROR 20332 --- [http-nio-auto-1-exec-3] com.example.demo.HandlerController       : Request 0002 - External API timeout after 1000ms (requested delay: 2500ms)
+2025-06-18 22:04:52.547 ERROR 20332 --- [pool-1-thread-3] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE_ERROR: I/O error on GET request for "http://localhost:63832/external/calculatePrice": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2025-06-18 22:06:24.447  INFO 29160 --- [main] com.example.demo.DemoApplicationTests    : Starting DemoApplicationTests using Java 17.0.10 on DESKTOP-VDNJKAA with PID 29160 (started by Megaport in E:\ws\poc_api_async2)
+2025-06-18 22:06:24.449  INFO 29160 --- [main] com.example.demo.DemoApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2025-06-18 22:06:25.631  INFO 29160 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2025-06-18 22:06:25.645  INFO 29160 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-18 22:06:25.646  INFO 29160 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2025-06-18 22:06:25.805  INFO 29160 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-18 22:06:25.805  INFO 29160 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1330 ms
+2025-06-18 22:06:26.889  INFO 29160 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 63912 (http) with context path ''
+2025-06-18 22:06:26.900  INFO 29160 --- [main] com.example.demo.DemoApplicationTests    : Started DemoApplicationTests in 2.747 seconds (JVM running for 3.726)
+2025-06-18 22:06:27.387  INFO 29160 --- [http-nio-auto-1-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-18 22:06:27.387  INFO 29160 --- [http-nio-auto-1-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-18 22:06:27.388  INFO 29160 --- [http-nio-auto-1-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-06-18 22:06:27.422  INFO 29160 --- [http-nio-auto-1-exec-2] com.example.demo.HandlerController       : Request 0001 - Starting processing with delay: 100ms, apiTimeout: 2000ms
+2025-06-18 22:06:29.623  INFO 29160 --- [http-nio-auto-1-exec-2] com.example.demo.HandlerController       : Request 0001 - Traitement pendant 2 secondes
+2025-06-18 22:06:29.623  INFO 29160 --- [http-nio-auto-1-exec-2] com.example.demo.HandlerController       : Request 0001 - Processing completed with price: 532.15 (API duration: 185ms)
+2025-06-18 22:06:29.696  INFO 29160 --- [http-nio-auto-1-exec-3] com.example.demo.HandlerController       : Request 0002 - Starting processing with delay: 2500ms, apiTimeout: 1000ms
+2025-06-18 22:06:30.711 ERROR 29160 --- [pool-3-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 1000 ms
+2025-06-18 22:06:32.718  INFO 29160 --- [http-nio-auto-1-exec-3] com.example.demo.HandlerController       : Request 0002 - Traitement pendant 2 secondes
+2025-06-18 22:06:32.720 ERROR 29160 --- [http-nio-auto-1-exec-3] com.example.demo.HandlerController       : Request 0002 - External API timeout after 1000ms (requested delay: 2500ms)
+2025-06-18 22:06:35.090 ERROR 29160 --- [pool-1-thread-3] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE_ERROR: I/O error on GET request for "http://localhost:63912/external/calculatePrice": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2025-06-18 22:21:10.877  INFO 21804 --- [main] com.example.demo.DemoApplication         : Starting DemoApplication using Java 17.0.10 on DESKTOP-VDNJKAA with PID 21804 (E:\ws\poc_api_async2\target\classes started by Megaport in E:\ws\poc_api_async2)
+2025-06-18 22:21:10.881  INFO 21804 --- [main] com.example.demo.DemoApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-06-18 22:21:12.298  INFO 21804 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2025-06-18 22:21:12.320  INFO 21804 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-18 22:21:12.321  INFO 21804 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2025-06-18 22:21:12.616  INFO 21804 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-18 22:21:12.617  INFO 21804 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1670 ms
+2025-06-18 22:21:13.844  INFO 21804 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2025-06-18 22:21:13.855  INFO 21804 --- [main] com.example.demo.DemoApplication         : Started DemoApplication in 3.465 seconds (JVM running for 3.858)
+2025-06-18 22:24:57.336  INFO 30628 --- [main] com.example.demo.DemoApplication         : Starting DemoApplication using Java 17.0.10 on DESKTOP-VDNJKAA with PID 30628 (E:\ws\poc_api_async2\target\classes started by Megaport in E:\ws\poc_api_async2)
+2025-06-18 22:24:57.339  INFO 30628 --- [main] com.example.demo.DemoApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-06-18 22:24:58.082  INFO 30628 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2025-06-18 22:24:58.092  INFO 30628 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-18 22:24:58.093  INFO 30628 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2025-06-18 22:24:58.244  INFO 30628 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-18 22:24:58.245  INFO 30628 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 863 ms
+2025-06-18 22:24:58.648  INFO 30628 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2025-06-18 22:24:58.662  INFO 30628 --- [main] com.example.demo.DemoApplication         : Started DemoApplication in 1.676 seconds (JVM running for 2.021)
+2025-06-18 22:26:08.139  INFO 21896 --- [main] com.example.demo.DemoApplication         : Starting DemoApplication using Java 17.0.10 on DESKTOP-VDNJKAA with PID 21896 (E:\ws\poc_api_async2\target\classes started by Megaport in E:\ws\poc_api_async2)
+2025-06-18 22:26:08.142  INFO 21896 --- [main] com.example.demo.DemoApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-06-18 22:26:08.975  INFO 21896 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2025-06-18 22:26:08.986  INFO 21896 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-18 22:26:08.987  INFO 21896 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2025-06-18 22:26:09.071  INFO 21896 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-18 22:26:09.072  INFO 21896 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 887 ms
+2025-06-18 22:26:09.338  INFO 21896 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2025-06-18 22:26:09.346  INFO 21896 --- [main] com.example.demo.DemoApplication         : Started DemoApplication in 1.556 seconds (JVM running for 1.861)
+2025-06-18 22:26:32.635  INFO 21896 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-18 22:26:32.635  INFO 21896 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-18 22:26:32.636  INFO 21896 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-06-18 22:26:32.665  INFO 21896 --- [http-nio-8080-exec-1] com.example.demo.HandlerController       : Request 0001 - Starting processing with delay: 1876ms, apiTimeout: 2000ms
+2025-06-18 22:26:33.505  INFO 21896 --- [http-nio-8080-exec-3] com.example.demo.HandlerController       : Request 0002 - Starting processing with delay: 1945ms, apiTimeout: 2000ms
+2025-06-18 22:26:34.685 ERROR 21896 --- [pool-2-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 2000 ms
+2025-06-18 22:26:35.492  INFO 21896 --- [http-nio-8080-exec-5] com.example.demo.HandlerController       : Request 0003 - Starting processing with delay: 2076ms, apiTimeout: 2000ms
+2025-06-18 22:26:36.686  INFO 21896 --- [http-nio-8080-exec-1] com.example.demo.HandlerController       : Request 0001 - Traitement pendant 2 secondes
+2025-06-18 22:26:36.687 ERROR 21896 --- [http-nio-8080-exec-1] com.example.demo.HandlerController       : Request 0001 - External API timeout after 2000ms (requested delay: 1876ms)
+2025-06-18 22:26:37.457  INFO 21896 --- [http-nio-8080-exec-3] com.example.demo.HandlerController       : Request 0002 - Traitement pendant 2 secondes
+2025-06-18 22:26:37.457  INFO 21896 --- [http-nio-8080-exec-3] com.example.demo.HandlerController       : Request 0002 - Processing completed with price: 2172.5 (API duration: 1950ms)
+2025-06-18 22:26:37.494  INFO 21896 --- [http-nio-8080-exec-8] com.example.demo.HandlerController       : Request 0004 - Starting processing with delay: 1736ms, apiTimeout: 2000ms
+2025-06-18 22:26:37.505 ERROR 21896 --- [pool-4-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 2000 ms
+2025-06-18 22:26:38.486  INFO 21896 --- [http-nio-8080-exec-10] com.example.demo.HandlerController       : Request 0005 - Starting processing with delay: 2160ms, apiTimeout: 2000ms
+2025-06-18 22:26:39.491  INFO 21896 --- [http-nio-8080-exec-4] com.example.demo.HandlerController       : Request 0006 - Starting processing with delay: 1765ms, apiTimeout: 2000ms
+2025-06-18 22:26:39.506  INFO 21896 --- [http-nio-8080-exec-5] com.example.demo.HandlerController       : Request 0003 - Traitement pendant 2 secondes
+2025-06-18 22:26:39.506 ERROR 21896 --- [http-nio-8080-exec-5] com.example.demo.HandlerController       : Request 0003 - External API timeout after 2000ms (requested delay: 2076ms)
+2025-06-18 22:26:40.487 ERROR 21896 --- [pool-6-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 2000 ms
+2025-06-18 22:26:40.488  INFO 21896 --- [http-nio-8080-exec-6] com.example.demo.HandlerController       : Request 0007 - Starting processing with delay: 1923ms, apiTimeout: 2000ms
+2025-06-18 22:26:41.251  INFO 21896 --- [http-nio-8080-exec-8] com.example.demo.HandlerController       : Request 0004 - Traitement pendant 2 secondes
+2025-06-18 22:26:41.252  INFO 21896 --- [http-nio-8080-exec-8] com.example.demo.HandlerController       : Request 0004 - Processing completed with price: 2972.62 (API duration: 1742ms)
+2025-06-18 22:26:41.489  INFO 21896 --- [http-nio-8080-exec-9] com.example.demo.HandlerController       : Request 0008 - Starting processing with delay: 2023ms, apiTimeout: 2000ms
+2025-06-18 22:26:41.590 ERROR 21896 --- [pool-1-thread-4] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: Réponse arrivée après le timeout (2000 ms), durée réelle: 2084 ms, prix: 2771.85
+2025-06-18 22:26:42.489  INFO 21896 --- [http-nio-8080-exec-10] com.example.demo.HandlerController       : Request 0005 - Traitement pendant 2 secondes
+2025-06-18 22:26:42.489 ERROR 21896 --- [http-nio-8080-exec-10] com.example.demo.HandlerController       : Request 0005 - External API timeout after 2000ms (requested delay: 2160ms)
+2025-06-18 22:26:42.496  INFO 21896 --- [http-nio-8080-exec-8] com.example.demo.HandlerController       : Request 0009 - Starting processing with delay: 2389ms, apiTimeout: 2000ms
+2025-06-18 22:26:43.262  INFO 21896 --- [http-nio-8080-exec-4] com.example.demo.HandlerController       : Request 0006 - Traitement pendant 2 secondes
+2025-06-18 22:26:43.262  INFO 21896 --- [http-nio-8080-exec-4] com.example.demo.HandlerController       : Request 0006 - Processing completed with price: 2496.95 (API duration: 1769ms)
+2025-06-18 22:26:43.491 ERROR 21896 --- [pool-9-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 2000 ms
+2025-06-18 22:26:43.502  INFO 21896 --- [http-nio-8080-exec-3] com.example.demo.HandlerController       : Request 0010 - Starting processing with delay: 1837ms, apiTimeout: 2000ms
+2025-06-18 22:26:44.417  INFO 21896 --- [http-nio-8080-exec-6] com.example.demo.HandlerController       : Request 0007 - Traitement pendant 2 secondes
+2025-06-18 22:26:44.417  INFO 21896 --- [http-nio-8080-exec-6] com.example.demo.HandlerController       : Request 0007 - Processing completed with price: 1886.13 (API duration: 1927ms)
+2025-06-18 22:26:44.487  INFO 21896 --- [http-nio-8080-exec-10] com.example.demo.HandlerController       : Request 0011 - Starting processing with delay: 1923ms, apiTimeout: 2000ms
+2025-06-18 22:26:44.500 ERROR 21896 --- [pool-10-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 2000 ms
+2025-06-18 22:26:44.653 ERROR 21896 --- [pool-1-thread-3] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: Réponse arrivée après le timeout (2000 ms), durée réelle: 2164 ms, prix: 2663.19
+2025-06-18 22:26:45.491  INFO 21896 --- [http-nio-8080-exec-9] com.example.demo.HandlerController       : Request 0008 - Traitement pendant 2 secondes
+2025-06-18 22:26:45.491 ERROR 21896 --- [http-nio-8080-exec-9] com.example.demo.HandlerController       : Request 0008 - External API timeout after 2000ms (requested delay: 2023ms)
+2025-06-18 22:26:45.497  INFO 21896 --- [http-nio-8080-exec-6] com.example.demo.HandlerController       : Request 0012 - Starting processing with delay: 2050ms, apiTimeout: 2000ms
+2025-06-18 22:26:46.487  INFO 21896 --- [http-nio-8080-exec-1] com.example.demo.HandlerController       : Request 0013 - Starting processing with delay: 1725ms, apiTimeout: 2000ms
+2025-06-18 22:26:46.500  INFO 21896 --- [http-nio-8080-exec-8] com.example.demo.HandlerController       : Request 0009 - Traitement pendant 2 secondes
+2025-06-18 22:26:46.500 ERROR 21896 --- [http-nio-8080-exec-8] com.example.demo.HandlerController       : Request 0009 - External API timeout after 2000ms (requested delay: 2389ms)
+2025-06-18 22:26:47.344  INFO 21896 --- [http-nio-8080-exec-3] com.example.demo.HandlerController       : Request 0010 - Traitement pendant 2 secondes
+2025-06-18 22:26:47.344  INFO 21896 --- [http-nio-8080-exec-3] com.example.demo.HandlerController       : Request 0010 - Processing completed with price: 2316.74 (API duration: 1842ms)
+2025-06-18 22:26:47.497  INFO 21896 --- [http-nio-8080-exec-4] com.example.demo.HandlerController       : Request 0014 - Starting processing with delay: 2024ms, apiTimeout: 2000ms
+2025-06-18 22:26:47.500 ERROR 21896 --- [pool-13-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 2000 ms
+2025-06-18 22:26:47.519 ERROR 21896 --- [pool-1-thread-3] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: Réponse arrivée après le timeout (2000 ms), durée réelle: 2028 ms, prix: 2029.93
+2025-06-18 22:26:48.417  INFO 21896 --- [http-nio-8080-exec-10] com.example.demo.HandlerController       : Request 0011 - Traitement pendant 2 secondes
+2025-06-18 22:26:48.417  INFO 21896 --- [http-nio-8080-exec-10] com.example.demo.HandlerController       : Request 0011 - Processing completed with price: 312.25 (API duration: 1927ms)
+2025-06-18 22:26:48.500  INFO 21896 --- [http-nio-8080-exec-3] com.example.demo.HandlerController       : Request 0015 - Starting processing with delay: 1632ms, apiTimeout: 2000ms
+2025-06-18 22:26:48.894 ERROR 21896 --- [pool-1-thread-2] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: Réponse arrivée après le timeout (2000 ms), durée réelle: 2394 ms, prix: 112.96
+2025-06-18 22:26:49.498  INFO 21896 --- [http-nio-8080-exec-2] com.example.demo.HandlerController       : Request 0016 - Starting processing with delay: 2226ms, apiTimeout: 2000ms
+2025-06-18 22:26:49.499 ERROR 21896 --- [pool-15-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 2000 ms
+2025-06-18 22:26:49.501  INFO 21896 --- [http-nio-8080-exec-6] com.example.demo.HandlerController       : Request 0012 - Traitement pendant 2 secondes
+2025-06-18 22:26:49.501 ERROR 21896 --- [http-nio-8080-exec-6] com.example.demo.HandlerController       : Request 0012 - External API timeout after 2000ms (requested delay: 2050ms)
+2025-06-18 22:26:50.217  INFO 21896 --- [http-nio-8080-exec-1] com.example.demo.HandlerController       : Request 0013 - Traitement pendant 2 secondes
+2025-06-18 22:26:50.217  INFO 21896 --- [http-nio-8080-exec-1] com.example.demo.HandlerController       : Request 0013 - Processing completed with price: 696.53 (API duration: 1728ms)
+2025-06-18 22:26:50.487  INFO 21896 --- [http-nio-8080-exec-9] com.example.demo.HandlerController       : Request 0017 - Starting processing with delay: 2113ms, apiTimeout: 2000ms
+2025-06-18 22:26:51.499  INFO 21896 --- [http-nio-8080-exec-4] com.example.demo.HandlerController       : Request 0014 - Traitement pendant 2 secondes
+2025-06-18 22:26:51.499 ERROR 21896 --- [http-nio-8080-exec-4] com.example.demo.HandlerController       : Request 0014 - External API timeout after 2000ms (requested delay: 2024ms)
+2025-06-18 22:26:51.500 ERROR 21896 --- [pool-17-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 2000 ms
+2025-06-18 22:26:51.502  INFO 21896 --- [http-nio-8080-exec-5] com.example.demo.HandlerController       : Request 0018 - Starting processing with delay: 1984ms, apiTimeout: 2000ms
+2025-06-18 22:26:51.556 ERROR 21896 --- [pool-1-thread-2] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: Réponse arrivée après le timeout (2000 ms), durée réelle: 2055 ms, prix: 161.99
+2025-06-18 22:26:52.140  INFO 21896 --- [http-nio-8080-exec-3] com.example.demo.HandlerController       : Request 0015 - Traitement pendant 2 secondes
+2025-06-18 22:26:52.140  INFO 21896 --- [http-nio-8080-exec-3] com.example.demo.HandlerController       : Request 0015 - Processing completed with price: 1072.67 (API duration: 1637ms)
+2025-06-18 22:26:52.488 ERROR 21896 --- [pool-18-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 2000 ms
+2025-06-18 22:26:52.495  INFO 21896 --- [http-nio-8080-exec-4] com.example.demo.HandlerController       : Request 0019 - Starting processing with delay: 1830ms, apiTimeout: 2000ms
+2025-06-18 22:26:53.502  INFO 21896 --- [http-nio-8080-exec-2] com.example.demo.HandlerController       : Request 0016 - Traitement pendant 2 secondes
+2025-06-18 22:26:53.502  INFO 21896 --- [http-nio-8080-exec-7] com.example.demo.HandlerController       : Request 0020 - Starting processing with delay: 2335ms, apiTimeout: 2000ms
+2025-06-18 22:26:53.502 ERROR 21896 --- [http-nio-8080-exec-2] com.example.demo.HandlerController       : Request 0016 - External API timeout after 2000ms (requested delay: 2226ms)
+2025-06-18 22:26:53.504 ERROR 21896 --- [pool-19-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 2000 ms
+2025-06-18 22:26:53.529 ERROR 21896 --- [pool-1-thread-4] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: Réponse arrivée après le timeout (2000 ms), durée réelle: 2030 ms, prix: 2846.15
+2025-06-18 22:26:54.486  INFO 21896 --- [http-nio-8080-exec-2] com.example.demo.HandlerController       : Request 0021 - Starting processing with delay: 1777ms, apiTimeout: 2000ms
+2025-06-18 22:26:54.489  INFO 21896 --- [http-nio-8080-exec-9] com.example.demo.HandlerController       : Request 0017 - Traitement pendant 2 secondes
+2025-06-18 22:26:54.489 ERROR 21896 --- [http-nio-8080-exec-9] com.example.demo.HandlerController       : Request 0017 - External API timeout after 2000ms (requested delay: 2113ms)
+2025-06-18 22:26:55.501  INFO 21896 --- [http-nio-8080-exec-10] com.example.demo.HandlerController       : Request 0022 - Starting processing with delay: 1655ms, apiTimeout: 2000ms
+2025-06-18 22:26:55.504 ERROR 21896 --- [pool-21-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 2000 ms
+2025-06-18 22:26:55.504  INFO 21896 --- [http-nio-8080-exec-5] com.example.demo.HandlerController       : Request 0018 - Traitement pendant 2 secondes
+2025-06-18 22:26:55.504 ERROR 21896 --- [http-nio-8080-exec-5] com.example.demo.HandlerController       : Request 0018 - External API timeout after 2000ms (requested delay: 1984ms)
+2025-06-18 22:26:55.732 ERROR 21896 --- [pool-1-thread-3] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: Réponse arrivée après le timeout (2000 ms), durée réelle: 2230 ms, prix: 2910.24
+2025-06-18 22:26:56.331  INFO 21896 --- [http-nio-8080-exec-4] com.example.demo.HandlerController       : Request 0019 - Traitement pendant 2 secondes
+2025-06-18 22:26:56.331  INFO 21896 --- [http-nio-8080-exec-4] com.example.demo.HandlerController       : Request 0019 - Processing completed with price: 1776.44 (API duration: 1834ms)
+2025-06-18 22:26:56.497  INFO 21896 --- [http-nio-8080-exec-3] com.example.demo.HandlerController       : Request 0023 - Starting processing with delay: 1820ms, apiTimeout: 2000ms
+2025-06-18 22:26:56.605 ERROR 21896 --- [pool-1-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: Réponse arrivée après le timeout (2000 ms), durée réelle: 2116 ms, prix: 188.99
+2025-06-18 22:26:57.506  INFO 21896 --- [http-nio-8080-exec-7] com.example.demo.HandlerController       : Request 0020 - Traitement pendant 2 secondes
+2025-06-18 22:26:57.506 ERROR 21896 --- [http-nio-8080-exec-7] com.example.demo.HandlerController       : Request 0020 - External API timeout after 2000ms (requested delay: 2335ms)
+2025-06-18 22:26:58.269  INFO 21896 --- [http-nio-8080-exec-2] com.example.demo.HandlerController       : Request 0021 - Traitement pendant 2 secondes
+2025-06-18 22:26:58.269  INFO 21896 --- [http-nio-8080-exec-2] com.example.demo.HandlerController       : Request 0021 - Processing completed with price: 1213.92 (API duration: 1780ms)
+2025-06-18 22:26:59.393  INFO 21896 --- [http-nio-8080-exec-10] com.example.demo.HandlerController       : Request 0022 - Traitement pendant 2 secondes
+2025-06-18 22:26:59.393  INFO 21896 --- [http-nio-8080-exec-10] com.example.demo.HandlerController       : Request 0022 - Processing completed with price: 2613.49 (API duration: 1891ms)
+2025-06-18 22:26:59.844 ERROR 21896 --- [pool-1-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: Réponse arrivée après le timeout (2000 ms), durée réelle: 2338 ms, prix: 2915.25
+2025-06-18 22:27:00.325  INFO 21896 --- [http-nio-8080-exec-3] com.example.demo.HandlerController       : Request 0023 - Traitement pendant 2 secondes
+2025-06-18 22:27:00.325  INFO 21896 --- [http-nio-8080-exec-3] com.example.demo.HandlerController       : Request 0023 - Processing completed with price: 700.94 (API duration: 1825ms)
