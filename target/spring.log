@@ -2614,3 +2614,460 @@ Identify and stop the process that's listening on port 8080 or configure this ap
 2025-06-18 23:07:42.383  INFO 21656 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
 2025-06-18 23:07:42.391  INFO 21656 --- [main] c.e.d.e.ExternalApiControllerTest        : Started ExternalApiControllerTest in 0.677 seconds (JVM running for 9.85)
 2025-06-18 23:07:44.285 ERROR 21656 --- [pool-1-thread-3] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: Réponse arrivée après le timeout (1000 ms), durée réelle: 2603 ms, prix: 750.58
+2025-06-18 23:15:26.594  INFO 12692 --- [main] com.example.demo.DemoApplicationTests    : Starting DemoApplicationTests using Java 17.0.10 on DESKTOP-VDNJKAA with PID 12692 (started by Megaport in E:\ws\poc_api_async2)
+2025-06-18 23:15:26.596  INFO 12692 --- [main] com.example.demo.DemoApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2025-06-18 23:15:28.583  INFO 12692 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2025-06-18 23:15:28.595  INFO 12692 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-18 23:15:28.596  INFO 12692 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2025-06-18 23:15:28.763  INFO 12692 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-18 23:15:28.764  INFO 12692 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2137 ms
+2025-06-18 23:15:30.782  INFO 12692 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2025-06-18 23:15:30.982  INFO 12692 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 60010 (http) with context path ''
+2025-06-18 23:15:31.002  INFO 12692 --- [main] com.example.demo.DemoApplicationTests    : Started DemoApplicationTests in 4.733 seconds (JVM running for 5.777)
+2025-06-18 23:15:31.733  INFO 12692 --- [http-nio-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-18 23:15:31.734  INFO 12692 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-18 23:15:31.738  INFO 12692 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2025-06-18 23:15:31.801  INFO 12692 --- [http-nio-auto-1-exec-1] com.example.demo.HandlerController       : Request 0001 - Starting processing with delay: 100ms, apiTimeout: 2000ms
+2025-06-18 23:15:34.029  INFO 12692 --- [http-nio-auto-1-exec-1] com.example.demo.HandlerController       : Request 0001 - Traitement pendant 2 secondes
+2025-06-18 23:15:34.029  INFO 12692 --- [http-nio-auto-1-exec-1] com.example.demo.HandlerController       : Request 0001 - Processing completed with price: 1999.68 (API duration: 218ms)
+2025-06-18 23:15:34.096  INFO 12692 --- [http-nio-auto-1-exec-7] com.example.demo.HandlerController       : Request 0002 - Starting processing with delay: 2500ms, apiTimeout: 1000ms
+2025-06-18 23:15:35.097 ERROR 12692 --- [pool-2-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 1000 ms
+2025-06-18 23:15:37.105  INFO 12692 --- [http-nio-auto-1-exec-7] com.example.demo.HandlerController       : Request 0002 - Traitement pendant 2 secondes
+2025-06-18 23:15:37.106 ERROR 12692 --- [http-nio-auto-1-exec-7] com.example.demo.HandlerController       : Request 0002 - External API timeout after 1000ms (requested delay: 2500ms)
+2025-06-18 23:15:37.115  INFO 12692 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.example.demo.externalApi.ExternalApiControllerTest], using SpringBootContextLoader
+2025-06-18 23:15:37.116  INFO 12692 --- [main] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.example.demo.externalApi.ExternalApiControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2025-06-18 23:15:37.116  INFO 12692 --- [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.demo.externalApi.ExternalApiControllerTest]: ExternalApiControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-06-18 23:15:37.130  INFO 12692 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.demo.DemoApplication for test class com.example.demo.externalApi.ExternalApiControllerTest
+2025-06-18 23:15:37.133  INFO 12692 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2025-06-18 23:15:37.134  INFO 12692 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@4a890fdd, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@56299b0e, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@3ca278bc, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@283e1759, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@2acb1264, org.springframework.test.context.support.DirtiesContextTestExecutionListener@30a01dd8, org.springframework.test.context.event.EventPublishingTestExecutionListener@1f68e4e8, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@47b4ac83, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@351ede23, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@5604b85, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@5df7a065, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@3f45dfec, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@7c69e1e1]
+2025-06-18 23:15:37.171  INFO 12692 --- [main] c.e.d.e.ExternalApiControllerTest        : Starting ExternalApiControllerTest using Java 17.0.10 on DESKTOP-VDNJKAA with PID 12692 (started by Megaport in E:\ws\poc_api_async2)
+2025-06-18 23:15:37.171  INFO 12692 --- [main] c.e.d.e.ExternalApiControllerTest        : No active profile set, falling back to 1 default profile: "default"
+2025-06-18 23:15:38.366  INFO 12692 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-06-18 23:15:38.367  INFO 12692 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-06-18 23:15:38.377  INFO 12692 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2025-06-18 23:15:38.405  INFO 12692 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 37 ms
+2025-06-18 23:15:38.427  INFO 12692 --- [main] c.e.d.e.ExternalApiControllerTest        : Started ExternalApiControllerTest in 1.286 seconds (JVM running for 13.202)
+2025-06-18 23:15:39.686 ERROR 12692 --- [pool-1-thread-3] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: Réponse arrivée après le timeout (1000 ms), durée réelle: 2580 ms, prix: 1899.73
+2025-06-18 23:18:41.368  INFO 32724 --- [main] com.example.demo.DemoApplication         : Starting DemoApplication using Java 17.0.10 on DESKTOP-VDNJKAA with PID 32724 (E:\ws\poc_api_async2\target\classes started by Megaport in E:\ws\poc_api_async2)
+2025-06-18 23:18:41.372  INFO 32724 --- [main] com.example.demo.DemoApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-06-18 23:18:42.408  INFO 32724 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2025-06-18 23:18:42.426  INFO 32724 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-18 23:18:42.427  INFO 32724 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2025-06-18 23:18:42.520  INFO 32724 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-18 23:18:42.520  INFO 32724 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1095 ms
+2025-06-18 23:18:43.038  INFO 32724 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 3 endpoint(s) beneath base path '/actuator'
+2025-06-18 23:18:43.082  INFO 32724 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2025-06-18 23:18:43.096  INFO 32724 --- [main] com.example.demo.DemoApplication         : Started DemoApplication in 2.094 seconds (JVM running for 2.548)
+2025-06-18 23:18:50.884  INFO 32724 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-18 23:18:50.885  INFO 32724 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-18 23:18:50.886  INFO 32724 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-06-18 23:18:50.926  INFO 32724 --- [http-nio-8080-exec-1] com.example.demo.HandlerController       : Request 0001 - Starting processing with delay: 2065ms, apiTimeout: 2000ms
+2025-06-18 23:18:51.749  INFO 32724 --- [http-nio-8080-exec-3] com.example.demo.HandlerController       : Request 0002 - Starting processing with delay: 1757ms, apiTimeout: 2000ms
+2025-06-18 23:18:52.938 ERROR 32724 --- [pool-2-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 2000 ms
+2025-06-18 23:18:53.738  INFO 32724 --- [http-nio-8080-exec-5] com.example.demo.HandlerController       : Request 0003 - Starting processing with delay: 1940ms, apiTimeout: 2000ms
+2025-06-18 23:18:54.939  INFO 32724 --- [http-nio-8080-exec-1] com.example.demo.HandlerController       : Request 0001 - Traitement pendant 2 secondes
+2025-06-18 23:18:54.940 ERROR 32724 --- [http-nio-8080-exec-1] com.example.demo.HandlerController       : Request 0001 - External API timeout after 2000ms (requested delay: 2065ms)
+2025-06-18 23:18:55.519  INFO 32724 --- [http-nio-8080-exec-3] com.example.demo.HandlerController       : Request 0002 - Traitement pendant 2 secondes
+2025-06-18 23:18:55.520  INFO 32724 --- [http-nio-8080-exec-3] com.example.demo.HandlerController       : Request 0002 - Processing completed with price: 792.15 (API duration: 1764ms)
+2025-06-18 23:18:55.747  INFO 32724 --- [http-nio-8080-exec-8] com.example.demo.HandlerController       : Request 0004 - Starting processing with delay: 1834ms, apiTimeout: 2000ms
+2025-06-18 23:18:56.749  INFO 32724 --- [http-nio-8080-exec-10] com.example.demo.HandlerController       : Request 0005 - Starting processing with delay: 1986ms, apiTimeout: 2000ms
+2025-06-18 23:18:57.012 ERROR 32724 --- [pool-1-thread-4] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: Réponse arrivée après le timeout (2000 ms), durée réelle: 2072 ms, prix: 2333.26
+2025-06-18 23:18:57.696  INFO 32724 --- [http-nio-8080-exec-5] com.example.demo.HandlerController       : Request 0003 - Traitement pendant 2 secondes
+2025-06-18 23:18:57.696  INFO 32724 --- [http-nio-8080-exec-5] com.example.demo.HandlerController       : Request 0003 - Processing completed with price: 711.66 (API duration: 1957ms)
+2025-06-18 23:18:57.745  INFO 32724 --- [http-nio-8080-exec-4] com.example.demo.HandlerController       : Request 0006 - Starting processing with delay: 1711ms, apiTimeout: 2000ms
+2025-06-18 23:18:58.742  INFO 32724 --- [http-nio-8080-exec-3] com.example.demo.HandlerController       : Request 0007 - Starting processing with delay: 1901ms, apiTimeout: 2000ms
+2025-06-18 23:18:59.588  INFO 32724 --- [http-nio-8080-exec-8] com.example.demo.HandlerController       : Request 0004 - Traitement pendant 2 secondes
+2025-06-18 23:18:59.588  INFO 32724 --- [http-nio-8080-exec-8] com.example.demo.HandlerController       : Request 0004 - Processing completed with price: 129.34 (API duration: 1839ms)
+2025-06-18 23:18:59.739  INFO 32724 --- [http-nio-8080-exec-7] com.example.demo.HandlerController       : Request 0008 - Starting processing with delay: 2138ms, apiTimeout: 2000ms
+2025-06-18 23:19:00.738  INFO 32724 --- [http-nio-8080-exec-5] com.example.demo.HandlerController       : Request 0009 - Starting processing with delay: 1827ms, apiTimeout: 2000ms
+2025-06-18 23:19:00.742  INFO 32724 --- [http-nio-8080-exec-10] com.example.demo.HandlerController       : Request 0005 - Traitement pendant 2 secondes
+2025-06-18 23:19:00.742  INFO 32724 --- [http-nio-8080-exec-10] com.example.demo.HandlerController       : Request 0005 - Processing completed with price: 2656.43 (API duration: 1992ms)
+2025-06-18 23:19:01.465  INFO 32724 --- [http-nio-8080-exec-4] com.example.demo.HandlerController       : Request 0006 - Traitement pendant 2 secondes
+2025-06-18 23:19:01.466  INFO 32724 --- [http-nio-8080-exec-4] com.example.demo.HandlerController       : Request 0006 - Processing completed with price: 252.68 (API duration: 1717ms)
+2025-06-18 23:19:01.738  INFO 32724 --- [http-nio-8080-exec-1] com.example.demo.HandlerController       : Request 0010 - Starting processing with delay: 2131ms, apiTimeout: 2000ms
+2025-06-18 23:19:01.742 ERROR 32724 --- [pool-2-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 2000 ms
+2025-06-18 23:19:02.649  INFO 32724 --- [http-nio-8080-exec-3] com.example.demo.HandlerController       : Request 0007 - Traitement pendant 2 secondes
+2025-06-18 23:19:02.650  INFO 32724 --- [http-nio-8080-exec-3] com.example.demo.HandlerController       : Request 0007 - Processing completed with price: 2750.39 (API duration: 1904ms)
+2025-06-18 23:19:02.741  INFO 32724 --- [http-nio-8080-exec-6] com.example.demo.HandlerController       : Request 0011 - Starting processing with delay: 1755ms, apiTimeout: 2000ms
+2025-06-18 23:19:03.740 ERROR 32724 --- [pool-2-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 2000 ms
+2025-06-18 23:19:03.743  INFO 32724 --- [http-nio-8080-exec-7] com.example.demo.HandlerController       : Request 0008 - Traitement pendant 2 secondes
+2025-06-18 23:19:03.743 ERROR 32724 --- [http-nio-8080-exec-7] com.example.demo.HandlerController       : Request 0008 - External API timeout after 2000ms (requested delay: 2138ms)
+2025-06-18 23:19:03.743  INFO 32724 --- [http-nio-8080-exec-4] com.example.demo.HandlerController       : Request 0012 - Starting processing with delay: 2008ms, apiTimeout: 2000ms
+2025-06-18 23:19:04.571  INFO 32724 --- [http-nio-8080-exec-5] com.example.demo.HandlerController       : Request 0009 - Traitement pendant 2 secondes
+2025-06-18 23:19:04.572  INFO 32724 --- [http-nio-8080-exec-5] com.example.demo.HandlerController       : Request 0009 - Processing completed with price: 1022.5 (API duration: 1831ms)
+2025-06-18 23:19:04.742  INFO 32724 --- [http-nio-8080-exec-3] com.example.demo.HandlerController       : Request 0013 - Starting processing with delay: 1963ms, apiTimeout: 2000ms
+2025-06-18 23:19:05.740  INFO 32724 --- [http-nio-8080-exec-1] com.example.demo.HandlerController       : Request 0010 - Traitement pendant 2 secondes
+2025-06-18 23:19:05.741 ERROR 32724 --- [http-nio-8080-exec-1] com.example.demo.HandlerController       : Request 0010 - External API timeout after 2000ms (requested delay: 2131ms)
+2025-06-18 23:19:05.742  INFO 32724 --- [http-nio-8080-exec-8] com.example.demo.HandlerController       : Request 0014 - Starting processing with delay: 1953ms, apiTimeout: 2000ms
+2025-06-18 23:19:05.746 ERROR 32724 --- [pool-2-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 2000 ms
+2025-06-18 23:19:05.887 ERROR 32724 --- [pool-1-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: Réponse arrivée après le timeout (2000 ms), durée réelle: 2144 ms, prix: 1167.96
+2025-06-18 23:19:06.502  INFO 32724 --- [http-nio-8080-exec-6] com.example.demo.HandlerController       : Request 0011 - Traitement pendant 2 secondes
+2025-06-18 23:19:06.503  INFO 32724 --- [http-nio-8080-exec-6] com.example.demo.HandlerController       : Request 0011 - Processing completed with price: 2882.0 (API duration: 1759ms)
+2025-06-18 23:19:06.737  INFO 32724 --- [http-nio-8080-exec-1] com.example.demo.HandlerController       : Request 0015 - Starting processing with delay: 2202ms, apiTimeout: 2000ms
+2025-06-18 23:19:07.736  INFO 32724 --- [http-nio-8080-exec-9] com.example.demo.HandlerController       : Request 0016 - Starting processing with delay: 2228ms, apiTimeout: 2000ms
+2025-06-18 23:19:07.748  INFO 32724 --- [http-nio-8080-exec-4] com.example.demo.HandlerController       : Request 0012 - Traitement pendant 2 secondes
+2025-06-18 23:19:07.748 ERROR 32724 --- [http-nio-8080-exec-4] com.example.demo.HandlerController       : Request 0012 - External API timeout after 2000ms (requested delay: 2008ms)
+2025-06-18 23:19:07.877 ERROR 32724 --- [pool-1-thread-4] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: Réponse arrivée après le timeout (2000 ms), durée réelle: 2137 ms, prix: 658.31
+2025-06-18 23:19:08.712  INFO 32724 --- [http-nio-8080-exec-3] com.example.demo.HandlerController       : Request 0013 - Traitement pendant 2 secondes
+2025-06-18 23:19:08.712  INFO 32724 --- [http-nio-8080-exec-3] com.example.demo.HandlerController       : Request 0013 - Processing completed with price: 522.43 (API duration: 1967ms)
+2025-06-18 23:19:08.737  INFO 32724 --- [http-nio-8080-exec-5] com.example.demo.HandlerController       : Request 0017 - Starting processing with delay: 2028ms, apiTimeout: 2000ms
+2025-06-18 23:19:08.739 ERROR 32724 --- [pool-2-thread-2] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 2000 ms
+2025-06-18 23:19:09.715  INFO 32724 --- [http-nio-8080-exec-8] com.example.demo.HandlerController       : Request 0014 - Traitement pendant 2 secondes
+2025-06-18 23:19:09.715  INFO 32724 --- [http-nio-8080-exec-8] com.example.demo.HandlerController       : Request 0014 - Processing completed with price: 971.66 (API duration: 1970ms)
+2025-06-18 23:19:09.739 ERROR 32724 --- [pool-2-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 2000 ms
+2025-06-18 23:19:09.741  INFO 32724 --- [http-nio-8080-exec-10] com.example.demo.HandlerController       : Request 0018 - Starting processing with delay: 1963ms, apiTimeout: 2000ms
+2025-06-18 23:19:09.761 ERROR 32724 --- [pool-1-thread-2] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: Réponse arrivée après le timeout (2000 ms), durée réelle: 2013 ms, prix: 1602.72
+2025-06-18 23:19:10.734  INFO 32724 --- [http-nio-8080-exec-2] com.example.demo.HandlerController       : Request 0019 - Starting processing with delay: 2165ms, apiTimeout: 2000ms
+2025-06-18 23:19:10.739 ERROR 32724 --- [pool-2-thread-2] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 2000 ms
+2025-06-18 23:19:10.740  INFO 32724 --- [http-nio-8080-exec-1] com.example.demo.HandlerController       : Request 0015 - Traitement pendant 2 secondes
+2025-06-18 23:19:10.740 ERROR 32724 --- [http-nio-8080-exec-1] com.example.demo.HandlerController       : Request 0015 - External API timeout after 2000ms (requested delay: 2202ms)
+2025-06-18 23:19:11.736  INFO 32724 --- [http-nio-8080-exec-6] com.example.demo.HandlerController       : Request 0020 - Starting processing with delay: 2012ms, apiTimeout: 2000ms
+2025-06-18 23:19:11.740  INFO 32724 --- [http-nio-8080-exec-9] com.example.demo.HandlerController       : Request 0016 - Traitement pendant 2 secondes
+2025-06-18 23:19:11.740 ERROR 32724 --- [http-nio-8080-exec-9] com.example.demo.HandlerController       : Request 0016 - External API timeout after 2000ms (requested delay: 2228ms)
+2025-06-18 23:19:12.736 ERROR 32724 --- [pool-2-thread-2] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 2000 ms
+2025-06-18 23:19:12.740  INFO 32724 --- [http-nio-8080-exec-5] com.example.demo.HandlerController       : Request 0017 - Traitement pendant 2 secondes
+2025-06-18 23:19:12.740 ERROR 32724 --- [http-nio-8080-exec-5] com.example.demo.HandlerController       : Request 0017 - External API timeout after 2000ms (requested delay: 2028ms)
+2025-06-18 23:19:12.749  INFO 32724 --- [http-nio-8080-exec-3] com.example.demo.HandlerController       : Request 0021 - Starting processing with delay: 2016ms, apiTimeout: 2000ms
+2025-06-18 23:19:12.946 ERROR 32724 --- [pool-1-thread-3] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: Réponse arrivée après le timeout (2000 ms), durée réelle: 2206 ms, prix: 350.85
+2025-06-18 23:19:13.713  INFO 32724 --- [http-nio-8080-exec-10] com.example.demo.HandlerController       : Request 0018 - Traitement pendant 2 secondes
+2025-06-18 23:19:13.713  INFO 32724 --- [http-nio-8080-exec-10] com.example.demo.HandlerController       : Request 0018 - Processing completed with price: 979.28 (API duration: 1969ms)
+2025-06-18 23:19:13.737 ERROR 32724 --- [pool-2-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 2000 ms
+2025-06-18 23:19:13.742  INFO 32724 --- [http-nio-8080-exec-8] com.example.demo.HandlerController       : Request 0022 - Starting processing with delay: 2215ms, apiTimeout: 2000ms
+2025-06-18 23:19:13.972 ERROR 32724 --- [pool-1-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: Réponse arrivée après le timeout (2000 ms), durée réelle: 2232 ms, prix: 2016.4
+2025-06-18 23:19:14.737  INFO 32724 --- [http-nio-8080-exec-2] com.example.demo.HandlerController       : Request 0019 - Traitement pendant 2 secondes
+2025-06-18 23:19:14.737 ERROR 32724 --- [http-nio-8080-exec-2] com.example.demo.HandlerController       : Request 0019 - External API timeout after 2000ms (requested delay: 2165ms)
+2025-06-18 23:19:14.741  INFO 32724 --- [http-nio-8080-exec-1] com.example.demo.HandlerController       : Request 0023 - Starting processing with delay: 1821ms, apiTimeout: 2000ms
+2025-06-18 23:19:14.751 ERROR 32724 --- [pool-2-thread-2] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 2000 ms
+2025-06-18 23:19:14.936 ERROR 32724 --- [pool-1-thread-2] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: Réponse arrivée après le timeout (2000 ms), durée réelle: 2032 ms, prix: 1534.93
+2025-06-18 23:19:15.739  INFO 32724 --- [http-nio-8080-exec-6] com.example.demo.HandlerController       : Request 0020 - Traitement pendant 2 secondes
+2025-06-18 23:19:15.739 ERROR 32724 --- [http-nio-8080-exec-6] com.example.demo.HandlerController       : Request 0020 - External API timeout after 2000ms (requested delay: 2012ms)
+2025-06-18 23:19:15.743 ERROR 32724 --- [pool-2-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 2000 ms
+2025-06-18 23:19:16.742 ERROR 32724 --- [pool-2-thread-2] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 2000 ms
+2025-06-18 23:19:16.752  INFO 32724 --- [http-nio-8080-exec-3] com.example.demo.HandlerController       : Request 0021 - Traitement pendant 2 secondes
+2025-06-18 23:19:16.752 ERROR 32724 --- [http-nio-8080-exec-3] com.example.demo.HandlerController       : Request 0021 - External API timeout after 2000ms (requested delay: 2016ms)
+2025-06-18 23:19:16.907 ERROR 32724 --- [pool-1-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: Réponse arrivée après le timeout (2000 ms), durée réelle: 2170 ms, prix: 2508.45
+2025-06-18 23:19:17.744  INFO 32724 --- [http-nio-8080-exec-8] com.example.demo.HandlerController       : Request 0022 - Traitement pendant 2 secondes
+2025-06-18 23:19:17.744 ERROR 32724 --- [http-nio-8080-exec-8] com.example.demo.HandlerController       : Request 0022 - External API timeout after 2000ms (requested delay: 2215ms)
+2025-06-18 23:19:17.755 ERROR 32724 --- [pool-1-thread-3] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: Réponse arrivée après le timeout (2000 ms), durée réelle: 2016 ms, prix: 595.43
+2025-06-18 23:19:18.743  INFO 32724 --- [http-nio-8080-exec-1] com.example.demo.HandlerController       : Request 0023 - Traitement pendant 2 secondes
+2025-06-18 23:19:18.743 ERROR 32724 --- [http-nio-8080-exec-1] com.example.demo.HandlerController       : Request 0023 - External API timeout after 2000ms (requested delay: 1821ms)
+2025-06-18 23:19:18.771 ERROR 32724 --- [pool-1-thread-4] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: Réponse arrivée après le timeout (2000 ms), durée réelle: 2019 ms, prix: 2682.66
+2025-06-18 23:19:19.962 ERROR 32724 --- [pool-1-thread-2] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: Réponse arrivée après le timeout (2000 ms), durée réelle: 2218 ms, prix: 1945.61
+2025-06-18 23:26:03.043  INFO 32760 --- [main] com.example.demo.DemoApplication         : Starting DemoApplication using Java 17.0.10 on DESKTOP-VDNJKAA with PID 32760 (E:\ws\poc_api_async2\target\classes started by Megaport in E:\ws\poc_api_async2)
+2025-06-18 23:26:03.046  INFO 32760 --- [main] com.example.demo.DemoApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-06-18 23:26:04.342  INFO 32760 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2025-06-18 23:26:04.359  INFO 32760 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-18 23:26:04.360  INFO 32760 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2025-06-18 23:26:04.451  INFO 32760 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-18 23:26:04.452  INFO 32760 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1355 ms
+2025-06-18 23:26:04.961  INFO 32760 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 3 endpoint(s) beneath base path '/actuator'
+2025-06-18 23:26:05.000  INFO 32760 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2025-06-18 23:26:05.013  INFO 32760 --- [main] com.example.demo.DemoApplication         : Started DemoApplication in 2.41 seconds (JVM running for 2.769)
+2025-06-18 23:26:13.461  INFO 32760 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-18 23:26:13.462  INFO 32760 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-18 23:26:13.463  INFO 32760 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-06-18 23:26:13.491  INFO 32760 --- [http-nio-8080-exec-1] com.example.demo.HandlerController       : Request 0001 - Starting processing with delay: 1892ms, apiTimeout: 2000ms
+2025-06-18 23:26:14.341  INFO 32760 --- [http-nio-8080-exec-3] com.example.demo.HandlerController       : Request 0002 - Starting processing with delay: 1994ms, apiTimeout: 2000ms
+2025-06-18 23:26:16.340  INFO 32760 --- [http-nio-8080-exec-5] com.example.demo.HandlerController       : Request 0003 - Starting processing with delay: 2410ms, apiTimeout: 2000ms
+2025-06-18 23:26:17.474  INFO 32760 --- [http-nio-8080-exec-1] com.example.demo.HandlerController       : Request 0001 - Traitement pendant 2 secondes
+2025-06-18 23:26:17.474  INFO 32760 --- [http-nio-8080-exec-1] com.example.demo.HandlerController       : Request 0001 - Processing completed with price: 2086.9 (API duration: 1981ms)
+2025-06-18 23:26:18.345  INFO 32760 --- [http-nio-8080-exec-7] com.example.demo.HandlerController       : Request 0004 - Starting processing with delay: 2110ms, apiTimeout: 2000ms
+2025-06-18 23:26:18.352  INFO 32760 --- [http-nio-8080-exec-3] com.example.demo.HandlerController       : Request 0002 - Traitement pendant 2 secondes
+2025-06-18 23:26:18.352 ERROR 32760 --- [pool-2-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 2000 ms
+2025-06-18 23:26:18.353  INFO 32760 --- [http-nio-8080-exec-3] com.example.demo.HandlerController       : Request 0002 - Processing completed with price: 1127.0 (API duration: 1999ms)
+2025-06-18 23:26:19.342  INFO 32760 --- [http-nio-8080-exec-9] com.example.demo.HandlerController       : Request 0005 - Starting processing with delay: 1928ms, apiTimeout: 2000ms
+2025-06-18 23:26:20.331  INFO 32760 --- [http-nio-8080-exec-2] com.example.demo.HandlerController       : Request 0006 - Starting processing with delay: 1936ms, apiTimeout: 2000ms
+2025-06-18 23:26:20.358 ERROR 32760 --- [pool-2-thread-2] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 2000 ms
+2025-06-18 23:26:20.358  INFO 32760 --- [http-nio-8080-exec-5] com.example.demo.HandlerController       : Request 0003 - Traitement pendant 2 secondes
+2025-06-18 23:26:20.359 ERROR 32760 --- [http-nio-8080-exec-5] com.example.demo.HandlerController       : Request 0003 - External API timeout after 2000ms (requested delay: 2410ms)
+2025-06-18 23:26:21.329  INFO 32760 --- [http-nio-8080-exec-3] com.example.demo.HandlerController       : Request 0007 - Starting processing with delay: 1710ms, apiTimeout: 2000ms
+2025-06-18 23:26:22.341  INFO 32760 --- [http-nio-8080-exec-5] com.example.demo.HandlerController       : Request 0008 - Starting processing with delay: 1938ms, apiTimeout: 2000ms
+2025-06-18 23:26:22.359  INFO 32760 --- [http-nio-8080-exec-7] com.example.demo.HandlerController       : Request 0004 - Traitement pendant 2 secondes
+2025-06-18 23:26:22.359 ERROR 32760 --- [http-nio-8080-exec-7] com.example.demo.HandlerController       : Request 0004 - External API timeout after 2000ms (requested delay: 2110ms)
+2025-06-18 23:26:22.774 ERROR 32760 --- [pool-1-thread-3] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: Réponse arrivée après le timeout (2000 ms), durée réelle: 2415 ms, prix: 2870.11
+2025-06-18 23:26:23.279  INFO 32760 --- [http-nio-8080-exec-9] com.example.demo.HandlerController       : Request 0005 - Traitement pendant 2 secondes
+2025-06-18 23:26:23.279  INFO 32760 --- [http-nio-8080-exec-9] com.example.demo.HandlerController       : Request 0005 - Processing completed with price: 1435.7 (API duration: 1933ms)
+2025-06-18 23:26:23.343  INFO 32760 --- [http-nio-8080-exec-4] com.example.demo.HandlerController       : Request 0009 - Starting processing with delay: 1989ms, apiTimeout: 2000ms
+2025-06-18 23:26:24.277  INFO 32760 --- [http-nio-8080-exec-2] com.example.demo.HandlerController       : Request 0006 - Traitement pendant 2 secondes
+2025-06-18 23:26:24.278  INFO 32760 --- [http-nio-8080-exec-2] com.example.demo.HandlerController       : Request 0006 - Processing completed with price: 714.12 (API duration: 1943ms)
+2025-06-18 23:26:24.336  INFO 32760 --- [http-nio-8080-exec-1] com.example.demo.HandlerController       : Request 0010 - Starting processing with delay: 2027ms, apiTimeout: 2000ms
+2025-06-18 23:26:24.473 ERROR 32760 --- [pool-1-thread-2] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: Réponse arrivée après le timeout (2000 ms), durée réelle: 2114 ms, prix: 2651.27
+2025-06-18 23:26:25.047  INFO 32760 --- [http-nio-8080-exec-3] com.example.demo.HandlerController       : Request 0007 - Traitement pendant 2 secondes
+2025-06-18 23:26:25.047  INFO 32760 --- [http-nio-8080-exec-3] com.example.demo.HandlerController       : Request 0007 - Processing completed with price: 1287.21 (API duration: 1714ms)
+2025-06-18 23:26:25.332  INFO 32760 --- [http-nio-8080-exec-9] com.example.demo.HandlerController       : Request 0011 - Starting processing with delay: 1967ms, apiTimeout: 2000ms
+2025-06-18 23:26:26.285  INFO 32760 --- [http-nio-8080-exec-5] com.example.demo.HandlerController       : Request 0008 - Traitement pendant 2 secondes
+2025-06-18 23:26:26.285  INFO 32760 --- [http-nio-8080-exec-5] com.example.demo.HandlerController       : Request 0008 - Processing completed with price: 1912.67 (API duration: 1941ms)
+2025-06-18 23:26:26.330  INFO 32760 --- [http-nio-8080-exec-8] com.example.demo.HandlerController       : Request 0012 - Starting processing with delay: 1904ms, apiTimeout: 2000ms
+2025-06-18 23:26:26.338 ERROR 32760 --- [pool-2-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 2000 ms
+2025-06-18 23:26:27.331  INFO 32760 --- [http-nio-8080-exec-3] com.example.demo.HandlerController       : Request 0013 - Starting processing with delay: 2118ms, apiTimeout: 2000ms
+2025-06-18 23:26:27.339  INFO 32760 --- [http-nio-8080-exec-4] com.example.demo.HandlerController       : Request 0009 - Traitement pendant 2 secondes
+2025-06-18 23:26:27.339  INFO 32760 --- [http-nio-8080-exec-4] com.example.demo.HandlerController       : Request 0009 - Processing completed with price: 1076.53 (API duration: 1994ms)
+2025-06-18 23:26:28.330  INFO 32760 --- [http-nio-8080-exec-5] com.example.demo.HandlerController       : Request 0014 - Starting processing with delay: 1799ms, apiTimeout: 2000ms
+2025-06-18 23:26:28.339  INFO 32760 --- [http-nio-8080-exec-1] com.example.demo.HandlerController       : Request 0010 - Traitement pendant 2 secondes
+2025-06-18 23:26:28.339 ERROR 32760 --- [http-nio-8080-exec-1] com.example.demo.HandlerController       : Request 0010 - External API timeout after 2000ms (requested delay: 2027ms)
+2025-06-18 23:26:29.305  INFO 32760 --- [http-nio-8080-exec-9] com.example.demo.HandlerController       : Request 0011 - Traitement pendant 2 secondes
+2025-06-18 23:26:29.305  INFO 32760 --- [http-nio-8080-exec-9] com.example.demo.HandlerController       : Request 0011 - Processing completed with price: 239.94 (API duration: 1972ms)
+2025-06-18 23:26:29.333 ERROR 32760 --- [pool-2-thread-2] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 2000 ms
+2025-06-18 23:26:29.337  INFO 32760 --- [http-nio-8080-exec-4] com.example.demo.HandlerController       : Request 0015 - Starting processing with delay: 1758ms, apiTimeout: 2000ms
+2025-06-18 23:26:30.239  INFO 32760 --- [http-nio-8080-exec-8] com.example.demo.HandlerController       : Request 0012 - Traitement pendant 2 secondes
+2025-06-18 23:26:30.239  INFO 32760 --- [http-nio-8080-exec-8] com.example.demo.HandlerController       : Request 0012 - Processing completed with price: 1209.14 (API duration: 1909ms)
+2025-06-18 23:26:30.354  INFO 32760 --- [http-nio-8080-exec-1] com.example.demo.HandlerController       : Request 0016 - Starting processing with delay: 1943ms, apiTimeout: 2000ms
+2025-06-18 23:26:30.371 ERROR 32760 --- [pool-1-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: Réponse arrivée après le timeout (2000 ms), durée réelle: 2032 ms, prix: 101.35
+2025-06-18 23:26:31.333  INFO 32760 --- [http-nio-8080-exec-3] com.example.demo.HandlerController       : Request 0013 - Traitement pendant 2 secondes
+2025-06-18 23:26:31.333 ERROR 32760 --- [http-nio-8080-exec-3] com.example.demo.HandlerController       : Request 0013 - External API timeout after 2000ms (requested delay: 2118ms)
+2025-06-18 23:26:31.336  INFO 32760 --- [http-nio-8080-exec-6] com.example.demo.HandlerController       : Request 0017 - Starting processing with delay: 1809ms, apiTimeout: 2000ms
+2025-06-18 23:26:32.134  INFO 32760 --- [http-nio-8080-exec-5] com.example.demo.HandlerController       : Request 0014 - Traitement pendant 2 secondes
+2025-06-18 23:26:32.134  INFO 32760 --- [http-nio-8080-exec-5] com.example.demo.HandlerController       : Request 0014 - Processing completed with price: 2111.1 (API duration: 1802ms)
+2025-06-18 23:26:32.336  INFO 32760 --- [http-nio-8080-exec-2] com.example.demo.HandlerController       : Request 0018 - Starting processing with delay: 1614ms, apiTimeout: 2000ms
+2025-06-18 23:26:33.103  INFO 32760 --- [http-nio-8080-exec-4] com.example.demo.HandlerController       : Request 0015 - Traitement pendant 2 secondes
+2025-06-18 23:26:33.104  INFO 32760 --- [http-nio-8080-exec-4] com.example.demo.HandlerController       : Request 0015 - Processing completed with price: 1685.64 (API duration: 1765ms)
+2025-06-18 23:26:33.355  INFO 32760 --- [http-nio-8080-exec-3] com.example.demo.HandlerController       : Request 0019 - Starting processing with delay: 1768ms, apiTimeout: 2000ms
+2025-06-18 23:26:33.456 ERROR 32760 --- [pool-1-thread-4] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: Réponse arrivée après le timeout (2000 ms), durée réelle: 2123 ms, prix: 2673.62
+2025-06-18 23:26:34.303  INFO 32760 --- [http-nio-8080-exec-1] com.example.demo.HandlerController       : Request 0016 - Traitement pendant 2 secondes
+2025-06-18 23:26:34.304  INFO 32760 --- [http-nio-8080-exec-1] com.example.demo.HandlerController       : Request 0016 - Processing completed with price: 1328.45 (API duration: 1947ms)
+2025-06-18 23:26:34.342  INFO 32760 --- [http-nio-8080-exec-9] com.example.demo.HandlerController       : Request 0020 - Starting processing with delay: 1991ms, apiTimeout: 2000ms
+2025-06-18 23:26:35.152  INFO 32760 --- [http-nio-8080-exec-6] com.example.demo.HandlerController       : Request 0017 - Traitement pendant 2 secondes
+2025-06-18 23:26:35.152  INFO 32760 --- [http-nio-8080-exec-6] com.example.demo.HandlerController       : Request 0017 - Processing completed with price: 2249.46 (API duration: 1815ms)
+2025-06-18 23:26:35.337  INFO 32760 --- [http-nio-8080-exec-8] com.example.demo.HandlerController       : Request 0021 - Starting processing with delay: 2349ms, apiTimeout: 2000ms
+2025-06-18 23:26:35.957  INFO 32760 --- [http-nio-8080-exec-2] com.example.demo.HandlerController       : Request 0018 - Traitement pendant 2 secondes
+2025-06-18 23:26:35.957  INFO 32760 --- [http-nio-8080-exec-2] com.example.demo.HandlerController       : Request 0018 - Processing completed with price: 532.64 (API duration: 1619ms)
+2025-06-18 23:26:36.338  INFO 32760 --- [http-nio-8080-exec-10] com.example.demo.HandlerController       : Request 0022 - Starting processing with delay: 1835ms, apiTimeout: 2000ms
+2025-06-18 23:26:37.128  INFO 32760 --- [http-nio-8080-exec-3] com.example.demo.HandlerController       : Request 0019 - Traitement pendant 2 secondes
+2025-06-18 23:26:37.128  INFO 32760 --- [http-nio-8080-exec-3] com.example.demo.HandlerController       : Request 0019 - Processing completed with price: 2637.46 (API duration: 1773ms)
+2025-06-18 23:26:37.333  INFO 32760 --- [http-nio-8080-exec-5] com.example.demo.HandlerController       : Request 0023 - Starting processing with delay: 2248ms, apiTimeout: 2000ms
+2025-06-18 23:26:37.338 ERROR 32760 --- [pool-2-thread-2] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 2000 ms
+2025-06-18 23:26:38.339  INFO 32760 --- [http-nio-8080-exec-9] com.example.demo.HandlerController       : Request 0020 - Traitement pendant 2 secondes
+2025-06-18 23:26:38.339  INFO 32760 --- [http-nio-8080-exec-9] com.example.demo.HandlerController       : Request 0020 - Processing completed with price: 982.54 (API duration: 1995ms)
+2025-06-18 23:26:39.335 ERROR 32760 --- [pool-2-thread-2] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 2000 ms
+2025-06-18 23:26:39.339  INFO 32760 --- [http-nio-8080-exec-8] com.example.demo.HandlerController       : Request 0021 - Traitement pendant 2 secondes
+2025-06-18 23:26:39.339 ERROR 32760 --- [http-nio-8080-exec-8] com.example.demo.HandlerController       : Request 0021 - External API timeout after 2000ms (requested delay: 2349ms)
+2025-06-18 23:26:40.179  INFO 32760 --- [http-nio-8080-exec-10] com.example.demo.HandlerController       : Request 0022 - Traitement pendant 2 secondes
+2025-06-18 23:26:40.179  INFO 32760 --- [http-nio-8080-exec-10] com.example.demo.HandlerController       : Request 0022 - Processing completed with price: 1661.55 (API duration: 1840ms)
+2025-06-18 23:26:41.336  INFO 32760 --- [http-nio-8080-exec-5] com.example.demo.HandlerController       : Request 0023 - Traitement pendant 2 secondes
+2025-06-18 23:26:41.336 ERROR 32760 --- [http-nio-8080-exec-5] com.example.demo.HandlerController       : Request 0023 - External API timeout after 2000ms (requested delay: 2248ms)
+2025-06-18 23:26:41.693 ERROR 32760 --- [pool-1-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: Réponse arrivée après le timeout (2000 ms), durée réelle: 2354 ms, prix: 293.71
+2025-06-18 23:26:43.589 ERROR 32760 --- [pool-1-thread-4] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: Réponse arrivée après le timeout (2000 ms), durée réelle: 2253 ms, prix: 1243.28
+2025-06-18 23:30:38.544  INFO 19140 --- [main] com.example.demo.DemoApplication         : Starting DemoApplication using Java 17.0.10 on DESKTOP-VDNJKAA with PID 19140 (E:\ws\poc_api_async2\target\classes started by Megaport in E:\ws\poc_api_async2)
+2025-06-18 23:30:38.553  INFO 19140 --- [main] com.example.demo.DemoApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-06-18 23:30:39.626  INFO 19140 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2025-06-18 23:30:39.647  INFO 19140 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-18 23:30:39.648  INFO 19140 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2025-06-18 23:30:39.748  INFO 19140 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-18 23:30:39.748  INFO 19140 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1149 ms
+2025-06-18 23:30:40.239  INFO 19140 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 3 endpoint(s) beneath base path '/actuator'
+2025-06-18 23:30:40.276  INFO 19140 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2025-06-18 23:30:40.290  INFO 19140 --- [main] com.example.demo.DemoApplication         : Started DemoApplication in 2.164 seconds (JVM running for 2.522)
+2025-06-18 23:30:42.583  INFO 19140 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-18 23:30:42.584  INFO 19140 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-18 23:30:42.585  INFO 19140 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-06-18 23:30:42.622  INFO 19140 --- [http-nio-8080-exec-1] com.example.demo.HandlerController       : Request 0001 - Starting processing with delay: 1863ms, apiTimeout: 2000ms
+2025-06-18 23:30:43.432  INFO 19140 --- [http-nio-8080-exec-3] com.example.demo.HandlerController       : Request 0002 - Starting processing with delay: 2021ms, apiTimeout: 2000ms
+2025-06-18 23:30:45.425  INFO 19140 --- [http-nio-8080-exec-5] com.example.demo.HandlerController       : Request 0003 - Starting processing with delay: 1911ms, apiTimeout: 2000ms
+2025-06-18 23:30:45.435 ERROR 19140 --- [pool-2-thread-2] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 2000 ms
+2025-06-18 23:30:46.589  INFO 19140 --- [http-nio-8080-exec-1] com.example.demo.HandlerController       : Request 0001 - Traitement pendant 2 secondes
+2025-06-18 23:30:46.589  INFO 19140 --- [http-nio-8080-exec-1] com.example.demo.HandlerController       : Request 0001 - Processing completed with price: 1134.25 (API duration: 1963ms)
+2025-06-18 23:30:47.426  INFO 19140 --- [http-nio-8080-exec-7] com.example.demo.HandlerController       : Request 0004 - Starting processing with delay: 2181ms, apiTimeout: 2000ms
+2025-06-18 23:30:47.436  INFO 19140 --- [http-nio-8080-exec-3] com.example.demo.HandlerController       : Request 0002 - Traitement pendant 2 secondes
+2025-06-18 23:30:47.437 ERROR 19140 --- [http-nio-8080-exec-3] com.example.demo.HandlerController       : Request 0002 - External API timeout after 2000ms (requested delay: 2021ms)
+2025-06-18 23:30:48.429  INFO 19140 --- [http-nio-8080-exec-10] com.example.demo.HandlerController       : Request 0005 - Starting processing with delay: 2222ms, apiTimeout: 2000ms
+2025-06-18 23:30:49.358  INFO 19140 --- [http-nio-8080-exec-5] com.example.demo.HandlerController       : Request 0003 - Traitement pendant 2 secondes
+2025-06-18 23:30:49.359  INFO 19140 --- [http-nio-8080-exec-5] com.example.demo.HandlerController       : Request 0003 - Processing completed with price: 1405.93 (API duration: 1917ms)
+2025-06-18 23:30:49.428  INFO 19140 --- [http-nio-8080-exec-4] com.example.demo.HandlerController       : Request 0006 - Starting processing with delay: 1864ms, apiTimeout: 2000ms
+2025-06-18 23:30:49.437 ERROR 19140 --- [pool-2-thread-2] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 2000 ms
+2025-06-18 23:30:49.462 ERROR 19140 --- [pool-1-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: Réponse arrivée après le timeout (2000 ms), durée réelle: 2025 ms, prix: 1993.76
+2025-06-18 23:30:50.415  INFO 19140 --- [http-nio-8080-exec-6] com.example.demo.HandlerController       : Request 0007 - Starting processing with delay: 2391ms, apiTimeout: 2000ms
+2025-06-18 23:30:50.430 ERROR 19140 --- [pool-2-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 2000 ms
+2025-06-18 23:30:51.416  INFO 19140 --- [http-nio-8080-exec-5] com.example.demo.HandlerController       : Request 0008 - Starting processing with delay: 2144ms, apiTimeout: 2000ms
+2025-06-18 23:30:51.439  INFO 19140 --- [http-nio-8080-exec-7] com.example.demo.HandlerController       : Request 0004 - Traitement pendant 2 secondes
+2025-06-18 23:30:51.439 ERROR 19140 --- [http-nio-8080-exec-7] com.example.demo.HandlerController       : Request 0004 - External API timeout after 2000ms (requested delay: 2181ms)
+2025-06-18 23:30:52.415  INFO 19140 --- [http-nio-8080-exec-2] com.example.demo.HandlerController       : Request 0009 - Starting processing with delay: 2048ms, apiTimeout: 2000ms
+2025-06-18 23:30:52.416 ERROR 19140 --- [pool-2-thread-2] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 2000 ms
+2025-06-18 23:30:52.433  INFO 19140 --- [http-nio-8080-exec-10] com.example.demo.HandlerController       : Request 0005 - Traitement pendant 2 secondes
+2025-06-18 23:30:52.433 ERROR 19140 --- [http-nio-8080-exec-10] com.example.demo.HandlerController       : Request 0005 - External API timeout after 2000ms (requested delay: 2222ms)
+2025-06-18 23:30:53.300  INFO 19140 --- [http-nio-8080-exec-4] com.example.demo.HandlerController       : Request 0006 - Traitement pendant 2 secondes
+2025-06-18 23:30:53.300  INFO 19140 --- [http-nio-8080-exec-4] com.example.demo.HandlerController       : Request 0006 - Processing completed with price: 856.78 (API duration: 1870ms)
+2025-06-18 23:30:53.417 ERROR 19140 --- [pool-2-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 2000 ms
+2025-06-18 23:30:53.422  INFO 19140 --- [http-nio-8080-exec-10] com.example.demo.HandlerController       : Request 0010 - Starting processing with delay: 2001ms, apiTimeout: 2000ms
+2025-06-18 23:30:53.624 ERROR 19140 --- [pool-1-thread-2] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: Réponse arrivée après le timeout (2000 ms), durée réelle: 2185 ms, prix: 2783.99
+2025-06-18 23:30:54.417  INFO 19140 --- [http-nio-8080-exec-6] com.example.demo.HandlerController       : Request 0007 - Traitement pendant 2 secondes
+2025-06-18 23:30:54.418 ERROR 19140 --- [http-nio-8080-exec-6] com.example.demo.HandlerController       : Request 0007 - External API timeout after 2000ms (requested delay: 2391ms)
+2025-06-18 23:30:54.418 ERROR 19140 --- [pool-2-thread-2] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 2000 ms
+2025-06-18 23:30:54.423  INFO 19140 --- [http-nio-8080-exec-9] com.example.demo.HandlerController       : Request 0011 - Starting processing with delay: 2262ms, apiTimeout: 2000ms
+2025-06-18 23:30:55.039 ERROR 19140 --- [pool-1-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: Réponse arrivée après le timeout (2000 ms), durée réelle: 2227 ms, prix: 1820.72
+2025-06-18 23:30:55.417  INFO 19140 --- [http-nio-8080-exec-6] com.example.demo.HandlerController       : Request 0012 - Starting processing with delay: 1955ms, apiTimeout: 2000ms
+2025-06-18 23:30:55.418  INFO 19140 --- [http-nio-8080-exec-5] com.example.demo.HandlerController       : Request 0008 - Traitement pendant 2 secondes
+2025-06-18 23:30:55.418 ERROR 19140 --- [http-nio-8080-exec-5] com.example.demo.HandlerController       : Request 0008 - External API timeout after 2000ms (requested delay: 2144ms)
+2025-06-18 23:30:55.423 ERROR 19140 --- [pool-2-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 2000 ms
+2025-06-18 23:30:56.420  INFO 19140 --- [http-nio-8080-exec-2] com.example.demo.HandlerController       : Request 0009 - Traitement pendant 2 secondes
+2025-06-18 23:30:56.421 ERROR 19140 --- [http-nio-8080-exec-2] com.example.demo.HandlerController       : Request 0009 - External API timeout after 2000ms (requested delay: 2048ms)
+2025-06-18 23:30:56.424 ERROR 19140 --- [pool-2-thread-2] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 2000 ms
+2025-06-18 23:30:56.429  INFO 19140 --- [http-nio-8080-exec-5] com.example.demo.HandlerController       : Request 0013 - Starting processing with delay: 2244ms, apiTimeout: 2000ms
+2025-06-18 23:30:56.812 ERROR 19140 --- [pool-1-thread-2] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: Réponse arrivée après le timeout (2000 ms), durée réelle: 2394 ms, prix: 2483.22
+2025-06-18 23:30:57.424  INFO 19140 --- [http-nio-8080-exec-10] com.example.demo.HandlerController       : Request 0010 - Traitement pendant 2 secondes
+2025-06-18 23:30:57.425 ERROR 19140 --- [http-nio-8080-exec-10] com.example.demo.HandlerController       : Request 0010 - External API timeout after 2000ms (requested delay: 2001ms)
+2025-06-18 23:30:57.427  INFO 19140 --- [http-nio-8080-exec-4] com.example.demo.HandlerController       : Request 0014 - Starting processing with delay: 2028ms, apiTimeout: 2000ms
+2025-06-18 23:30:57.719 ERROR 19140 --- [pool-1-thread-4] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: Réponse arrivée après le timeout (2000 ms), durée réelle: 2150 ms, prix: 1730.57
+2025-06-18 23:30:58.424  INFO 19140 --- [http-nio-8080-exec-10] com.example.demo.HandlerController       : Request 0015 - Starting processing with delay: 2118ms, apiTimeout: 2000ms
+2025-06-18 23:30:58.425  INFO 19140 --- [http-nio-8080-exec-9] com.example.demo.HandlerController       : Request 0011 - Traitement pendant 2 secondes
+2025-06-18 23:30:58.425 ERROR 19140 --- [http-nio-8080-exec-9] com.example.demo.HandlerController       : Request 0011 - External API timeout after 2000ms (requested delay: 2262ms)
+2025-06-18 23:30:58.431 ERROR 19140 --- [pool-2-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 2000 ms
+2025-06-18 23:30:58.790 ERROR 19140 --- [pool-1-thread-3] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: Réponse arrivée après le timeout (2000 ms), durée réelle: 2053 ms, prix: 1416.32
+2025-06-18 23:30:59.379  INFO 19140 --- [http-nio-8080-exec-6] com.example.demo.HandlerController       : Request 0012 - Traitement pendant 2 secondes
+2025-06-18 23:30:59.380  INFO 19140 --- [http-nio-8080-exec-6] com.example.demo.HandlerController       : Request 0012 - Processing completed with price: 2844.1 (API duration: 1960ms)
+2025-06-18 23:30:59.419  INFO 19140 --- [http-nio-8080-exec-3] com.example.demo.HandlerController       : Request 0016 - Starting processing with delay: 2375ms, apiTimeout: 2000ms
+2025-06-18 23:30:59.428 ERROR 19140 --- [pool-2-thread-2] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 2000 ms
+2025-06-18 23:30:59.430 ERROR 19140 --- [pool-1-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: Réponse arrivée après le timeout (2000 ms), durée réelle: 2006 ms, prix: 2388.23
+2025-06-18 23:31:00.425  INFO 19140 --- [http-nio-8080-exec-6] com.example.demo.HandlerController       : Request 0017 - Starting processing with delay: 2069ms, apiTimeout: 2000ms
+2025-06-18 23:31:00.425 ERROR 19140 --- [pool-2-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 2000 ms
+2025-06-18 23:31:00.431  INFO 19140 --- [http-nio-8080-exec-5] com.example.demo.HandlerController       : Request 0013 - Traitement pendant 2 secondes
+2025-06-18 23:31:00.431 ERROR 19140 --- [http-nio-8080-exec-5] com.example.demo.HandlerController       : Request 0013 - External API timeout after 2000ms (requested delay: 2244ms)
+2025-06-18 23:31:01.327 ERROR 19140 --- [pool-1-thread-2] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: Réponse arrivée après le timeout (2000 ms), durée réelle: 2266 ms, prix: 1226.02
+2025-06-18 23:31:01.420 ERROR 19140 --- [pool-2-thread-2] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 2000 ms
+2025-06-18 23:31:01.428  INFO 19140 --- [http-nio-8080-exec-5] com.example.demo.HandlerController       : Request 0018 - Starting processing with delay: 1879ms, apiTimeout: 2000ms
+2025-06-18 23:31:01.429  INFO 19140 --- [http-nio-8080-exec-4] com.example.demo.HandlerController       : Request 0014 - Traitement pendant 2 secondes
+2025-06-18 23:31:01.429 ERROR 19140 --- [http-nio-8080-exec-4] com.example.demo.HandlerController       : Request 0014 - External API timeout after 2000ms (requested delay: 2028ms)
+2025-06-18 23:31:02.426  INFO 19140 --- [http-nio-8080-exec-10] com.example.demo.HandlerController       : Request 0015 - Traitement pendant 2 secondes
+2025-06-18 23:31:02.426 ERROR 19140 --- [pool-2-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 2000 ms
+2025-06-18 23:31:02.427 ERROR 19140 --- [http-nio-8080-exec-10] com.example.demo.HandlerController       : Request 0015 - External API timeout after 2000ms (requested delay: 2118ms)
+2025-06-18 23:31:02.429  INFO 19140 --- [http-nio-8080-exec-4] com.example.demo.HandlerController       : Request 0019 - Starting processing with delay: 1995ms, apiTimeout: 2000ms
+2025-06-18 23:31:03.163 ERROR 19140 --- [pool-1-thread-3] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: Réponse arrivée après le timeout (2000 ms), durée réelle: 2251 ms, prix: 1950.47
+2025-06-18 23:31:03.423  INFO 19140 --- [http-nio-8080-exec-3] com.example.demo.HandlerController       : Request 0016 - Traitement pendant 2 secondes
+2025-06-18 23:31:03.423 ERROR 19140 --- [http-nio-8080-exec-3] com.example.demo.HandlerController       : Request 0016 - External API timeout after 2000ms (requested delay: 2375ms)
+2025-06-18 23:31:03.429  INFO 19140 --- [http-nio-8080-exec-1] com.example.demo.HandlerController       : Request 0020 - Starting processing with delay: 2084ms, apiTimeout: 2000ms
+2025-06-18 23:31:03.846 ERROR 19140 --- [pool-1-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: Réponse arrivée après le timeout (2000 ms), durée réelle: 2035 ms, prix: 1936.04
+2025-06-18 23:31:04.427  INFO 19140 --- [http-nio-8080-exec-6] com.example.demo.HandlerController       : Request 0017 - Traitement pendant 2 secondes
+2025-06-18 23:31:04.428 ERROR 19140 --- [http-nio-8080-exec-6] com.example.demo.HandlerController       : Request 0017 - External API timeout after 2000ms (requested delay: 2069ms)
+2025-06-18 23:31:04.431 ERROR 19140 --- [pool-2-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 2000 ms
+2025-06-18 23:31:04.431  INFO 19140 --- [http-nio-8080-exec-3] com.example.demo.HandlerController       : Request 0021 - Starting processing with delay: 2170ms, apiTimeout: 2000ms
+2025-06-18 23:31:04.621 ERROR 19140 --- [pool-1-thread-4] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: Réponse arrivée après le timeout (2000 ms), durée réelle: 2121 ms, prix: 578.98
+2025-06-18 23:31:05.314  INFO 19140 --- [http-nio-8080-exec-5] com.example.demo.HandlerController       : Request 0018 - Traitement pendant 2 secondes
+2025-06-18 23:31:05.314  INFO 19140 --- [http-nio-8080-exec-5] com.example.demo.HandlerController       : Request 0018 - Processing completed with price: 2717.23 (API duration: 1885ms)
+2025-06-18 23:31:05.419  INFO 19140 --- [http-nio-8080-exec-2] com.example.demo.HandlerController       : Request 0022 - Starting processing with delay: 1913ms, apiTimeout: 2000ms
+2025-06-18 23:31:05.432 ERROR 19140 --- [pool-2-thread-2] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 2000 ms
+2025-06-18 23:31:05.802 ERROR 19140 --- [pool-1-thread-2] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: Réponse arrivée après le timeout (2000 ms), durée réelle: 2379 ms, prix: 420.25
+2025-06-18 23:31:06.427  INFO 19140 --- [http-nio-8080-exec-5] com.example.demo.HandlerController       : Request 0023 - Starting processing with delay: 2292ms, apiTimeout: 2000ms
+2025-06-18 23:31:06.432  INFO 19140 --- [http-nio-8080-exec-4] com.example.demo.HandlerController       : Request 0019 - Traitement pendant 2 secondes
+2025-06-18 23:31:06.432 ERROR 19140 --- [http-nio-8080-exec-4] com.example.demo.HandlerController       : Request 0019 - External API timeout after 2000ms (requested delay: 1995ms)
+2025-06-18 23:31:06.433 ERROR 19140 --- [pool-2-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 2000 ms
+2025-06-18 23:31:06.694 ERROR 19140 --- [pool-1-thread-4] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: Réponse arrivée après le timeout (2000 ms), durée réelle: 2072 ms, prix: 1857.5
+2025-06-18 23:31:07.421 ERROR 19140 --- [pool-2-thread-2] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 2000 ms
+2025-06-18 23:31:07.433  INFO 19140 --- [http-nio-8080-exec-1] com.example.demo.HandlerController       : Request 0020 - Traitement pendant 2 secondes
+2025-06-18 23:31:07.433 ERROR 19140 --- [http-nio-8080-exec-1] com.example.demo.HandlerController       : Request 0020 - External API timeout after 2000ms (requested delay: 2084ms)
+2025-06-18 23:31:08.428 ERROR 19140 --- [pool-2-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 2000 ms
+2025-06-18 23:31:08.433  INFO 19140 --- [http-nio-8080-exec-3] com.example.demo.HandlerController       : Request 0021 - Traitement pendant 2 secondes
+2025-06-18 23:31:08.434 ERROR 19140 --- [http-nio-8080-exec-3] com.example.demo.HandlerController       : Request 0021 - External API timeout after 2000ms (requested delay: 2170ms)
+2025-06-18 23:31:09.424  INFO 19140 --- [http-nio-8080-exec-2] com.example.demo.HandlerController       : Request 0022 - Traitement pendant 2 secondes
+2025-06-18 23:31:09.424 ERROR 19140 --- [http-nio-8080-exec-2] com.example.demo.HandlerController       : Request 0022 - External API timeout after 2000ms (requested delay: 1913ms)
+2025-06-18 23:31:09.522 ERROR 19140 --- [pool-1-thread-3] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: Réponse arrivée après le timeout (2000 ms), durée réelle: 2089 ms, prix: 2804.0
+2025-06-18 23:31:10.429  INFO 19140 --- [http-nio-8080-exec-5] com.example.demo.HandlerController       : Request 0023 - Traitement pendant 2 secondes
+2025-06-18 23:31:10.430 ERROR 19140 --- [http-nio-8080-exec-5] com.example.demo.HandlerController       : Request 0023 - External API timeout after 2000ms (requested delay: 2292ms)
+2025-06-18 23:31:10.609 ERROR 19140 --- [pool-1-thread-2] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: Réponse arrivée après le timeout (2000 ms), durée réelle: 2176 ms, prix: 2266.78
+2025-06-18 23:31:12.726 ERROR 19140 --- [pool-1-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: Réponse arrivée après le timeout (2000 ms), durée réelle: 2296 ms, prix: 1756.46
+2025-06-18 23:32:03.749  INFO 20404 --- [main] com.example.demo.DemoApplication         : Starting DemoApplication using Java 17.0.10 on DESKTOP-VDNJKAA with PID 20404 (E:\ws\poc_api_async2\target\classes started by Megaport in E:\ws\poc_api_async2)
+2025-06-18 23:32:03.774  INFO 20404 --- [main] com.example.demo.DemoApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-06-18 23:32:04.855  INFO 20404 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2025-06-18 23:32:04.876  INFO 20404 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-18 23:32:04.877  INFO 20404 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2025-06-18 23:32:04.984  INFO 20404 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-18 23:32:04.985  INFO 20404 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1163 ms
+2025-06-18 23:32:05.476  INFO 20404 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 3 endpoint(s) beneath base path '/actuator'
+2025-06-18 23:32:05.514  INFO 20404 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2025-06-18 23:32:05.528  INFO 20404 --- [main] com.example.demo.DemoApplication         : Started DemoApplication in 2.131 seconds (JVM running for 2.453)
+2025-06-18 23:32:13.367  INFO 20404 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-18 23:32:13.367  INFO 20404 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-18 23:32:13.368  INFO 20404 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-06-18 23:32:13.395  INFO 20404 --- [http-nio-8080-exec-2] com.example.demo.HandlerController       : Request 0001 - Starting processing with delay: 2015ms, apiTimeout: 2000ms
+2025-06-18 23:32:14.252  INFO 20404 --- [http-nio-8080-exec-3] com.example.demo.HandlerController       : Request 0002 - Starting processing with delay: 2351ms, apiTimeout: 2000ms
+2025-06-18 23:32:15.408 ERROR 20404 --- [pool-2-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 2000 ms
+2025-06-18 23:32:16.251  INFO 20404 --- [http-nio-8080-exec-5] com.example.demo.HandlerController       : Request 0003 - Starting processing with delay: 1671ms, apiTimeout: 2000ms
+2025-06-18 23:32:16.253 ERROR 20404 --- [pool-2-thread-2] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 2000 ms
+2025-06-18 23:32:17.411  INFO 20404 --- [http-nio-8080-exec-2] com.example.demo.HandlerController       : Request 0001 - Traitement pendant 2 secondes
+2025-06-18 23:32:17.412 ERROR 20404 --- [http-nio-8080-exec-2] com.example.demo.HandlerController       : Request 0001 - External API timeout after 2000ms (requested delay: 2015ms)
+2025-06-18 23:32:18.249  INFO 20404 --- [http-nio-8080-exec-8] com.example.demo.HandlerController       : Request 0004 - Starting processing with delay: 2061ms, apiTimeout: 2000ms
+2025-06-18 23:32:18.254  INFO 20404 --- [http-nio-8080-exec-3] com.example.demo.HandlerController       : Request 0002 - Traitement pendant 2 secondes
+2025-06-18 23:32:18.254 ERROR 20404 --- [http-nio-8080-exec-3] com.example.demo.HandlerController       : Request 0002 - External API timeout after 2000ms (requested delay: 2351ms)
+2025-06-18 23:32:19.253  INFO 20404 --- [http-nio-8080-exec-1] com.example.demo.HandlerController       : Request 0005 - Starting processing with delay: 1897ms, apiTimeout: 2000ms
+2025-06-18 23:32:19.432 ERROR 20404 --- [pool-1-thread-4] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: Réponse arrivée après le timeout (2000 ms), durée réelle: 2020 ms, prix: 1852.09
+2025-06-18 23:32:19.931  INFO 20404 --- [http-nio-8080-exec-5] com.example.demo.HandlerController       : Request 0003 - Traitement pendant 2 secondes
+2025-06-18 23:32:19.931  INFO 20404 --- [http-nio-8080-exec-5] com.example.demo.HandlerController       : Request 0003 - Processing completed with price: 1076.52 (API duration: 1677ms)
+2025-06-18 23:32:20.251 ERROR 20404 --- [pool-2-thread-2] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 2000 ms
+2025-06-18 23:32:20.254  INFO 20404 --- [http-nio-8080-exec-2] com.example.demo.HandlerController       : Request 0006 - Starting processing with delay: 2240ms, apiTimeout: 2000ms
+2025-06-18 23:32:20.610 ERROR 20404 --- [pool-1-thread-2] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: Réponse arrivée après le timeout (2000 ms), durée réelle: 2356 ms, prix: 128.74
+2025-06-18 23:32:21.251  INFO 20404 --- [http-nio-8080-exec-3] com.example.demo.HandlerController       : Request 0007 - Starting processing with delay: 1734ms, apiTimeout: 2000ms
+2025-06-18 23:32:22.242  INFO 20404 --- [http-nio-8080-exec-5] com.example.demo.HandlerController       : Request 0008 - Starting processing with delay: 2176ms, apiTimeout: 2000ms
+2025-06-18 23:32:22.252  INFO 20404 --- [http-nio-8080-exec-8] com.example.demo.HandlerController       : Request 0004 - Traitement pendant 2 secondes
+2025-06-18 23:32:22.252 ERROR 20404 --- [http-nio-8080-exec-8] com.example.demo.HandlerController       : Request 0004 - External API timeout after 2000ms (requested delay: 2061ms)
+2025-06-18 23:32:22.255 ERROR 20404 --- [pool-2-thread-2] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 2000 ms
+2025-06-18 23:32:23.160  INFO 20404 --- [http-nio-8080-exec-1] com.example.demo.HandlerController       : Request 0005 - Traitement pendant 2 secondes
+2025-06-18 23:32:23.161  INFO 20404 --- [http-nio-8080-exec-1] com.example.demo.HandlerController       : Request 0005 - Processing completed with price: 1642.94 (API duration: 1902ms)
+2025-06-18 23:32:23.241  INFO 20404 --- [http-nio-8080-exec-4] com.example.demo.HandlerController       : Request 0009 - Starting processing with delay: 2308ms, apiTimeout: 2000ms
+2025-06-18 23:32:24.244 ERROR 20404 --- [pool-2-thread-2] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 2000 ms
+2025-06-18 23:32:24.256  INFO 20404 --- [http-nio-8080-exec-6] com.example.demo.HandlerController       : Request 0010 - Starting processing with delay: 1860ms, apiTimeout: 2000ms
+2025-06-18 23:32:24.257  INFO 20404 --- [http-nio-8080-exec-2] com.example.demo.HandlerController       : Request 0006 - Traitement pendant 2 secondes
+2025-06-18 23:32:24.257 ERROR 20404 --- [http-nio-8080-exec-2] com.example.demo.HandlerController       : Request 0006 - External API timeout after 2000ms (requested delay: 2240ms)
+2025-06-18 23:32:24.316 ERROR 20404 --- [pool-1-thread-3] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: Réponse arrivée après le timeout (2000 ms), durée réelle: 2064 ms, prix: 904.24
+2025-06-18 23:32:24.991  INFO 20404 --- [http-nio-8080-exec-3] com.example.demo.HandlerController       : Request 0007 - Traitement pendant 2 secondes
+2025-06-18 23:32:24.991  INFO 20404 --- [http-nio-8080-exec-3] com.example.demo.HandlerController       : Request 0007 - Processing completed with price: 852.27 (API duration: 1737ms)
+2025-06-18 23:32:25.242 ERROR 20404 --- [pool-2-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 2000 ms
+2025-06-18 23:32:25.255  INFO 20404 --- [http-nio-8080-exec-2] com.example.demo.HandlerController       : Request 0011 - Starting processing with delay: 2079ms, apiTimeout: 2000ms
+2025-06-18 23:32:26.245  INFO 20404 --- [http-nio-8080-exec-5] com.example.demo.HandlerController       : Request 0008 - Traitement pendant 2 secondes
+2025-06-18 23:32:26.246 ERROR 20404 --- [http-nio-8080-exec-5] com.example.demo.HandlerController       : Request 0008 - External API timeout after 2000ms (requested delay: 2176ms)
+2025-06-18 23:32:26.250  INFO 20404 --- [http-nio-8080-exec-3] com.example.demo.HandlerController       : Request 0012 - Starting processing with delay: 2073ms, apiTimeout: 2000ms
+2025-06-18 23:32:26.560 ERROR 20404 --- [pool-1-thread-3] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: Réponse arrivée après le timeout (2000 ms), durée réelle: 2244 ms, prix: 1490.87
+2025-06-18 23:32:27.243  INFO 20404 --- [http-nio-8080-exec-4] com.example.demo.HandlerController       : Request 0009 - Traitement pendant 2 secondes
+2025-06-18 23:32:27.244 ERROR 20404 --- [http-nio-8080-exec-4] com.example.demo.HandlerController       : Request 0009 - External API timeout after 2000ms (requested delay: 2308ms)
+2025-06-18 23:32:27.245  INFO 20404 --- [http-nio-8080-exec-7] com.example.demo.HandlerController       : Request 0013 - Starting processing with delay: 2326ms, apiTimeout: 2000ms
+2025-06-18 23:32:27.256 ERROR 20404 --- [pool-2-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 2000 ms
+2025-06-18 23:32:28.125  INFO 20404 --- [http-nio-8080-exec-6] com.example.demo.HandlerController       : Request 0010 - Traitement pendant 2 secondes
+2025-06-18 23:32:28.125  INFO 20404 --- [http-nio-8080-exec-6] com.example.demo.HandlerController       : Request 0010 - Processing completed with price: 2758.9 (API duration: 1866ms)
+2025-06-18 23:32:28.252 ERROR 20404 --- [pool-2-thread-2] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 2000 ms
+2025-06-18 23:32:28.256  INFO 20404 --- [http-nio-8080-exec-4] com.example.demo.HandlerController       : Request 0014 - Starting processing with delay: 1775ms, apiTimeout: 2000ms
+2025-06-18 23:32:28.426 ERROR 20404 --- [pool-1-thread-4] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: Réponse arrivée après le timeout (2000 ms), durée réelle: 2180 ms, prix: 320.44
+2025-06-18 23:32:29.247 ERROR 20404 --- [pool-2-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 2000 ms
+2025-06-18 23:32:29.251  INFO 20404 --- [http-nio-8080-exec-6] com.example.demo.HandlerController       : Request 0015 - Starting processing with delay: 1745ms, apiTimeout: 2000ms
+2025-06-18 23:32:29.257  INFO 20404 --- [http-nio-8080-exec-2] com.example.demo.HandlerController       : Request 0011 - Traitement pendant 2 secondes
+2025-06-18 23:32:29.257 ERROR 20404 --- [http-nio-8080-exec-2] com.example.demo.HandlerController       : Request 0011 - External API timeout after 2000ms (requested delay: 2079ms)
+2025-06-18 23:32:29.558 ERROR 20404 --- [pool-1-thread-3] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: Réponse arrivée après le timeout (2000 ms), durée réelle: 2315 ms, prix: 2130.58
+2025-06-18 23:32:30.251  INFO 20404 --- [http-nio-8080-exec-2] com.example.demo.HandlerController       : Request 0016 - Starting processing with delay: 1787ms, apiTimeout: 2000ms
+2025-06-18 23:32:30.254  INFO 20404 --- [http-nio-8080-exec-3] com.example.demo.HandlerController       : Request 0012 - Traitement pendant 2 secondes
+2025-06-18 23:32:30.254 ERROR 20404 --- [http-nio-8080-exec-3] com.example.demo.HandlerController       : Request 0012 - External API timeout after 2000ms (requested delay: 2073ms)
+2025-06-18 23:32:31.246  INFO 20404 --- [http-nio-8080-exec-10] com.example.demo.HandlerController       : Request 0017 - Starting processing with delay: 1894ms, apiTimeout: 2000ms
+2025-06-18 23:32:31.248  INFO 20404 --- [http-nio-8080-exec-7] com.example.demo.HandlerController       : Request 0013 - Traitement pendant 2 secondes
+2025-06-18 23:32:31.248 ERROR 20404 --- [http-nio-8080-exec-7] com.example.demo.HandlerController       : Request 0013 - External API timeout after 2000ms (requested delay: 2326ms)
+2025-06-18 23:32:31.641 ERROR 20404 --- [pool-1-thread-3] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: Réponse arrivée après le timeout (2000 ms), durée réelle: 2082 ms, prix: 901.47
+2025-06-18 23:32:32.107  INFO 20404 --- [http-nio-8080-exec-4] com.example.demo.HandlerController       : Request 0014 - Traitement pendant 2 secondes
+2025-06-18 23:32:32.107  INFO 20404 --- [http-nio-8080-exec-4] com.example.demo.HandlerController       : Request 0014 - Processing completed with price: 1239.78 (API duration: 1851ms)
+2025-06-18 23:32:32.248  INFO 20404 --- [http-nio-8080-exec-7] com.example.demo.HandlerController       : Request 0018 - Starting processing with delay: 2302ms, apiTimeout: 2000ms
+2025-06-18 23:32:32.332 ERROR 20404 --- [pool-1-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: Réponse arrivée après le timeout (2000 ms), durée réelle: 2078 ms, prix: 1838.01
+2025-06-18 23:32:33.004  INFO 20404 --- [http-nio-8080-exec-6] com.example.demo.HandlerController       : Request 0015 - Traitement pendant 2 secondes
+2025-06-18 23:32:33.004  INFO 20404 --- [http-nio-8080-exec-6] com.example.demo.HandlerController       : Request 0015 - Processing completed with price: 1047.7 (API duration: 1750ms)
+2025-06-18 23:32:33.255  INFO 20404 --- [http-nio-8080-exec-5] com.example.demo.HandlerController       : Request 0019 - Starting processing with delay: 2260ms, apiTimeout: 2000ms
+2025-06-18 23:32:33.970 ERROR 20404 --- [pool-1-thread-3] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: Réponse arrivée après le timeout (2000 ms), durée réelle: 2329 ms, prix: 648.54
+2025-06-18 23:32:34.043  INFO 20404 --- [http-nio-8080-exec-2] com.example.demo.HandlerController       : Request 0016 - Traitement pendant 2 secondes
+2025-06-18 23:32:34.045  INFO 20404 --- [http-nio-8080-exec-2] com.example.demo.HandlerController       : Request 0016 - Processing completed with price: 908.3 (API duration: 1790ms)
+2025-06-18 23:32:34.249 ERROR 20404 --- [pool-2-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 2000 ms
+2025-06-18 23:32:34.252  INFO 20404 --- [http-nio-8080-exec-1] com.example.demo.HandlerController       : Request 0020 - Starting processing with delay: 2099ms, apiTimeout: 2000ms
+2025-06-18 23:32:35.147  INFO 20404 --- [http-nio-8080-exec-10] com.example.demo.HandlerController       : Request 0017 - Traitement pendant 2 secondes
+2025-06-18 23:32:35.147  INFO 20404 --- [http-nio-8080-exec-10] com.example.demo.HandlerController       : Request 0017 - Processing completed with price: 1223.23 (API duration: 1899ms)
+2025-06-18 23:32:35.257 ERROR 20404 --- [pool-2-thread-2] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 2000 ms
+2025-06-18 23:32:35.267  INFO 20404 --- [http-nio-8080-exec-3] com.example.demo.HandlerController       : Request 0021 - Starting processing with delay: 1994ms, apiTimeout: 2000ms
+2025-06-18 23:32:36.247  INFO 20404 --- [http-nio-8080-exec-2] com.example.demo.HandlerController       : Request 0022 - Starting processing with delay: 2144ms, apiTimeout: 2000ms
+2025-06-18 23:32:36.250  INFO 20404 --- [http-nio-8080-exec-7] com.example.demo.HandlerController       : Request 0018 - Traitement pendant 2 secondes
+2025-06-18 23:32:36.250 ERROR 20404 --- [http-nio-8080-exec-7] com.example.demo.HandlerController       : Request 0018 - External API timeout after 2000ms (requested delay: 2302ms)
+2025-06-18 23:32:36.254 ERROR 20404 --- [pool-2-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 2000 ms
+2025-06-18 23:32:37.240  INFO 20404 --- [http-nio-8080-exec-4] com.example.demo.HandlerController       : Request 0023 - Starting processing with delay: 1791ms, apiTimeout: 2000ms
+2025-06-18 23:32:37.257  INFO 20404 --- [http-nio-8080-exec-5] com.example.demo.HandlerController       : Request 0019 - Traitement pendant 2 secondes
+2025-06-18 23:32:37.257 ERROR 20404 --- [http-nio-8080-exec-5] com.example.demo.HandlerController       : Request 0019 - External API timeout after 2000ms (requested delay: 2260ms)
+2025-06-18 23:32:38.248 ERROR 20404 --- [pool-2-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_TIMEOUT: Timeout after 2000 ms
+2025-06-18 23:32:38.254  INFO 20404 --- [http-nio-8080-exec-1] com.example.demo.HandlerController       : Request 0020 - Traitement pendant 2 secondes
+2025-06-18 23:32:38.254 ERROR 20404 --- [http-nio-8080-exec-1] com.example.demo.HandlerController       : Request 0020 - External API timeout after 2000ms (requested delay: 2099ms)
+2025-06-18 23:32:38.555 ERROR 20404 --- [pool-1-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: Réponse arrivée après le timeout (2000 ms), durée réelle: 2305 ms, prix: 2714.82
+2025-06-18 23:32:39.267  INFO 20404 --- [http-nio-8080-exec-3] com.example.demo.HandlerController       : Request 0021 - Traitement pendant 2 secondes
+2025-06-18 23:32:39.267  INFO 20404 --- [http-nio-8080-exec-3] com.example.demo.HandlerController       : Request 0021 - Processing completed with price: 2377.48 (API duration: 1999ms)
+2025-06-18 23:32:39.529 ERROR 20404 --- [pool-1-thread-3] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: Réponse arrivée après le timeout (2000 ms), durée réelle: 2263 ms, prix: 404.66
+2025-06-18 23:32:40.249  INFO 20404 --- [http-nio-8080-exec-2] com.example.demo.HandlerController       : Request 0022 - Traitement pendant 2 secondes
+2025-06-18 23:32:40.249 ERROR 20404 --- [http-nio-8080-exec-2] com.example.demo.HandlerController       : Request 0022 - External API timeout after 2000ms (requested delay: 2144ms)
+2025-06-18 23:32:40.498 ERROR 20404 --- [pool-1-thread-2] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: Réponse arrivée après le timeout (2000 ms), durée réelle: 2103 ms, prix: 2477.41
+2025-06-18 23:32:41.037  INFO 20404 --- [http-nio-8080-exec-4] com.example.demo.HandlerController       : Request 0023 - Traitement pendant 2 secondes
+2025-06-18 23:32:41.037  INFO 20404 --- [http-nio-8080-exec-4] com.example.demo.HandlerController       : Request 0023 - Processing completed with price: 610.05 (API duration: 1797ms)
+2025-06-18 23:32:42.397 ERROR 20404 --- [pool-1-thread-1] c.e.demo.api.AsyncExternalApiCaller      : EXTERNAL_API_LATE: Réponse arrivée après le timeout (2000 ms), durée réelle: 2148 ms, prix: 1871.16

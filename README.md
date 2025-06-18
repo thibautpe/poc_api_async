@@ -247,3 +247,72 @@ Les paramètres suivants sont configurables dans `src/main/resources/application
 - `external.api.url` : URL de l'API externe simulée
 
 Modifiez ces valeurs selon vos besoins pour adapter le comportement de l'application à votre environnement ou à la charge attendue. 
+
+> **Note sur l'extraction des métriques Micrometer** :
+> À la fin du script `run_gatling_with_app.ps1`, les métriques Micrometer sur les réponses tardives sont extraites automatiquement via l'endpoint `/actuator/prometheus`. 
+
+## Métriques Prometheus/Micrometer exposées
+
+L'application expose de nombreuses métriques pour l'observabilité des appels asynchrones à l'API externe. Ces métriques sont accessibles via `/actuator/prometheus`.
+
+### Compteurs (Counters)
+- `external_api.success.count` : Nombre d'appels aboutis (succès HTTP 2xx)
+- `external_api.error.count` : Nombre d'appels en erreur (exception, hors timeout)
+- `external_api.timeout.count` : Nombre d'appels ayant dépassé le délai (timeout)
+- `external_api.late_response.count` : Nombre de réponses reçues après le timeout
+- `external_api.total.count` : Nombre total d'appels tentés
+- `external_api.http_2xx.count` : Nombre de réponses HTTP 2xx
+- `external_api.http_4xx.count` : Nombre de réponses HTTP 4xx
+- `external_api.http_5xx.count` : Nombre de réponses HTTP 5xx
+- `external_api.cancelled.count` : Nombre d'appels annulés (cancelled)
+
+### Timers (Durées)
+- `external_api.all.duration` : Durée de tous les appels (succès, erreur, timeout)
+- `external_api.success.duration` : Durée des appels réussis
+- `external_api.error.duration` : Durée des appels en erreur
+- `external_api.timeout.duration` : Durée jusqu'au timeout
+- `external_api.late_response.duration` : Durée des réponses reçues après le timeout
+- `external_api.cancelled.duration` : Durée des appels annulés
+
+### Utilisation
+- Ces métriques permettent de suivre la santé, la performance et la fiabilité de l'intégration asynchrone.
+- Elles facilitent la création de dashboards Grafana (taux de succès, taux d'erreur, latence, timeouts, etc.).
+- Elles aident à détecter les problèmes de saturation, de lenteur ou d'instabilité côté API externe. 
+
+## Observabilité et Prometheus
+
+L'application expose des métriques techniques et métier au format Prometheus via l'endpoint `/actuator/prometheus`. Prometheus est un système open source de monitoring et d'alerte très utilisé pour collecter, stocker et visualiser ces métriques (souvent avec Grafana).
+
+👉 Pour une introduction détaillée à Prometheus, son fonctionnement et son intégration avec ce projet, consultez [doc/metrics_prometheus.md](doc/metrics_prometheus.md) 
+
+---
+
+## Documentation détaillée
+
+Retrouvez dans le dossier `doc/` des explications approfondies sur les sujets clés du projet, organisées par thématique :
+
+### Architecture et stack technique
+- **[STACK_TECHNIQUE_JAVA11.md](doc/STACK_TECHNIQUE_JAVA11.md)** : Description de la stack technique utilisée (Java 11, Spring Boot, etc.) et justification des choix.
+- **[CLASS_DIAGRAM.md](doc/CLASS_DIAGRAM.md)** : Diagramme de classes du projet pour comprendre l'architecture globale.
+
+### Patterns et gestion de l'asynchrone
+- **[PATTERNS_ASYNC.md](doc/PATTERNS_ASYNC.md)** : Panorama des patterns d'asynchronisme en Java/Spring, avec exemples et recommandations.
+- **[POOL_CONFIGURATION.md](doc/POOL_CONFIGURATION.md)** : Explications sur la gestion des pools de threads pour l'asynchrone, bonnes pratiques et configuration dans le projet.
+- **[delay_timeout_explained.md](doc/delay_timeout_explained.md)** : Détail sur la gestion des délais et timeouts dans les appels asynchrones, et leur impact sur le système.
+- **[USE_CASES_ASYNC_TIMEOUT.md](doc/USE_CASES_ASYNC_TIMEOUT.md)** : Cas d'usage typiques de l'asynchrone et du timeout, et comment ils sont couverts dans ce POC.
+
+### Observabilité et monitoring
+- **[PROMETHEUS.md](doc/PROMETHEUS.md)** : Introduction à Prometheus, concepts de base, configuration, et intégration avec Spring Boot/Micrometer.
+
+### Analyse critique et retour d'expérience
+- **[critique_du_poc.md](doc/critique_du_poc.md)** : Analyse critique du POC, limites, axes d'amélioration et points de vigilance.
+
+### Tests de charge et performance
+- **[GATLING.md](doc/GATLING.md)** : Présentation de Gatling, ses fonctionnalités, son usage dans ce projet pour tester l'asynchrone et les timeouts, et des pistes d'amélioration pour la suite.
+
+### Observabilité (logs, métriques, traces)
+- **[OBSERVABILITE.md](doc/OBSERVABILITE.md)** : Généralités sur l'observabilité, notions clés (logs, métriques, traces, alerting), ce qui est couvert dans ce projet et pistes pour aller plus loin (tracing distribué, alertes, dashboards, etc.).
+
+Chaque document apporte un éclairage complémentaire pour approfondir la compréhension ou l'exploitation du projet.
+
+--- 
