@@ -5,6 +5,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Map;
 import java.util.concurrent.*;
@@ -13,12 +15,23 @@ import java.util.concurrent.atomic.AtomicInteger;
 @Service
 public class AsyncExternalApiCaller {
     private static final Logger logger = LoggerFactory.getLogger(AsyncExternalApiCaller.class);
-    private final ExecutorService executor = Executors.newFixedThreadPool(4);
     private final RestTemplate restTemplate = new RestTemplate();
     private final AtomicInteger timeoutCounter = new AtomicInteger(0);
     private final AtomicInteger lateResponseCounter = new AtomicInteger(0);
     @Value("${external.api.url}")
     private String externalApiUrl;
+
+    private final ExecutorService executor;
+    private final ScheduledExecutorService scheduler;
+
+    @Autowired
+    public AsyncExternalApiCaller(
+        @Qualifier("asyncExecutor") ExecutorService executor,
+        @Qualifier("timeoutScheduler") ScheduledExecutorService scheduler
+    ) {
+        this.executor = executor;
+        this.scheduler = scheduler;
+    }
 
     public static class ApiResult {
         public final boolean success;
@@ -53,8 +66,6 @@ public class AsyncExternalApiCaller {
             }
         }, executor);
 
-        // Timeout management
-        ScheduledExecutorService scheduler = Executors.newSingleThreadScheduledExecutor();
         CompletableFuture<ApiResult> timeoutFuture = new CompletableFuture<>();
         scheduler.schedule(() -> {
             if (!future.isDone()) {
@@ -62,10 +73,8 @@ public class AsyncExternalApiCaller {
                 timeoutFuture.complete(new ApiResult(false, null, "EXTERNAL_API_TIMEOUT", timeoutMs, "TIMEOUT"));
                 logger.error("EXTERNAL_API_TIMEOUT: Timeout after {} ms", timeoutMs);
             }
-            scheduler.shutdown();
         }, timeoutMs, TimeUnit.MILLISECONDS);
 
-        // Return the first completed (either the real result or the timeout)
         return future.applyToEither(timeoutFuture, r -> r);
     }
 
