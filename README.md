@@ -265,6 +265,7 @@ L'application expose des métriques techniques et métier au format Prometheus v
 Retrouvez dans le dossier `doc/` des explications approfondies sur les sujets clés du projet, organisées par thématique :
 
 ### Architecture et stack technique
+- **[ARCHITECTURE.md](doc/ARCHITECTURE.md)** : Vue d'ensemble de l'architecture du projet, choix techniques, organisation des modules, flux principaux, points d'extension et contraintes.
 - **[STACK_TECHNIQUE_JAVA11.md](doc/STACK_TECHNIQUE_JAVA11.md)** : Description de la stack technique utilisée (Java 11, Spring Boot, etc.) et justification des choix.
 - **[CLASS_DIAGRAM.md](doc/CLASS_DIAGRAM.md)** : Diagramme de classes du projet pour comprendre l'architecture globale.
 
@@ -276,6 +277,7 @@ Retrouvez dans le dossier `doc/` des explications approfondies sur les sujets cl
 
 ### Observabilité (logs, métriques, traces)
 - **[OBSERVABILITE.md](doc/OBSERVABILITE.md)** : Généralités sur l'observabilité, notions clés (logs, métriques, traces, alerting), ce qui est couvert dans ce projet et pistes pour aller plus loin (tracing distribué, alertes, dashboards, etc.).
+- **[PROMETHEUS.md](doc/PROMETHEUS.md)** : Introduction à Prometheus, intégration et métriques exposées par le projet.
 
 ### Tests de charge et performance
 - **[GATLING.md](doc/GATLING.md)** : Présentation de Gatling, ses fonctionnalités, son usage dans ce projet pour tester l'asynchrone et les timeouts, et des pistes d'amélioration pour la suite.
