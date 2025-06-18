@@ -202,17 +202,16 @@ Les logs incluent :
 ### Points d'amélioration ou d'attention
 
 1. **Gestion des ressources (threads/executor)**  
-   Le POC crée un nouvel `ExecutorService` et un `ScheduledExecutorService` à chaque appel.  
-   → En production, il vaut mieux injecter un pool partagé (via Spring ou config) pour éviter la fuite de threads.
+   Le POC utilise des pools de threads injectés et mutualisés via Spring. **La taille des pools est désormais configurable** dans `application.properties` (`async.pool.size`, `timeout.scheduler.size`).
 
 2. **Nettoyage des threads**  
-   Les `ScheduledExecutorService` sont shutdown après usage, mais attention à ne pas en créer trop en charge réelle.
+   Les pools sont gérés par Spring et ne doivent pas être arrêtés manuellement. Leur cycle de vie est automatique.
 
 3. **Gestion des exceptions**  
    La gestion des exceptions est bonne, mais tu pourrais affiner les types d'erreurs pour distinguer timeout, erreurs réseau, etc.
 
 4. **Extensibilité**  
-   Pour un usage réel, prévoir la configuration du pool, du timeout, et de l'URL externe via des propriétés Spring.
+   **La taille des pools, le timeout par défaut et l'URL externe sont maintenant configurables** dans `application.properties` (`async.pool.size`, `timeout.scheduler.size`, `default.api.timeout`, `external.api.url`).
 
 5. **Observabilité**  
    Pour la prod, ajouter des métriques (Micrometer/Prometheus) sur les timeouts, les réponses tardives, etc.
