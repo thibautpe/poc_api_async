@@ -237,3 +237,14 @@ Si besoin d'exemples de refactoring pour la prod, ou d'approfondir un point (ex 
 
 > **Note sur la gestion des pools de threads** :
 > Les pools ExecutorService et ScheduledExecutorService sont injectés et mutualisés via Spring. **Il ne faut jamais les arrêter manuellement (shutdown)** dans le code applicatif. Leur cycle de vie est géré automatiquement par le conteneur Spring et ils sont arrêtés proprement à l'arrêt de l'application. 
+
+## 🔧 Extensibilité et configuration
+
+Les paramètres suivants sont configurables dans `src/main/resources/application.properties` :
+
+- `async.pool.size` : taille du pool de threads pour l'exécution asynchrone (par défaut 4)
+- `timeout.scheduler.size` : taille du pool pour la gestion des timeouts (par défaut 2)
+- `default.api.timeout` : timeout par défaut pour les appels à l'API externe (en ms)
+- `external.api.url` : URL de l'API externe simulée
+
+Modifiez ces valeurs selon vos besoins pour adapter le comportement de l'application à votre environnement ou à la charge attendue. 

@@ -1,5 +1,6 @@
 package com.example.demo.api;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -10,12 +11,12 @@ import java.util.concurrent.ScheduledExecutorService;
 @Configuration
 public class AsyncExternalApiCallerConfig {
     @Bean(name = "asyncExecutor")
-    public ExecutorService asyncExecutor() {
-        return Executors.newFixedThreadPool(4);
+    public ExecutorService asyncExecutor(@Value("${async.pool.size:4}") int poolSize) {
+        return Executors.newFixedThreadPool(poolSize);
     }
 
     @Bean(name = "timeoutScheduler")
-    public ScheduledExecutorService timeoutScheduler() {
-        return Executors.newScheduledThreadPool(2);
+    public ScheduledExecutorService timeoutScheduler(@Value("${timeout.scheduler.size:2}") int schedulerSize) {
+        return Executors.newScheduledThreadPool(schedulerSize);
     }
 } 
