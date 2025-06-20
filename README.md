@@ -221,6 +221,9 @@ Retrouvez dans le dossier `doc/` des explications approfondies sur les sujets cl
 ### Analyse critique et retour d'expérience
 - **[critique_du_poc.md](doc/critique_du_poc.md)** : Analyse critique du POC, limites, axes d'amélioration et points de vigilance.
 
+### Jalons techniques et démarche
+- **[JALONS_TECHNIQUES.md](doc/JALONS_TECHNIQUES.md)** : Les grandes étapes techniques, choix structurants et approche itérative du projet.
+
 Chaque document apporte un éclairage complémentaire pour approfondir la compréhension ou l'exploitation du projet.
 
 ---
