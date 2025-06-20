@@ -10,6 +10,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import io.micrometer.core.instrument.MeterRegistry;
 import io.micrometer.core.instrument.Timer;
 import io.micrometer.core.instrument.Counter;
+import io.opentelemetry.api.trace.Span;
+import io.opentelemetry.api.trace.Tracer;
+import io.opentelemetry.api.GlobalOpenTelemetry;
+import io.opentelemetry.context.Context;
+import io.opentelemetry.context.Scope;
 
 import java.util.Map;
 import java.util.concurrent.*;
@@ -79,8 +84,15 @@ public class AsyncExternalApiCaller {
 
     public CompletableFuture<ApiResult> callExternalApiAsync(long delay, long timeoutMs) {
         long start = System.currentTimeMillis();
+        Tracer tracer = GlobalOpenTelemetry.getTracer("com.example.demo.api.AsyncExternalApiCaller");
+        Span span = tracer.spanBuilder("callExternalApiAsync")
+                .setAttribute("external.api.url", externalApiUrl)
+                .setAttribute("external.api.delay", delay)
+                .setAttribute("external.api.timeout", timeoutMs)
+                .startSpan();
+        Context context = Context.current().with(span);
         CompletableFuture<ApiResult> future = CompletableFuture.supplyAsync(() -> {
-            try {
+            try (Scope scope = context.makeCurrent()) {
                 @SuppressWarnings("unchecked")
                 Map<String, Object> response = restTemplate.getForObject(
                         externalApiUrl + "?delay=" + delay, Map.class);
@@ -91,6 +103,8 @@ public class AsyncExternalApiCaller {
                 successTimer.record(duration, java.util.concurrent.TimeUnit.MILLISECONDS);
                 totalCallsCounter.increment();
                 http2xxCounter.increment();
+                span.setAttribute("external.api.status", "SUCCESS");
+                span.end();
                 return new ApiResult(true, price, null, duration, "SUCCESS");
             } catch (Exception e) {
                 long duration = System.currentTimeMillis() - start;
@@ -104,6 +118,9 @@ public class AsyncExternalApiCaller {
                     http5xxCounter.increment();
                 }
                 logger.error("EXTERNAL_API_ERROR: {}", e.getMessage());
+                span.setAttribute("external.api.status", "ERROR");
+                span.recordException(e);
+                span.end();
                 return new ApiResult(false, null, "EXTERNAL_API_ERROR", duration, "ERROR");
             }
         }, executor);
@@ -118,6 +135,10 @@ public class AsyncExternalApiCaller {
                 timeoutTimer.record(duration, java.util.concurrent.TimeUnit.MILLISECONDS);
                 timeoutFuture.complete(new ApiResult(false, null, "EXTERNAL_API_TIMEOUT", timeoutMs, "TIMEOUT"));
                 logger.error("EXTERNAL_API_TIMEOUT: Timeout after {} ms", timeoutMs);
+                try (Scope scope = context.makeCurrent()) {
+                    span.setAttribute("external.api.status", "TIMEOUT");
+                    span.end();
+                }
             }
         }, timeoutMs, TimeUnit.MILLISECONDS);
 
@@ -127,6 +148,10 @@ public class AsyncExternalApiCaller {
                     cancelledCounter.increment();
                     long duration = System.currentTimeMillis() - start;
                     cancelledTimer.record(duration, java.util.concurrent.TimeUnit.MILLISECONDS);
+                    try (Scope scope = context.makeCurrent()) {
+                        span.setAttribute("external.api.status", "CANCELLED");
+                        span.end();
+                    }
                 }
             });
     }

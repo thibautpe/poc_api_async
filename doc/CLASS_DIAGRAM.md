@@ -36,13 +36,13 @@ classDiagram
         +getTimeoutCount() : int
         +getLateResponseCount() : int
         +setExternalApiUrl(String)
-        class ApiResult {
-            +boolean success
-            +Double price
-            +String error
-            +long durationMs
-            +String status
-        }
+    }
+    class ApiResult {
+        +boolean success
+        +Double price
+        +String error
+        +long durationMs
+        +String status
     }
     class AsyncExternalApiCallerConfig {
         +asyncExecutor(int poolSize) : ExecutorService
@@ -66,7 +66,7 @@ classDiagram
     }
     DemoApplication --> HandlerController
     HandlerController --> AsyncExternalApiCaller
-    AsyncExternalApiCaller --> AsyncExternalApiCaller.ApiResult
+    AsyncExternalApiCaller --> ApiResult
     HandlerController --> ExternalApiController : (via HTTP)
     ExternalApiController --> ExternalApiService
     AsyncExternalApiCallerConfig ..> AsyncExternalApiCaller : (inject pools)
@@ -78,7 +78,7 @@ classDiagram
 - **DemoApplication** : Point d'entrée de l'application Spring Boot.
 - **HandlerController** : Contrôleur REST qui gère les requêtes `/handle` et utilise `AsyncExternalApiCaller` pour appeler l'API externe de façon asynchrone.
 - **AsyncExternalApiCaller** : Service qui encapsule l'appel asynchrone à l'API externe, la gestion des timeouts, des pools de threads et l'instrumentation des métriques (Micrometer).
-- **ApiResult** : Classe imbriquée représentant le résultat de l'appel à l'API externe (succès, erreur, prix, durée, statut).
+- **ApiResult** : Classe représentant le résultat de l'appel à l'API externe (succès, erreur, prix, durée, statut).
 - **AsyncExternalApiCallerConfig** : Configuration Spring pour injecter les pools de threads utilisés par `AsyncExternalApiCaller`.
 - **ExternalApiController** : Contrôleur REST simulant une API externe lente.
 - **ExternalApiService** : Service de calcul simulé pour l'API externe.
