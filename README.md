@@ -40,6 +40,8 @@ mvn clean install
 
 ## 3. Structure du projet
 
+Le projet est organisé pour séparer clairement la logique métier, les contrôleurs, la configuration asynchrone, la simulation d'API externe et les tests (unitaires, d'intégration et de charge). Cette structure facilite la compréhension, l'extension et la maintenance du code.
+
 ```
 src/
 ├── main/
@@ -47,17 +49,25 @@ src/
 │   │   └── com/
 │   │       └── example/
 │   │           └── demo/
-│   │               ├── DemoApplication.java
-│   │               └── HandlerController.java
+│   │               ├── DemoApplication.java                # Point d'entrée Spring Boot
+│   │               ├── HandlerController.java              # Contrôleur principal (endpoint /handler)
+│   │               ├── api/
+│   │               │   ├── AsyncExternalApiCaller.java         # Service d'appel asynchrone à l'API externe
+│   │               │   └── AsyncExternalApiCallerConfig.java  # Configuration des pools de threads asynchrones
+│   │               └── externalApi/
+│   │                   ├── ExternalApiController.java         # Contrôleur simulant l'API externe
+│   │                   └── ExternalApiService.java            # Service de calcul simulé pour l'API externe
 │   └── resources/
-│       └── application.properties
+│       └── application.properties                        # Configuration de l'application
 └── test/
     └── java/
         └── com/
             └── example/
                 └── demo/
-                    ├── DemoApplicationTests.java
-                    └── HandlerSimulation.java
+                    ├── DemoApplicationTests.java             # Tests unitaires de l'application
+                    ├── GatlingLoadTest1.java                 # Simulation de charge Gatling
+                    └── externalApi/
+                        └── ExternalApiControllerTest.java    # Tests unitaires du contrôleur externe
 ```
 
 ---
