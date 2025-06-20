@@ -1,48 +1,78 @@
 # Observabilité : généralités, concepts et mise en œuvre dans ce projet
 
-## 1. Généralités sur l'observabilité
+## 1. Introduction et piliers de l'observabilité
 
-L'observabilité désigne la capacité à comprendre l'état interne d'un système à partir de ses sorties externes. C'est un pilier essentiel pour le maintien en conditions opérationnelles, la détection proactive d'incidents, l'analyse de performance et l'amélioration continue.
+- **Logs** : traces textuelles d'événements, d'erreurs, d'exceptions.
+- **Métriques** : valeurs numériques agrégées (compteurs, durées, taux d'erreur, etc.).
+- **Traces distribuées** : suivi du parcours d'une requête à travers les différents composants d'un système distribué.
+- **Alerting** et **Dashboards** : notifications automatiques et visualisation synthétique.
 
-L'observabilité moderne repose sur trois piliers principaux :
-- **Logs** : traces textuelles d'événements, d'erreurs, d'exceptions, etc.
-- **Métriques** : valeurs numériques agrégées (compteurs, durées, taux d'erreur, etc.)
-- **Traces** : suivi du parcours d'une requête à travers les différents composants d'un système distribué
+---
 
-À cela s'ajoutent souvent :
-- **Alerting** : notifications automatiques en cas d'anomalie
-- **Dashboards** : visualisation synthétique et temps réel
+## 2. Observabilité dans ce projet
 
-## 2. Notions clés
+- **Métriques** instrumentées avec Micrometer, exposées via Prometheus (`/actuator/prometheus`).
+- **Logs** via Spring Boot et loggers personnalisés.
+- **Extraction automatique** des métriques après chaque test Gatling.
+- **Visualisation** possible dans Prometheus, Grafana, ou le navigateur.
+- **Suivi** des succès, erreurs, timeouts, réponses tardives, latences, etc.
 
-- **Logs** : utiles pour le debug, l'audit, la recherche d'incidents. Doivent être structurés et centralisés pour être exploitables à grande échelle.
-- **Métriques** : permettent de suivre la santé, la performance, la charge, les erreurs, etc. Idéales pour le monitoring temps réel et l'alerting.
-- **Traces distribuées** : indispensables pour comprendre les latences et les dépendances dans les architectures microservices.
-- **Alertes** : doivent être pertinentes, actionnables, et éviter le bruit.
-- **Dashboards** : facilitent la prise de décision rapide et la communication avec les équipes.
+---
 
-## 3. Observabilité dans ce projet
+## 3. OpenTelemetry : instrumentation et export des traces/métriques
 
-Ce POC met l'accent sur la collecte et l'exploitation des **métriques** :
-- Instrumentation du code avec **Micrometer** (compteurs, timers, etc.)
-- Exposition des métriques au format **Prometheus** via `/actuator/prometheus`
-- Extraction automatique des métriques après chaque test Gatling (PowerShell)
-- Visualisation possible dans le navigateur ou via Prometheus/Grafana
-- Suivi des succès, erreurs, timeouts, réponses tardives, latences, etc.
+OpenTelemetry est la solution standard pour instrumenter les applications modernes (traces, métriques, logs) et exporter ces données vers des outils d'observabilité (Signoz, Jaeger, Prometheus, etc.).
 
-Des logs sont également présents (Spring Boot, loggers personnalisés) pour le suivi des événements et erreurs.
+### Pourquoi OpenTelemetry ?
+- Collecte automatique des traces et métriques (requêtes HTTP, accès DB, etc.).
+- Compatible avec de nombreux backends via OTLP.
+- Découplé du code métier : configuration principalement via le classpath et les propriétés.
+
+### Dépendances nécessaires (déjà présentes)
+- `io.opentelemetry:opentelemetry-api`
+- `io.opentelemetry:opentelemetry-sdk`
+- `io.opentelemetry:opentelemetry-exporter-otlp`
+- `io.opentelemetry.instrumentation:opentelemetry-spring-boot-starter`
+
+### Exemple de configuration (`application.properties`)
+```
+# Export OTLP (exemple pour Signoz local)
+otel.exporter.otlp.endpoint=http://localhost:4317
+otel.resource.attributes=service.name=poc-api-async
+otel.metrics.exporter=otlp
+otel.traces.exporter=otlp
+otel.exporter.otlp.protocol=grpc
+
+# Pour exporter uniquement les traces
+# otel.metrics.exporter=none
+```
+- Pour Signoz Cloud, utiliser l'endpoint fourni par Signoz.
+- Pour Jaeger ou Tempo, adapter l'endpoint OTLP selon le backend.
+
+### Démarrage
+- Lancer le backend d'observabilité (Signoz, Jaeger, etc.).
+- Démarrer l'application Spring Boot : l'instrumentation et l'export sont automatiques si la config est présente.
+
+### Pour aller plus loin
+- Ajouter des spans personnalisés dans le code avec l'API OpenTelemetry si besoin.
+- [Documentation officielle OpenTelemetry Java](https://opentelemetry.io/docs/instrumentation/java/)
+
+---
 
 ## 4. Pistes pour aller plus loin
 
-- **Traces distribuées** : intégrer OpenTelemetry ou Spring Cloud Sleuth pour suivre le parcours complet d'une requête (correlationId, spanId, etc.)
-- **Centralisation des logs** : utiliser ELK (Elasticsearch, Logstash, Kibana) ou Grafana Loki pour agréger et rechercher les logs
-- **Alerting Prometheus** : définir des règles d'alerte sur les métriques critiques (taux d'erreur, timeouts, saturation, etc.)
-- **Dashboards Grafana** : créer des dashboards croisant métriques techniques et métier pour une vision globale
-- **Métriques personnalisées** : ajouter des tags (endpoint, type d'erreur, etc.) pour des analyses plus fines
-- **Tests de chaos/fiabilité** : intégrer des outils comme Chaos Monkey pour tester la résilience
-- **SLO/SLA** : formaliser des objectifs de service et les monitorer automatiquement
+- **Traces distribuées** : intégrer OpenTelemetry (déjà prêt) ou Spring Cloud Sleuth.
+- **Centralisation des logs** : ELK (Elasticsearch, Logstash, Kibana) ou Grafana Loki.
+- **Alerting Prometheus** : règles d'alerte sur les métriques critiques.
+- **Dashboards Grafana** : croiser métriques techniques et métier.
+- **Métriques personnalisées** : tags pour analyses fines.
+- **Tests de chaos/fiabilité** : outils comme Chaos Monkey.
+- **SLO/SLA** : formaliser et monitorer les objectifs de service.
+
+---
 
 ## 5. Références utiles
+
 - [Qu'est-ce que l'observabilité ? (Grafana)](https://grafana.com/docs/grafana/latest/observability/)
 - [Spring Boot Actuator](https://docs.spring.io/spring-boot/docs/current/reference/html/actuator.html)
 - [Micrometer](https://micrometer.io/)
