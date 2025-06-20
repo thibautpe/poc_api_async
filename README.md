@@ -208,7 +208,7 @@ Retrouvez dans le dossier `doc/` des explications approfondies sur les sujets cl
 ### Patterns, asynchrone et configuration
 - **[PATTERNS_ASYNC.md](doc/PATTERNS_ASYNC.md)** : Panorama des patterns d'asynchronisme en Java/Spring, avec exemples et recommandations.
 - **[POOL_CONFIGURATION.md](doc/POOL_CONFIGURATION.md)** : Explications sur la gestion des pools de threads pour l'asynchrone, bonnes pratiques et configuration dans le projet.
-- **[delay_timeout_explained.md](doc/delay_timeout_explained.md)** : Détail sur la gestion des délais et timeouts dans les appels asynchrones, et leur impact sur le système.
+- **[DELAY_TIMEOUT_EXPLAINED.md](doc/DELAY_TIMEOUT_EXPLAINED.md)** : Détail sur la gestion des délais et timeouts dans les appels asynchrones, et leur impact sur le système.
 - **[USE_CASES_ASYNC_TIMEOUT.md](doc/USE_CASES_ASYNC_TIMEOUT.md)** : Cas d'usage typiques de l'asynchrone et du timeout, et comment ils sont couverts dans ce POC.
 
 ### Observabilité, monitoring et performance
@@ -217,7 +217,7 @@ Retrouvez dans le dossier `doc/` des explications approfondies sur les sujets cl
 - **[GATLING.md](doc/GATLING.md)** : Présentation de Gatling, ses fonctionnalités, son usage dans ce projet pour tester l'asynchrone et les timeouts, et des pistes d'amélioration pour la suite.
 
 ### Analyse critique, démarche et historique
-- **[critique_du_poc.md](doc/critique_du_poc.md)** : Analyse critique du POC, limites, axes d'amélioration et points de vigilance.
+- **[CRITIQUE_DU_POC.md](doc/CRITIQUE_DU_POC.md)** : Analyse critique du POC, limites, axes d'amélioration et points de vigilance.
 - **[JALONS_TECHNIQUES.md](doc/JALONS_TECHNIQUES.md)** : Les grandes étapes techniques, choix structurants et approche itérative du projet.
 - **[HISTORIQUE_ITERATIF.md](doc/HISTORIQUE_ITERATIF.md)** : Historique des itérations, décisions et démarche d'amélioration continue.
 
@@ -227,4 +227,4 @@ Chaque document apporte un éclairage complémentaire pour approfondir la compr�
 
 ## 14. Analyse critique du POC API Asynchrone
 
-Voir [critique_du_poc.md](doc/critique_du_poc.md) pour une analyse détaillée des points forts, limites et axes d'amélioration. 
+Voir [CRITIQUE_DU_POC.md](doc/CRITIQUE_DU_POC.md) pour une analyse détaillée des points forts, limites et axes d'amélioration. 
