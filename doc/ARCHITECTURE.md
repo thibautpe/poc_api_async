@@ -87,4 +87,6 @@ Ce document présente l'architecture du projet "API Asynchrone". Il décrit les 
 - Liens utiles :
   - [README.md](../README.md)
   - [PATTERNS_ASYNC.md](PATTERNS_ASYNC.md)
-  - [PROMETHEUS.md](PROMETHEUS.md) 
+  - [PROMETHEUS.md](PROMETHEUS.md)
+  - [DELAY_TIMEOUT_EXPLAINED.md](DELAY_TIMEOUT_EXPLAINED.md)
+  - [CRITIQUE_DU_POC.md](CRITIQUE_DU_POC.md) 
