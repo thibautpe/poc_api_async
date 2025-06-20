@@ -1,6 +1,25 @@
 # POC API Asynchrone avec Timeout (Spring Boot, Gatling)
 
-Ce projet est un Proof of Concept (POC) démontrant la mise en œuvre d'une API asynchrone en Java Spring Boot, avec gestion avancée des timeouts côté appelant, simulation d'API externe lente, et tests de charge automatisés avec Gatling.
+Ce projet expose une API HTTP permettant de simuler un appel asynchrone à une API externe lente. Vous envoyez une requête avec un paramètre de délai, et vous récupérez soit un prix simulé (si la réponse arrive à temps), soit une erreur de timeout (si l'API externe est trop lente).
+
+Voici le flux principal du projet :
+
+```mermaid
+flowchart TD
+    CLIENT["Client"]
+    HANDLER["/handler (API asynchrone)"]
+    EXTERNAL["API externe simulée"]
+    OK["Réponse 200 OK (prix, durée, status)"]
+    TIMEOUT["Réponse 504 Timeout (erreur, message, status)"]
+
+    CLIENT -- "GET /handler?delay=xxx" --> HANDLER
+    HANDLER -- "Appel asynchrone avec délai" --> EXTERNAL
+    EXTERNAL -- "Réponse (prix ou délai)" --> HANDLER
+    HANDLER -- "Si réponse < timeout" --> OK
+    HANDLER -- "Si réponse > timeout" --> TIMEOUT
+    OK -- "JSON succès" --> CLIENT
+    TIMEOUT -- "JSON timeout" --> CLIENT
+```
 
 ---
 
@@ -80,6 +99,26 @@ src/
 - Paramètres :
   - `delay` : délai en millisecondes (optionnel, défaut : 0)
 - Exemple : http://localhost:8081/handler?delay=100
+
+#### Exemple de réponse en cas de succès
+```json
+{
+  "requestId": "0001",
+  "price": 1234.56,
+  "durationMs": 1500,
+  "status": "SUCCESS"
+}
+```
+
+#### Exemple de réponse en cas de timeout
+```json
+{
+  "requestId": "0002",
+  "error": "EXTERNAL_API_TIMEOUT",
+  "message": "Request timeout after 2000ms (requested delay: 2300ms)",
+  "status": "TIMEOUT"
+}
+```
 
 ---
 
