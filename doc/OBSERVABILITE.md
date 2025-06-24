@@ -17,6 +17,8 @@
 - **Visualisation** possible dans Prometheus, Grafana, ou le navigateur.
 - **Suivi** des succès, erreurs, timeouts, réponses tardives, latences, etc.
 
+> **Voir [PROMETHEUS.md](PROMETHEUS.md) pour les détails sur l'instrumentation et l'exposition des métriques.**
+
 ---
 
 ## 3. OpenTelemetry : instrumentation et export des traces/métriques
@@ -78,4 +80,6 @@ otel.exporter.otlp.protocol=grpc
 - [Micrometer](https://micrometer.io/)
 - [Prometheus](https://prometheus.io/)
 - [OpenTelemetry](https://opentelemetry.io/)
-- [ELK Stack](https://www.elastic.co/what-is/elk-stack) 
+- [ELK Stack](https://www.elastic.co/what-is/elk-stack)
+
+**Dernière mise à jour : juin 2025** 

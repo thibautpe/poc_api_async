@@ -36,6 +36,9 @@
     - Si le pool est dimensionné pour supporter 50 threads, tous les appels sont traités en parallèle.
     - Si le pool est plus petit (ex: 10 threads), les appels au-delà de la capacité attendent qu'un thread se libère (file d'attente interne).
     - Si la file d'attente du pool est saturée, de nouveaux appels peuvent être rejetés ou attendre indéfiniment (selon la configuration du pool).
+
+> **Voir [POOL_CONFIGURATION.md](POOL_CONFIGURATION.md) pour la configuration détaillée des pools de threads.**
+
 - **Conséquences** :
     - Si tous les threads sont occupés et que les délais sont longs, certains appels risquent d'atteindre le timeout avant d'être traités.
     - Le serveur peut logguer des erreurs de timeout ou de saturation du pool.
@@ -49,4 +52,6 @@
 ## Résumé
 - Le système est robuste tant que la charge reste dans la capacité du pool et que l'API externe répond dans les temps.
 - Les timeouts sont gérés proprement (HTTP 504), les réponses tardives sont logguées mais non transmises au client.
-- En cas de surcharge ou d'API lente, le taux d'erreur augmente, ce qui est visible dans les rapports Gatling. 
+- En cas de surcharge ou d'API lente, le taux d'erreur augmente, ce qui est visible dans les rapports Gatling.
+
+**Dernière mise à jour : juin 2025** 

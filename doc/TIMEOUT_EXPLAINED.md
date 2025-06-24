@@ -31,4 +31,8 @@ sequenceDiagram
 
 **Cas d'usage :**
 - `delay < timeout` → succès, le client reçoit un prix.
-- `delay > timeout` → timeout, le client reçoit une erreur. 
+- `delay > timeout` → timeout, le client reçoit une erreur.
+
+> **Voir [PATTERNS_ASYNC.md](PATTERNS_ASYNC.md) pour la gestion technique des timeouts et [USE_CASES_ASYNC_TIMEOUT.md](USE_CASES_ASYNC_TIMEOUT.md) pour les cas d'usage détaillés.**
+
+**Dernière mise à jour : juin 2025** 

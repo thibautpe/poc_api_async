@@ -18,6 +18,8 @@ Ce document retrace les grandes étapes techniques qui ont jalonné la construct
   - Externalisation de l'URL de l'API externe et des paramètres de timeout dans `application.properties`.
   - Injection des pools de threads via des beans Spring.
 
+> **Voir [PATTERNS_ASYNC.md](PATTERNS_ASYNC.md) et [POOL_CONFIGURATION.md](POOL_CONFIGURATION.md) pour les détails sur les patterns asynchrones et la configuration des pools.**
+
 ---
 
 ## 3. Robustesse et instrumentation
@@ -27,6 +29,8 @@ Ce document retrace les grandes étapes techniques qui ont jalonné la construct
 - **Instrumentation métier** :
   - Ajout de compteurs et timers (Micrometer) pour suivre les succès, timeouts, erreurs, réponses tardives, etc.
   - Exposition des métriques via `/actuator/prometheus`.
+
+> **Voir [OBSERVABILITE.md](OBSERVABILITE.md) et [PROMETHEUS.md](PROMETHEUS.md) pour les détails sur l'observabilité.**
 
 ---
 
@@ -40,6 +44,8 @@ Ce document retrace les grandes étapes techniques qui ont jalonné la construct
 - **Intégration de Gatling** :
   - Création d'un test de charge automatisé pour simuler des appels concurrents, valider la gestion des timeouts et observer la robustesse sous stress.
   - Extraction et corrélation des métriques techniques avec les résultats Gatling.
+
+> **Voir [GATLING.md](GATLING.md) pour les détails sur les tests de charge.**
 
 ---
 
@@ -69,4 +75,8 @@ Ce document retrace les grandes étapes techniques qui ont jalonné la construct
 
 ---
 
-*Ce cheminement montre comment, à partir d'un socle simple, on a construit un POC robuste, modulaire, observable et prêt à être challengé en conditions réelles.* 
+*Ce cheminement montre comment, à partir d'un socle simple, on a construit un POC robuste, modulaire, observable et prêt à être challengé en conditions réelles.*
+
+---
+
+**Dernière mise à jour : juin 2025** 

@@ -15,6 +15,9 @@
   - **Extraction et visualisation** : métriques extraites automatiquement après chaque test Gatling, visualisation possible dans Prometheus/Grafana ou via le navigateur
 - **Automatisation** : Script PowerShell pour enchaîner build, lancement de l'app, tests de charge, extraction et affichage des métriques
 
+> **Voir [OBSERVABILITE.md](OBSERVABILITE.md) et [PROMETHEUS.md](PROMETHEUS.md) pour les détails sur l'observabilité.**
+> **Voir [GATLING.md](GATLING.md) pour les détails sur les tests de charge.**
+
 ## Pourquoi Java 11 ?
 
 - **Version LTS (Long Term Support)** : Java 11 est une version supportée à long terme, stable et largement adoptée en entreprise.
@@ -52,4 +55,6 @@
 - Si besoin de fonctionnalités avancées (virtual threads, records, etc.), une migration vers Java 17+ serait à prévoir.
 
 ## Conclusion
-Le choix de Java 11 garantit la stabilité, la compatibilité et la portabilité du projet dans la plupart des environnements professionnels actuels, tout en permettant une base moderne pour l'asynchrone, les tests, l'observabilité et l'automatisation. 
+Le choix de Java 11 garantit la stabilité, la compatibilité et la portabilité du projet dans la plupart des environnements professionnels actuels, tout en permettant une base moderne pour l'asynchrone, les tests, l'observabilité et l'automatisation.
+
+**Dernière mise à jour : juin 2025** 

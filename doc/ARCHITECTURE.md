@@ -33,6 +33,8 @@ Ce document présente l'architecture du projet "API Asynchrone". Il décrit les 
 - **Monitoring** : Prometheus, logs Spring
 - **Gestion de la configuration** : `application.properties`
 
+> **Voir [PATTERNS_ASYNC.md](PATTERNS_ASYNC.md) pour les détails sur les patterns asynchrones utilisés.**
+
 ## 4. Description des modules
 
 ### 4.1 Contrôleurs REST
@@ -42,15 +44,21 @@ Ce document présente l'architecture du projet "API Asynchrone". Il décrit les 
 - Logique métier asynchrone (voir `AsyncExternalApiCaller`, `ExternalApiService`)
 - Gestion des délais, timeouts, pool de threads
 
+> **Voir [POOL_CONFIGURATION.md](POOL_CONFIGURATION.md) pour la configuration des pools de threads.**
+
 ### 4.3 Simulation d'API externe
 - Endpoint simulant un service distant, avec délais configurables
 
 ### 4.4 Tests de charge
 - Scripts Gatling pour simuler des charges et mesurer la performance
 
+> **Voir [GATLING.md](GATLING.md) pour les détails sur les tests de charge.**
+
 ### 4.5 Observabilité
 - Exposition de métriques Prometheus
 - Logs applicatifs
+
+> **Voir [OBSERVABILITE.md](OBSERVABILITE.md) et [PROMETHEUS.md](PROMETHEUS.md) pour les détails sur l'observabilité.**
 
 ## 5. Flux principaux
 
@@ -59,6 +67,8 @@ Ce document présente l'architecture du projet "API Asynchrone". Il décrit les 
 2. Le contrôleur délègue au service asynchrone
 3. Le service appelle l'API externe simulée (asynchrone)
 4. Gestion du timeout et retour de la réponse
+
+> **Voir [TIMEOUT_EXPLAINED.md](TIMEOUT_EXPLAINED.md) et [USE_CASES_ASYNC_TIMEOUT.md](USE_CASES_ASYNC_TIMEOUT.md) pour les détails sur la gestion des timeouts.**
 
 ### 5.2 Gestion des erreurs
 - Timeout, erreurs d'appel externe, gestion centralisée des exceptions
@@ -88,5 +98,9 @@ Ce document présente l'architecture du projet "API Asynchrone". Il décrit les 
   - [README.md](../README.md)
   - [PATTERNS_ASYNC.md](PATTERNS_ASYNC.md)
   - [PROMETHEUS.md](PROMETHEUS.md)
-  - [DELAY_TIMEOUT_EXPLAINED.md](DELAY_TIMEOUT_EXPLAINED.md)
-  - [CRITIQUE_DU_POC.md](CRITIQUE_DU_POC.md) 
+  - [TIMEOUT_EXPLAINED.md](TIMEOUT_EXPLAINED.md)
+  - [CRITIQUE_POC.md](CRITIQUE_POC.md)
+
+---
+
+**Dernière mise à jour : juin 2025** 

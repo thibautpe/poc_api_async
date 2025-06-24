@@ -54,4 +54,6 @@ public AsyncExternalApiCaller(
 La configuration du pool de threads via des beans Spring permet de garantir la performance, la réactivité et la robustesse de l'application. En limitant le nombre de threads et en fixant un timeout raisonnable, nous nous assurons que le traitement principal n'est pas ralenti par les appels à l'API externe, tout en évitant les fuites de ressources.
 
 > **Note importante :**
-> Les pools de threads (ExecutorService et ScheduledExecutorService) sont mutualisés et gérés par Spring. **Il ne faut pas les arrêter (shutdown) après chaque usage**. Un shutdown prématuré empêcherait le traitement des futures tâches et pourrait provoquer des erreurs en charge réelle. Le cycle de vie de ces pools est géré par le conteneur Spring et ils sont arrêtés proprement à l'arrêt de l'application. 
+> Les pools de threads (ExecutorService et ScheduledExecutorService) sont mutualisés et gérés par Spring. **Il ne faut pas les arrêter (shutdown) après chaque usage**. Un shutdown prématuré empêcherait le traitement des futures tâches et pourrait provoquer des erreurs en charge réelle. Le cycle de vie de ces pools est géré par le conteneur Spring et ils sont arrêtés proprement à l'arrêt de l'application.
+
+**Dernière mise à jour : juin 2025** 

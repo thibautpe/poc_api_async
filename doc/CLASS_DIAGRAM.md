@@ -84,6 +84,8 @@ classDiagram
 - **ExternalApiService** : Service de calcul simulé pour l'API externe.
 - **GatlingLoadTest1** : Simulation Gatling qui génère la charge sur `/handle` et vérifie les réponses et les SLA.
 
+> **Voir [POOL_CONFIGURATION.md](POOL_CONFIGURATION.md) pour la configuration des pools de threads.**
+
 ---
 
 ## 2. Diagramme de séquence (flux d'une requête asynchrone)
@@ -117,6 +119,8 @@ sequenceDiagram
 - Selon le délai, le contrôleur retourne un succès ou un timeout (504).
 - Les métriques sont incrémentées et exposées pour Prometheus.
 
+> **Voir [TIMEOUT_EXPLAINED.md](TIMEOUT_EXPLAINED.md) et [USE_CASES_ASYNC_TIMEOUT.md](USE_CASES_ASYNC_TIMEOUT.md) pour les détails sur la gestion des timeouts.**
+
 ---
 
 ## 3. Notes complémentaires
@@ -125,6 +129,9 @@ sequenceDiagram
 - L'observabilité est assurée par Micrometer, Prometheus, et l'extraction automatisée des métriques après chaque test de charge.
 - Le test de charge Gatling simule des scénarios variés et vérifie les SLA sur `/handle`.
 - Le découplage entre contrôleur, service asynchrone et API externe permet de tester facilement la résilience et la scalabilité.
+
+> **Voir [OBSERVABILITE.md](OBSERVABILITE.md) et [PROMETHEUS.md](PROMETHEUS.md) pour les détails sur l'observabilité.**
+> **Voir [GATLING.md](GATLING.md) pour les détails sur les tests de charge.**
 
 ---
 
@@ -162,4 +169,8 @@ sequenceDiagram
 - Le timeout est atteint avant la réponse de l'API externe : le contrôleur répond en 504 (Gateway Timeout).
 - Les métriques de timeout sont incrémentées.
 - Quand la réponse externe arrive finalement, une métrique "late response" est incrémentée et un log est généré.
-- Ce scénario permet de monitorer la robustesse et la réactivité du système face aux lenteurs externes. 
+- Ce scénario permet de monitorer la robustesse et la réactivité du système face aux lenteurs externes.
+
+---
+
+**Dernière mise à jour : juin 2025** 

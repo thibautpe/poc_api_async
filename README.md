@@ -1,6 +1,6 @@
 # POC API Asynchrone avec Timeout (Spring Boot, Gatling)
 
-Ce projet expose une API HTTP permettant de simuler un appel asynchrone à une API externe lente. Vous envoyez une requête avec un paramètre de délai, et vous récupérez soit un prix simulé (si la réponse arrive à temps), soit une erreur de timeout (si l'API externe est trop lente).
+Ce projet expose une API HTTP permettant de simuler un appel asynchrone à une API externe lente. Vous envoyez une requête avec des paramètres de délai et de timeout, et vous récupérez soit un prix simulé (si la réponse arrive à temps), soit une erreur de timeout (si l'API externe est trop lente).
 
 Voici le flux principal du projet :
 
@@ -12,7 +12,7 @@ flowchart TD
     OK["Réponse 200 OK (prix, durée, status)"]
     TIMEOUT["Réponse 504 Timeout (erreur, message, status)"]
 
-    CLIENT -- "GET /handler?delay=xxx" --> HANDLER
+    CLIENT -- "GET /handler?delay=xxx&apiTimeout=yyy" --> HANDLER
     HANDLER -- "Appel asynchrone avec délai" --> EXTERNAL
     EXTERNAL -- "Réponse (prix ou délai)" --> HANDLER
     HANDLER -- "Si réponse < timeout" --> OK
@@ -44,12 +44,12 @@ mvn clean install
    ```bash
    mvn spring-boot:run
    ```
-2. Accéder à l'API : http://localhost:8081/handler
+2. Accéder à l'API : http://localhost:8080/handler
 3. Lancer un test de charge :
    ```bash
    mvn gatling:test
    ```
-4. Consulter les métriques Prometheus : http://localhost:8081/actuator/prometheus
+4. Consulter les métriques Prometheus : http://localhost:8080/actuator/prometheus
 5. Voir les rapports Gatling :
    ```
    target/gatling/[nom-du-test]-[timestamp]/index.html
@@ -97,8 +97,9 @@ src/
 - URL : `/handler`
 - Méthode : GET
 - Paramètres :
-  - `delay` : délai en millisecondes (optionnel, défaut : 0)
-- Exemple : http://localhost:8081/handler?delay=100
+  - `delay` : délai en millisecondes (optionnel, défaut : 100)
+  - `apiTimeout` : timeout en millisecondes (optionnel, défaut : 2000)
+- Exemple : http://localhost:8080/handler?delay=100&apiTimeout=2000
 
 #### Exemple de réponse en cas de succès
 ```json
@@ -125,7 +126,7 @@ src/
 ## 5. Configuration & Personnalisation
 
 Le fichier `application.properties` contient la configuration de base :
-- Port : 8081
+- Port : 8080
 - Logging : configuré pour afficher les IDs de requête et les durées
 - Timeout, taille des pools, URL API externe, etc.
 
@@ -155,7 +156,7 @@ Les logs incluent :
 - Nombre de requêtes actives 
 
 ### Gestion des timeouts et erreurs HTTP 504
-- Si l'API externe met plus de 2000 ms à répondre, le contrôleur retourne une réponse JSON avec le code HTTP 504 (Gateway Timeout).
+- Si l'API externe met plus de temps que le paramètre `apiTimeout` à répondre, le contrôleur retourne une réponse JSON avec le code HTTP 504 (Gateway Timeout).
 - Les réponses HTTP 504 sont comptabilisées comme des erreurs (KO) dans les rapports Gatling.
 
 ### Sécurité (POC)
@@ -173,7 +174,7 @@ Les logs incluent :
 Vous pouvez tester l'API manuellement avec curl :
 
 ```bash
-curl http://localhost:8081/handler?delay=100
+curl http://localhost:8080/handler?delay=100&apiTimeout=2000
 ```
 
 ### Tests automatisés
@@ -247,7 +248,7 @@ Retrouvez dans le dossier `doc/` des explications approfondies sur les sujets cl
 ### Patterns, asynchrone et configuration
 - **[PATTERNS_ASYNC.md](doc/PATTERNS_ASYNC.md)** : Panorama des patterns d'asynchronisme en Java/Spring, avec exemples et recommandations.
 - **[POOL_CONFIGURATION.md](doc/POOL_CONFIGURATION.md)** : Explications sur la gestion des pools de threads pour l'asynchrone, bonnes pratiques et configuration dans le projet.
-- **[DELAY_TIMEOUT_EXPLAINED.md](doc/DELAY_TIMEOUT_EXPLAINED.md)** : Détail sur la gestion des délais et timeouts dans les appels asynchrones, et leur impact sur le système.
+- **[TIMEOUT_EXPLAINED.md](doc/TIMEOUT_EXPLAINED.md)** : Détail sur la gestion des délais et timeouts dans les appels asynchrones, et leur impact sur le système.
 - **[USE_CASES_ASYNC_TIMEOUT.md](doc/USE_CASES_ASYNC_TIMEOUT.md)** : Cas d'usage typiques de l'asynchrone et du timeout, et comment ils sont couverts dans ce POC.
 
 ### Observabilité, monitoring et performance
@@ -256,14 +257,12 @@ Retrouvez dans le dossier `doc/` des explications approfondies sur les sujets cl
 - **[GATLING.md](doc/GATLING.md)** : Présentation de Gatling, ses fonctionnalités, son usage dans ce projet pour tester l'asynchrone et les timeouts, et des pistes d'amélioration pour la suite.
 
 ### Analyse critique, démarche et historique
-- **[CRITIQUE_DU_POC.md](doc/CRITIQUE_DU_POC.md)** : Analyse critique du POC, limites, axes d'amélioration et points de vigilance.
+- **[CRITIQUE_POC.md](doc/CRITIQUE_POC.md)** : Analyse critique du POC, limites, axes d'amélioration et points de vigilance.
 - **[JALONS_TECHNIQUES.md](doc/JALONS_TECHNIQUES.md)** : Les grandes étapes techniques, choix structurants et approche itérative du projet.
 - **[HISTORIQUE_ITERATIF.md](doc/HISTORIQUE_ITERATIF.md)** : Historique des itérations, décisions et démarche d'amélioration continue.
 
-Chaque document apporte un éclairage complémentaire pour approfondir la compréhension ou l'exploitation du projet.
+> **Note :** Pensez à synchroniser les diagrammes (CLASS_DIAGRAM.md, séquences) si de nouveaux endpoints ou services sont ajoutés.
 
 ---
 
-## 14. Analyse critique du POC API Asynchrone
-
-Voir [CRITIQUE_DU_POC.md](doc/CRITIQUE_DU_POC.md) pour une analyse détaillée des points forts, limites et axes d'amélioration. 
+**Dernière mise à jour : juin 2025** 

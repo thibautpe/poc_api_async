@@ -155,4 +155,6 @@ assertions(
 ## Références
 - [Site officiel Gatling](https://gatling.io/)
 - [Documentation Gatling](https://gatling.io/docs/)
-- [Exemples de simulations](https://github.com/gatling/gatling) 
+- [Exemples de simulations](https://github.com/gatling/gatling)
+
+**Dernière mise à jour : juin 2025** 

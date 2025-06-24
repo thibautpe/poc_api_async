@@ -62,4 +62,6 @@ Ce document retrace les principales étapes, itérations et décisions qui ont j
 
 ---
 
-*Ce document illustre comment l'amélioration continue, la transparence et l'agilité peuvent transformer un simple POC en une base solide pour des développements futurs.* 
+*Ce document illustre comment l'amélioration continue, la transparence et l'agilité peuvent transformer un simple POC en une base solide pour des développements futurs.*
+
+**Dernière mise à jour : juin 2025** 

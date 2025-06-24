@@ -1,4 +1,3 @@
-
 ---
 
 ## Introduction à Prometheus et Micrometer 
@@ -47,4 +46,6 @@ Micrometer est une bibliothèque Java qui permet d'instrumenter facilement une a
 - Prometheus peut être configuré pour "scraper" cet endpoint à intervalle régulier.
 - Les métriques peuvent être visualisées dans Grafana, utilisées pour des alertes, ou analysées pour l'amélioration continue.
 
---- 
+---
+
+**Dernière mise à jour : juin 2025** 

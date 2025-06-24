@@ -25,6 +25,8 @@
    Le POC crée un nouvel `ExecutorService` et un `ScheduledExecutorService` à chaque appel.  
    → En production, il vaut mieux injecter un pool partagé (via Spring ou config) pour éviter la fuite de threads.
 
+> **Voir [POOL_CONFIGURATION.md](POOL_CONFIGURATION.md) pour la configuration des pools de threads.**
+
 2. **Nettoyage des threads**  
    Les `ScheduledExecutorService` sont shutdown après usage, mais attention à ne pas en créer trop en charge réelle.
 
@@ -37,11 +39,15 @@
 5. **Observabilité**  
    Pour la prod, ajouter des métriques (Micrometer/Prometheus) sur les timeouts, les réponses tardives, etc.
 
+> **Voir [OBSERVABILITE.md](OBSERVABILITE.md) et [PROMETHEUS.md](PROMETHEUS.md) pour les détails sur l'observabilité.**
+
 6. **Sécurité**  
    Pour un POC ce n'est pas critique, mais en prod, attention à la validation des entrées et à la gestion des erreurs exposées.
 
 7. **Tests**  
    Les tests sont bien faits pour le POC. Pour la prod, ajouter des tests de montée en charge plus longs, et des tests de résilience (coupure réseau, etc.).
+
+> **Voir [GATLING.md](GATLING.md) pour les détails sur les tests de charge.**
 
 8. **Code style**  
    Le code est propre, bien commenté, et les imports sont bien gérés.
@@ -61,3 +67,5 @@ Si besoin d'exemples de refactoring pour la prod, ou d'approfondir un point (ex 
 
 - **[GATLING.md](GATLING.md)** : Pour approfondir les tests de charge, la simulation de scénarios avancés et l'analyse des performances.
 - **[OBSERVABILITE.md](OBSERVABILITE.md)** : Pour comprendre les enjeux de l'observabilité, les bonnes pratiques de monitoring, de métriques, de logs et de tracing dans un projet moderne.
+
+**Dernière mise à jour : juin 2025**
